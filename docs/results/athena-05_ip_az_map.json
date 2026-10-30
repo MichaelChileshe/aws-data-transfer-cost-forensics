@@ -1,0 +1,26 @@
+{
+ "meta": {
+  "query_id": "6de78ebd-e948-4a40-9363-5bbfcb022dc7",
+  "scanned_bytes": 39791,
+  "engine_ms": 697,
+  "rows": 4
+ },
+ "rows": [
+  {
+   "ip": "10.170.0.151",
+   "az_id": "use1-az1"
+  },
+  {
+   "ip": "10.170.10.10",
+   "az_id": "use1-az1"
+  },
+  {
+   "ip": "10.170.10.20",
+   "az_id": "use1-az1"
+  },
+  {
+   "ip": "10.170.11.10",
+   "az_id": "use1-az2"
+  }
+ ]
+}

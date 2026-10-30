@@ -1,0 +1,16 @@
+{
+ "app-a": {
+  "bytes": 1073741824,
+  "file": "/var/tmp/mvela/payload.csv",
+  "mode": "make-payload",
+  "seconds": 11.18,
+  "sha256": "1765d8a551069ec14eb327a3dd64727e3292897e25a450d089d12c0c76a160ce"
+ },
+ "app-b": {
+  "bytes": 268435456,
+  "file": "/var/tmp/mvela/payload-b.csv",
+  "mode": "make-payload",
+  "seconds": 3.08,
+  "sha256": "4ff50806caa819a8b1f456a536096483c6dbb3c5fa42c78934c586cbae87c9f4"
+ }
+}

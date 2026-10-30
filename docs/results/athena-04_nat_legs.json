@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "query_id": "c88606fe-5e4f-42b7-98a2-f620d95b22bc",
+  "scanned_bytes": 50192,
+  "engine_ms": 698,
+  "rows": 13
+ },
+ "rows": [
+  {
+   "run": "(between runs)",
+   "in_from_source": "2001077",
+   "out_to_destination": "2014940",
+   "in_from_destination": "170347128",
+   "out_to_source": "184091286",
+   "bytes": "358454431",
+   "records": "1561"
+  },
+  {
+   "run": "chatty-saz",
+   "in_from_source": "13341",
+   "out_to_destination": "12932",
+   "in_from_destination": "14950",
+   "out_to_source": "12979",
+   "bytes": "54202",
+   "records": "126"
+  },
+  {
+   "run": "chatty-xaz",
+   "in_from_source": "19107",
+   "out_to_destination": "19343",
+   "in_from_destination": "22312",
+   "out_to_source": "20607",
+   "bytes": "81369",
+   "records": "148"
+  },
+  {
+   "run": "gzip-euw1",
+   "in_from_source": "312649429",
+   "out_to_destination": "312659186",
+   "in_from_destination": "1369002",
+   "out_to_source": "1373154",
+   "bytes": "628050771",
+   "records": "193"
+  },
+  {
+   "run": "idle",
+   "in_from_source": "46638",
+   "out_to_destination": "37791",
+   "in_from_destination": "56923",
+   "out_to_source": "53856",
+   "bytes": "195208",
+   "records": "397"
+  },
+  {
+   "run": "internet-in",
+   "in_from_source": "1958133",
+   "out_to_destination": "1957790",
+   "in_from_destination": "556971716",
+   "out_to_source": "556970057",
+   "bytes": "1117857696",
+   "records": "137"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "in_from_source": "1117483655",
+   "out_to_destination": "1117485899",
+   "in_from_destination": "3334073",
+   "out_to_source": "3314572",
+   "bytes": "2241618199",
+   "records": "223"
+  },
+  {
+   "run": "s3-gwe",
+   "in_from_source": "17743",
+   "out_to_destination": "26834",
+   "in_from_destination": "21618",
+   "out_to_source": "27157",
+   "bytes": "93352",
+   "records": "111"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "in_from_source": "12691",
+   "out_to_destination": "12832",
+   "in_from_destination": "13615",
+   "out_to_source": "6381",
+   "bytes": "45519",
+   "records": "96"
+  },
+  {
+   "run": "s3-nat",
+   "in_from_source": "1092476929",
+   "out_to_destination": "1092467616",
+   "in_from_destination": "5056160",
+   "out_to_source": "5054696",
+   "bytes": "2195055401",
+   "records": "192"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "in_from_source": "273991149",
+   "out_to_destination": "273991390",
+   "in_from_destination": "1181140",
+   "out_to_source": "1178907",
+   "bytes": "550342586",
+   "records": "157"
+  },
+  {
+   "run": "saz-bulk",
+   "in_from_source": "25604",
+   "out_to_destination": "25320",
+   "in_from_destination": "36858",
+   "out_to_source": "34691",
+   "bytes": "122473",
+   "records": "139"
+  },
+  {
+   "run": "xaz-bulk",
+   "in_from_source": "17859",
+   "out_to_destination": "17382",
+   "in_from_destination": "21540",
+   "out_to_source": "20180",
+   "bytes": "76961",
+   "records": "135"
+  }
+ ]
+}

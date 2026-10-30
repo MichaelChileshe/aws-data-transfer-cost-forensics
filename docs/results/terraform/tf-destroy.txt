@@ -1,0 +1,1614 @@
+data.aws_ssm_parameter.al2023_arm: Reading...
+aws_vpc.this: Refreshing state... [id=vpc-084d6659fc4b29b32]
+aws_glue_catalog_database.this: Refreshing state... [id=<account-id>:mvela_xfer]
+aws_iam_role.app: Refreshing state... [id=mvela-xfer-app-role]
+data.aws_caller_identity.current: Reading...
+aws_s3_bucket.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+data.aws_availability_zones.available: Reading...
+aws_s3_bucket.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+data.aws_caller_identity.current: Read complete after 0s [id=<account-id>]
+data.aws_ec2_instance_type_offerings.type: Reading...
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+data.aws_ssm_parameter.al2023_arm: Read complete after 1s [id=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-arm64]
+data.aws_ec2_instance_type_offerings.type: Read complete after 1s [id=us-east-1]
+aws_iam_role_policy_attachment.app_ssm: Refreshing state... [id=mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_instance_profile.app: Refreshing state... [id=mvela-xfer-app-profile]
+aws_internet_gateway.this: Refreshing state... [id=igw-0aef63192ccf16dac]
+aws_route_table.private: Refreshing state... [id=rtb-0a89d9f763bf2168d]
+aws_subnet.private["a"]: Refreshing state... [id=subnet-0821d4652a1ccea90]
+aws_route_table.public: Refreshing state... [id=rtb-04dde3fa5f5d19907]
+aws_subnet.public_a: Refreshing state... [id=subnet-05e8ca58c6d045a3f]
+aws_security_group.app: Refreshing state... [id=sg-0de5ee1d9fc7d8d8f]
+aws_subnet.private["b"]: Refreshing state... [id=subnet-015d77022fdfef550]
+aws_vpc_endpoint.s3[0]: Refreshing state... [id=vpce-0fd3b2ed5cfc76d57]
+aws_route.public_internet: Refreshing state... [id=r-rtb-04dde3fa5f5d199071080289494]
+aws_route_table_association.public_a: Refreshing state... [id=rtbassoc-09a2a26fd5cb187ca]
+aws_vpc_security_group_ingress_rule.bulk: Refreshing state... [id=sgr-0c67fc0ab83e844f4]
+aws_vpc_security_group_egress_rule.all: Refreshing state... [id=sgr-017cc02b9ae6f4931]
+aws_vpc_security_group_ingress_rule.http: Refreshing state... [id=sgr-048b9c1208df96130]
+aws_route_table_association.private["a"]: Refreshing state... [id=rtbassoc-02e554a22e5d44d49]
+aws_route_table_association.private["b"]: Refreshing state... [id=rtbassoc-0344f1c4fb326e082]
+aws_s3_bucket_public_access_block.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_policy.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_public_access_block.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_public_access_block.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_iam_role_policy.app_s3: Refreshing state... [id=mvela-xfer-app-role:mvela-xfer-app-s3]
+aws_glue_catalog_table.flows: Refreshing state... [id=<account-id>:mvela_xfer:vpc_flow_logs]
+aws_s3_bucket_lifecycle_configuration.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_athena_workgroup.this: Refreshing state... [id=mvela-xfer]
+aws_s3_bucket_public_access_block.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket_policy.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_policy.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_flow_log.vpc: Refreshing state... [id=fl-03a0906a8d392d132]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_athena_workgroup.this will be destroyed
+  - resource "aws_athena_workgroup" "this" {
+      - arn           = "arn:aws:athena:us-east-1:<account-id>:workgroup/mvela-xfer" -> null
+      - description   = "Data-transfer forensics over the VPC flow logs" -> null
+      - force_destroy = true -> null
+      - id            = "mvela-xfer" -> null
+      - name          = "mvela-xfer" -> null
+      - region        = "us-east-1" -> null
+      - state         = "ENABLED" -> null
+      - tags          = {} -> null
+      - tags_all      = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+
+      - configuration {
+          - bytes_scanned_cutoff_per_query          = 104857600 -> null
+          - enable_minimum_encryption_configuration = false -> null
+          - enforce_workgroup_configuration         = true -> null
+          - publish_cloudwatch_metrics_enabled      = false -> null
+          - requester_pays_enabled                  = false -> null
+            # (1 unchanged attribute hidden)
+
+          - engine_version {
+              - effective_engine_version = "Athena engine version 3" -> null
+              - selected_engine_version  = "AUTO" -> null
+            }
+
+          - result_configuration {
+              - output_location       = "s3://mvela-xfer-athena-e3bf3457/results/" -> null
+                # (1 unchanged attribute hidden)
+
+              - encryption_configuration {
+                  - encryption_option = "SSE_S3" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+    }
+
+  # aws_flow_log.vpc will be destroyed
+  - resource "aws_flow_log" "vpc" {
+      - arn                        = "arn:aws:ec2:us-east-1:<account-id>:vpc-flow-log/fl-03a0906a8d392d132" -> null
+      - id                         = "fl-03a0906a8d392d132" -> null
+      - log_destination            = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457" -> null
+      - log_destination_type       = "s3" -> null
+      - log_format                 = "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status} ${vpc-id} ${subnet-id} ${instance-id} ${az-id} ${sublocation-type} ${flow-direction} ${traffic-path} ${pkt-src-aws-service} ${pkt-dst-aws-service} ${pkt-srcaddr} ${pkt-dstaddr}" -> null
+      - max_aggregation_interval   = 60 -> null
+      - region                     = "us-east-1" -> null
+      - tags                       = {
+          - "Name" = "mvela-xfer-flowlog"
+        } -> null
+      - tags_all                   = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-flowlog"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - traffic_type               = "ALL" -> null
+      - vpc_id                     = "vpc-084d6659fc4b29b32" -> null
+        # (2 unchanged attributes hidden)
+
+      - destination_options {
+          - file_format                = "parquet" -> null
+          - hive_compatible_partitions = true -> null
+          - per_hour_partition         = true -> null
+        }
+    }
+
+  # aws_glue_catalog_database.this will be destroyed
+  - resource "aws_glue_catalog_database" "this" {
+      - arn          = "arn:aws:glue:us-east-1:<account-id>:database/mvela_xfer" -> null
+      - catalog_id   = "<account-id>" -> null
+      - description  = "Mvelaphanda data-transfer forensics" -> null
+      - id           = "<account-id>:mvela_xfer" -> null
+      - name         = "mvela_xfer" -> null
+      - parameters   = {} -> null
+      - region       = "us-east-1" -> null
+      - tags         = {} -> null
+      - tags_all     = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (1 unchanged attribute hidden)
+
+      - create_table_default_permission {
+          - permissions = [
+              - "ALL",
+            ] -> null
+
+          - principal {
+              - data_lake_principal_identifier = "IAM_ALLOWED_PRINCIPALS" -> null
+            }
+        }
+    }
+
+  # aws_glue_catalog_table.flows will be destroyed
+  - resource "aws_glue_catalog_table" "flows" {
+      - arn                = "arn:aws:glue:us-east-1:<account-id>:table/mvela_xfer/vpc_flow_logs" -> null
+      - catalog_id         = "<account-id>" -> null
+      - database_name      = "mvela_xfer" -> null
+      - description        = "VPC flow logs, custom v5 format, Parquet, Hive-compatible hourly partitions" -> null
+      - id                 = "<account-id>:mvela_xfer:vpc_flow_logs" -> null
+      - name               = "vpc_flow_logs" -> null
+      - parameters         = {
+          - "EXTERNAL"                  = "TRUE"
+          - "classification"            = "parquet"
+          - "projection.day.digits"     = "2"
+          - "projection.day.range"      = "1,31"
+          - "projection.day.type"       = "integer"
+          - "projection.enabled"        = "true"
+          - "projection.hour.digits"    = "2"
+          - "projection.hour.range"     = "0,23"
+          - "projection.hour.type"      = "integer"
+          - "projection.month.digits"   = "2"
+          - "projection.month.range"    = "1,12"
+          - "projection.month.type"     = "integer"
+          - "projection.year.range"     = "2025,2035"
+          - "projection.year.type"      = "integer"
+          - "storage.location.template" = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=${year}/month=${month}/day=${day}/hour=${hour}/"
+        } -> null
+      - region             = "us-east-1" -> null
+      - retention          = 0 -> null
+      - table_type         = "EXTERNAL_TABLE" -> null
+        # (3 unchanged attributes hidden)
+
+      - partition_keys {
+          - name       = "year" -> null
+          - parameters = {} -> null
+          - type       = "string" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - partition_keys {
+          - name       = "month" -> null
+          - parameters = {} -> null
+          - type       = "string" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - partition_keys {
+          - name       = "day" -> null
+          - parameters = {} -> null
+          - type       = "string" -> null
+            # (1 unchanged attribute hidden)
+        }
+      - partition_keys {
+          - name       = "hour" -> null
+          - parameters = {} -> null
+          - type       = "string" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - storage_descriptor {
+          - additional_locations      = [] -> null
+          - bucket_columns            = [] -> null
+          - compressed                = false -> null
+          - input_format              = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat" -> null
+          - location                  = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/" -> null
+          - number_of_buckets         = 0 -> null
+          - output_format             = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat" -> null
+          - parameters                = {} -> null
+          - stored_as_sub_directories = false -> null
+
+          - columns {
+              - name       = "version" -> null
+              - parameters = {} -> null
+              - type       = "int" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "account_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "interface_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "srcaddr" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "dstaddr" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "srcport" -> null
+              - parameters = {} -> null
+              - type       = "int" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "dstport" -> null
+              - parameters = {} -> null
+              - type       = "int" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "protocol" -> null
+              - parameters = {} -> null
+              - type       = "int" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "packets" -> null
+              - parameters = {} -> null
+              - type       = "bigint" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "bytes" -> null
+              - parameters = {} -> null
+              - type       = "bigint" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "start" -> null
+              - parameters = {} -> null
+              - type       = "bigint" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "end" -> null
+              - parameters = {} -> null
+              - type       = "bigint" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "action" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "log_status" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "vpc_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "subnet_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "instance_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "az_id" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "sublocation_type" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "flow_direction" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "traffic_path" -> null
+              - parameters = {} -> null
+              - type       = "int" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "pkt_src_aws_service" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "pkt_dst_aws_service" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "pkt_srcaddr" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+          - columns {
+              - name       = "pkt_dstaddr" -> null
+              - parameters = {} -> null
+              - type       = "string" -> null
+                # (1 unchanged attribute hidden)
+            }
+
+          - ser_de_info {
+                name                  = null
+              - parameters            = {} -> null
+              - serialization_library = "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe" -> null
+            }
+        }
+    }
+
+  # aws_iam_instance_profile.app will be destroyed
+  - resource "aws_iam_instance_profile" "app" {
+      - arn         = "arn:aws:iam::<account-id>:instance-profile/mvela-xfer-app-profile" -> null
+      - create_date = "2026-10-30T11:39:24Z" -> null
+      - id          = "mvela-xfer-app-profile" -> null
+      - name        = "mvela-xfer-app-profile" -> null
+      - path        = "/" -> null
+      - role        = "mvela-xfer-app-role" -> null
+      - tags        = {} -> null
+      - tags_all    = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - unique_id   = "AIPA3IFWBO65U6Y4NO4WB" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role.app will be destroyed
+  - resource "aws_iam_role" "app" {
+      - arn                   = "arn:aws:iam::<account-id>:role/mvela-xfer-app-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-10-30T11:39:22Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "mvela-xfer-app-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "mvela-xfer-app-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {} -> null
+      - tags_all              = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - unique_id             = "AROA3IFWBO65ZUZ2HVVZ7" -> null
+        # (3 unchanged attributes hidden)
+
+      - inline_policy {
+          - name   = "mvela-xfer-app-s3" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = [
+                              - "s3:PutObject",
+                              - "s3:AbortMultipartUpload",
+                              - "s3:ListMultipartUploadParts",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = [
+                              - "arn:aws:s3:::mvela-xfer-lake-e3bf3457/*",
+                              - "arn:aws:s3:::mvela-xfer-replica-e3bf3457/*",
+                            ]
+                          - Sid      = "WriteLabObjects"
+                        },
+                      - {
+                          - Action   = [
+                              - "s3:ListBucket",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = [
+                              - "arn:aws:s3:::mvela-xfer-lake-e3bf3457",
+                              - "arn:aws:s3:::mvela-xfer-replica-e3bf3457",
+                            ]
+                          - Sid      = "ListLabBuckets"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+    }
+
+  # aws_iam_role_policy.app_s3 will be destroyed
+  - resource "aws_iam_role_policy" "app_s3" {
+      - id          = "mvela-xfer-app-role:mvela-xfer-app-s3" -> null
+      - name        = "mvela-xfer-app-s3" -> null
+      - policy      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action   = [
+                          - "s3:PutObject",
+                          - "s3:AbortMultipartUpload",
+                          - "s3:ListMultipartUploadParts",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = [
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457/*",
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457/*",
+                        ]
+                      - Sid      = "WriteLabObjects"
+                    },
+                  - {
+                      - Action   = [
+                          - "s3:ListBucket",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = [
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457",
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457",
+                        ]
+                      - Sid      = "ListLabBuckets"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - role        = "mvela-xfer-app-role" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_iam_role_policy_attachment.app_ssm will be destroyed
+  - resource "aws_iam_role_policy_attachment" "app_ssm" {
+      - id         = "mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore" -> null
+      - role       = "mvela-xfer-app-role" -> null
+    }
+
+  # aws_internet_gateway.this will be destroyed
+  - resource "aws_internet_gateway" "this" {
+      - arn      = "arn:aws:ec2:us-east-1:<account-id>:internet-gateway/igw-0aef63192ccf16dac" -> null
+      - id       = "igw-0aef63192ccf16dac" -> null
+      - owner_id = "<account-id>" -> null
+      - region   = "us-east-1" -> null
+      - tags     = {
+          - "Name" = "mvela-xfer-igw"
+        } -> null
+      - tags_all = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-igw"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id   = "vpc-084d6659fc4b29b32" -> null
+    }
+
+  # aws_route.public_internet will be destroyed
+  - resource "aws_route" "public_internet" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - gateway_id                  = "igw-0aef63192ccf16dac" -> null
+      - id                          = "r-rtb-04dde3fa5f5d199071080289494" -> null
+      - origin                      = "CreateRoute" -> null
+      - region                      = "us-east-1" -> null
+      - route_table_id              = "rtb-04dde3fa5f5d19907" -> null
+      - state                       = "active" -> null
+        # (14 unchanged attributes hidden)
+    }
+
+  # aws_route_table.private will be destroyed
+  - resource "aws_route_table" "private" {
+      - arn              = "arn:aws:ec2:us-east-1:<account-id>:route-table/rtb-0a89d9f763bf2168d" -> null
+      - id               = "rtb-0a89d9f763bf2168d" -> null
+      - owner_id         = "<account-id>" -> null
+      - propagating_vgws = [] -> null
+      - region           = "us-east-1" -> null
+      - route            = [] -> null
+      - tags             = {
+          - "Name" = "mvela-xfer-private-rt"
+        } -> null
+      - tags_all         = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-private-rt"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id           = "vpc-084d6659fc4b29b32" -> null
+    }
+
+  # aws_route_table.public will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:us-east-1:<account-id>:route-table/rtb-04dde3fa5f5d19907" -> null
+      - id               = "rtb-04dde3fa5f5d19907" -> null
+      - owner_id         = "<account-id>" -> null
+      - propagating_vgws = [] -> null
+      - region           = "us-east-1" -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-0aef63192ccf16dac"
+                # (12 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "mvela-xfer-public-rt"
+        } -> null
+      - tags_all         = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-public-rt"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id           = "vpc-084d6659fc4b29b32" -> null
+    }
+
+  # aws_route_table_association.private["a"] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-02e554a22e5d44d49" -> null
+      - region         = "us-east-1" -> null
+      - route_table_id = "rtb-0a89d9f763bf2168d" -> null
+      - subnet_id      = "subnet-0821d4652a1ccea90" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.private["b"] will be destroyed
+  - resource "aws_route_table_association" "private" {
+      - id             = "rtbassoc-0344f1c4fb326e082" -> null
+      - region         = "us-east-1" -> null
+      - route_table_id = "rtb-0a89d9f763bf2168d" -> null
+      - subnet_id      = "subnet-015d77022fdfef550" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_route_table_association.public_a will be destroyed
+  - resource "aws_route_table_association" "public_a" {
+      - id             = "rtbassoc-09a2a26fd5cb187ca" -> null
+      - region         = "us-east-1" -> null
+      - route_table_id = "rtb-04dde3fa5f5d19907" -> null
+      - subnet_id      = "subnet-05e8ca58c6d045a3f" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_s3_bucket.athena will be destroyed
+  - resource "aws_s3_bucket" "athena" {
+      - arn                         = "arn:aws:s3:::mvela-xfer-athena-e3bf3457" -> null
+      - bucket                      = "mvela-xfer-athena-e3bf3457" -> null
+      - bucket_domain_name          = "mvela-xfer-athena-e3bf3457.s3.amazonaws.com" -> null
+      - bucket_namespace            = "global" -> null
+      - bucket_region               = "us-east-1" -> null
+      - bucket_regional_domain_name = "mvela-xfer-athena-e3bf3457.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "mvela-xfer-athena-e3bf3457" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (3 unchanged attributes hidden)
+
+      - grant {
+          - id          = "a672cb3389fb02a3443315c3797c82d61c8bcef5c2a2372511d6a0a5fdc2b0ef" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 0 -> null
+          - enabled                                = true -> null
+          - id                                     = "expire-query-results" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket.flowlogs will be destroyed
+  - resource "aws_s3_bucket" "flowlogs" {
+      - arn                         = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457" -> null
+      - bucket                      = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - bucket_domain_name          = "mvela-xfer-flowlogs-e3bf3457.s3.amazonaws.com" -> null
+      - bucket_namespace            = "global" -> null
+      - bucket_region               = "us-east-1" -> null
+      - bucket_regional_domain_name = "mvela-xfer-flowlogs-e3bf3457.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - object_lock_enabled         = false -> null
+      - policy                      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:PutObject"
+                      - Condition = {
+                          - ArnLike      = {
+                              - "aws:SourceArn" = "arn:aws:logs:us-east-1:<account-id>:*"
+                            }
+                          - StringEquals = {
+                              - "aws:SourceAccount" = "<account-id>"
+                              - "s3:x-amz-acl"      = "bucket-owner-full-control"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "delivery.logs.amazonaws.com"
+                        }
+                      - Resource  = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/*"
+                      - Sid       = "AWSLogDeliveryWrite"
+                    },
+                  - {
+                      - Action    = "s3:GetBucketAcl"
+                      - Condition = {
+                          - ArnLike      = {
+                              - "aws:SourceArn" = "arn:aws:logs:us-east-1:<account-id>:*"
+                            }
+                          - StringEquals = {
+                              - "aws:SourceAccount" = "<account-id>"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "delivery.logs.amazonaws.com"
+                        }
+                      - Resource  = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457"
+                      - Sid       = "AWSLogDeliveryAclCheck"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "a672cb3389fb02a3443315c3797c82d61c8bcef5c2a2372511d6a0a5fdc2b0ef" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 0 -> null
+          - enabled                                = true -> null
+          - id                                     = "expire-flow-logs" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket.lake will be destroyed
+  - resource "aws_s3_bucket" "lake" {
+      - arn                         = "arn:aws:s3:::mvela-xfer-lake-e3bf3457" -> null
+      - bucket                      = "mvela-xfer-lake-e3bf3457" -> null
+      - bucket_domain_name          = "mvela-xfer-lake-e3bf3457.s3.amazonaws.com" -> null
+      - bucket_namespace            = "global" -> null
+      - bucket_region               = "us-east-1" -> null
+      - bucket_regional_domain_name = "mvela-xfer-lake-e3bf3457.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "mvela-xfer-lake-e3bf3457" -> null
+      - object_lock_enabled         = false -> null
+      - policy                      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457",
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457/*",
+                        ]
+                      - Sid       = "TLSOnly"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "a672cb3389fb02a3443315c3797c82d61c8bcef5c2a2372511d6a0a5fdc2b0ef" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 1 -> null
+          - enabled                                = true -> null
+          - id                                     = "expire-lab-objects" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 1 -> null
+              - expired_object_delete_marker = false -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket.replica will be destroyed
+  - resource "aws_s3_bucket" "replica" {
+      - arn                         = "arn:aws:s3:::mvela-xfer-replica-e3bf3457" -> null
+      - bucket                      = "mvela-xfer-replica-e3bf3457" -> null
+      - bucket_domain_name          = "mvela-xfer-replica-e3bf3457.s3.amazonaws.com" -> null
+      - bucket_namespace            = "global" -> null
+      - bucket_region               = "eu-west-1" -> null
+      - bucket_regional_domain_name = "mvela-xfer-replica-e3bf3457.s3.eu-west-1.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z1BKCTXD74EZPE" -> null
+      - id                          = "mvela-xfer-replica-e3bf3457" -> null
+      - object_lock_enabled         = false -> null
+      - policy                      = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457",
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457/*",
+                        ]
+                      - Sid       = "TLSOnly"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region                      = "eu-west-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {} -> null
+      - tags_all                    = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (2 unchanged attributes hidden)
+
+      - grant {
+          - id          = "a672cb3389fb02a3443315c3797c82d61c8bcef5c2a2372511d6a0a5fdc2b0ef" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 1 -> null
+          - enabled                                = true -> null
+          - id                                     = "expire-lab-objects" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 1 -> null
+              - expired_object_delete_marker = false -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.athena will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "athena" {
+      - bucket                                 = "mvela-xfer-athena-e3bf3457" -> null
+      - id                                     = "mvela-xfer-athena-e3bf3457" -> null
+      - region                                 = "us-east-1" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "expire-query-results" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.flowlogs will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "flowlogs" {
+      - bucket                                 = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - id                                     = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - region                                 = "us-east-1" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "expire-flow-logs" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.lake will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "lake" {
+      - bucket                                 = "mvela-xfer-lake-e3bf3457" -> null
+      - id                                     = "mvela-xfer-lake-e3bf3457" -> null
+      - region                                 = "us-east-1" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "expire-lab-objects" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - abort_incomplete_multipart_upload {
+              - days_after_initiation = 1 -> null
+            }
+
+          - expiration {
+              - days                         = 1 -> null
+              - expired_object_delete_marker = false -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.replica will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "replica" {
+      - bucket                                 = "mvela-xfer-replica-e3bf3457" -> null
+      - id                                     = "mvela-xfer-replica-e3bf3457" -> null
+      - region                                 = "eu-west-1" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "expire-lab-objects" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - abort_incomplete_multipart_upload {
+              - days_after_initiation = 1 -> null
+            }
+
+          - expiration {
+              - days                         = 1 -> null
+              - expired_object_delete_marker = false -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_policy.flowlogs will be destroyed
+  - resource "aws_s3_bucket_policy" "flowlogs" {
+      - bucket = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - id     = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - policy = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:PutObject"
+                      - Condition = {
+                          - ArnLike      = {
+                              - "aws:SourceArn" = "arn:aws:logs:us-east-1:<account-id>:*"
+                            }
+                          - StringEquals = {
+                              - "aws:SourceAccount" = "<account-id>"
+                              - "s3:x-amz-acl"      = "bucket-owner-full-control"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "delivery.logs.amazonaws.com"
+                        }
+                      - Resource  = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/*"
+                      - Sid       = "AWSLogDeliveryWrite"
+                    },
+                  - {
+                      - Action    = "s3:GetBucketAcl"
+                      - Condition = {
+                          - ArnLike      = {
+                              - "aws:SourceArn" = "arn:aws:logs:us-east-1:<account-id>:*"
+                            }
+                          - StringEquals = {
+                              - "aws:SourceAccount" = "<account-id>"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "delivery.logs.amazonaws.com"
+                        }
+                      - Resource  = "arn:aws:s3:::mvela-xfer-flowlogs-e3bf3457"
+                      - Sid       = "AWSLogDeliveryAclCheck"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region = "us-east-1" -> null
+    }
+
+  # aws_s3_bucket_policy.lake will be destroyed
+  - resource "aws_s3_bucket_policy" "lake" {
+      - bucket = "mvela-xfer-lake-e3bf3457" -> null
+      - id     = "mvela-xfer-lake-e3bf3457" -> null
+      - policy = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457",
+                          - "arn:aws:s3:::mvela-xfer-lake-e3bf3457/*",
+                        ]
+                      - Sid       = "TLSOnly"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region = "us-east-1" -> null
+    }
+
+  # aws_s3_bucket_policy.replica will be destroyed
+  - resource "aws_s3_bucket_policy" "replica" {
+      - bucket = "mvela-xfer-replica-e3bf3457" -> null
+      - id     = "mvela-xfer-replica-e3bf3457" -> null
+      - policy = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "s3:*"
+                      - Condition = {
+                          - Bool = {
+                              - "aws:SecureTransport" = "false"
+                            }
+                        }
+                      - Effect    = "Deny"
+                      - Principal = "*"
+                      - Resource  = [
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457",
+                          - "arn:aws:s3:::mvela-xfer-replica-e3bf3457/*",
+                        ]
+                      - Sid       = "TLSOnly"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - region = "eu-west-1" -> null
+    }
+
+  # aws_s3_bucket_public_access_block.athena will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "athena" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "mvela-xfer-athena-e3bf3457" -> null
+      - id                      = "mvela-xfer-athena-e3bf3457" -> null
+      - ignore_public_acls      = true -> null
+      - region                  = "us-east-1" -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_public_access_block.flowlogs will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "flowlogs" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - id                      = "mvela-xfer-flowlogs-e3bf3457" -> null
+      - ignore_public_acls      = true -> null
+      - region                  = "us-east-1" -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_public_access_block.lake will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "lake" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "mvela-xfer-lake-e3bf3457" -> null
+      - id                      = "mvela-xfer-lake-e3bf3457" -> null
+      - ignore_public_acls      = true -> null
+      - region                  = "us-east-1" -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_public_access_block.replica will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "replica" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "mvela-xfer-replica-e3bf3457" -> null
+      - id                      = "mvela-xfer-replica-e3bf3457" -> null
+      - ignore_public_acls      = true -> null
+      - region                  = "eu-west-1" -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_security_group.app will be destroyed
+  - resource "aws_security_group" "app" {
+      - arn                    = "arn:aws:ec2:us-east-1:<account-id>:security-group/sg-0de5ee1d9fc7d8d8f" -> null
+      - description            = "Mvelaphanda app services - 9000 (bulk TCP) and 8080 (HTTP) from inside the VPC only" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Outbound: SSM, S3, the internet test download, the other app instances"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-0de5ee1d9fc7d8d8f" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "10.170.0.0/16",
+                ]
+              - description      = "Bulk TCP transfers between app instances"
+              - from_port        = 9000
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 9000
+            },
+          - {
+              - cidr_blocks      = [
+                  - "10.170.0.0/16",
+                ]
+              - description      = "Service-to-service HTTP calls (the chatty service)"
+              - from_port        = 8080
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 8080
+            },
+        ] -> null
+      - name                   = "mvela-xfer-app-sg" -> null
+      - owner_id               = "<account-id>" -> null
+      - region                 = "us-east-1" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Name" = "mvela-xfer-app-sg"
+        } -> null
+      - tags_all               = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-app-sg"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id                 = "vpc-084d6659fc4b29b32" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_subnet.private["a"] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:us-east-1:<account-id>:subnet/subnet-0821d4652a1ccea90" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1a" -> null
+      - availability_zone_id                           = "use1-az1" -> null
+      - cidr_block                                     = "10.170.10.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0821d4652a1ccea90" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "<account-id>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "us-east-1" -> null
+      - tags                                           = {
+          - "Name" = "mvela-xfer-private-a"
+        } -> null
+      - tags_all                                       = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-private-a"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id                                         = "vpc-084d6659fc4b29b32" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_subnet.private["b"] will be destroyed
+  - resource "aws_subnet" "private" {
+      - arn                                            = "arn:aws:ec2:us-east-1:<account-id>:subnet/subnet-015d77022fdfef550" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1b" -> null
+      - availability_zone_id                           = "use1-az2" -> null
+      - cidr_block                                     = "10.170.11.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-015d77022fdfef550" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "<account-id>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "us-east-1" -> null
+      - tags                                           = {
+          - "Name" = "mvela-xfer-private-b"
+        } -> null
+      - tags_all                                       = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-private-b"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id                                         = "vpc-084d6659fc4b29b32" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_subnet.public_a will be destroyed
+  - resource "aws_subnet" "public_a" {
+      - arn                                            = "arn:aws:ec2:us-east-1:<account-id>:subnet/subnet-05e8ca58c6d045a3f" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1a" -> null
+      - availability_zone_id                           = "use1-az1" -> null
+      - cidr_block                                     = "10.170.0.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-05e8ca58c6d045a3f" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "<account-id>" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - region                                         = "us-east-1" -> null
+      - tags                                           = {
+          - "Name" = "mvela-xfer-public-a"
+        } -> null
+      - tags_all                                       = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-public-a"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id                                         = "vpc-084d6659fc4b29b32" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_vpc.this will be destroyed
+  - resource "aws_vpc" "this" {
+      - arn                                  = "arn:aws:ec2:us-east-1:<account-id>:vpc/vpc-084d6659fc4b29b32" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.170.0.0/16" -> null
+      - default_network_acl_id               = "acl-01ddb5cfaf0a3a8c9" -> null
+      - default_route_table_id               = "rtb-0cbce8e782f12f46f" -> null
+      - default_security_group_id            = "sg-013531f591f952d42" -> null
+      - dhcp_options_id                      = "dopt-005c03a6fb6933432" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-084d6659fc4b29b32" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0cbce8e782f12f46f" -> null
+      - owner_id                             = "<account-id>" -> null
+      - region                               = "us-east-1" -> null
+      - tags                                 = {
+          - "Name" = "mvela-xfer-vpc"
+        } -> null
+      - tags_all                             = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-vpc"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_vpc_endpoint.s3[0] will be destroyed
+  - resource "aws_vpc_endpoint" "s3" {
+      - arn                        = "arn:aws:ec2:us-east-1:<account-id>:vpc-endpoint/vpce-0fd3b2ed5cfc76d57" -> null
+      - cidr_blocks                = [
+          - "16.15.160.0/19",
+          - "16.182.0.0/16",
+          - "18.34.0.0/19",
+          - "52.216.0.0/15",
+          - "54.231.0.0/16",
+          - "3.5.0.0/19",
+          - "18.34.232.0/21",
+          - "16.15.192.0/18",
+          - "16.15.156.0/22",
+        ] -> null
+      - dns_entry                  = [] -> null
+      - id                         = "vpce-0fd3b2ed5cfc76d57" -> null
+      - ip_address_type            = "ipv4" -> null
+      - network_interface_ids      = [] -> null
+      - owner_id                   = "<account-id>" -> null
+      - policy                     = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "*"
+                      - Effect    = "Allow"
+                      - Principal = "*"
+                      - Resource  = "*"
+                    },
+                ]
+              - Version   = "2008-10-17"
+            }
+        ) -> null
+      - prefix_list_id             = "pl-63a5400a" -> null
+      - private_dns_enabled        = false -> null
+      - region                     = "us-east-1" -> null
+      - requester_managed          = false -> null
+      - route_table_ids            = [
+          - "rtb-0a89d9f763bf2168d",
+        ] -> null
+      - security_group_ids         = [] -> null
+      - service_name               = "com.amazonaws.us-east-1.s3" -> null
+      - service_region             = "us-east-1" -> null
+      - state                      = "available" -> null
+      - subnet_ids                 = [] -> null
+      - tags                       = {
+          - "Name" = "mvela-xfer-s3-gateway"
+        } -> null
+      - tags_all                   = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-s3-gateway"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_endpoint_type          = "Gateway" -> null
+      - vpc_id                     = "vpc-084d6659fc4b29b32" -> null
+        # (2 unchanged attributes hidden)
+
+      - dns_options {
+          - dns_record_ip_type                             = "service-defined" -> null
+          - private_dns_only_for_inbound_resolver_endpoint = false -> null
+          - private_dns_specified_domains                  = [] -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_vpc_security_group_egress_rule.all will be destroyed
+  - resource "aws_vpc_security_group_egress_rule" "all" {
+      - arn                    = "arn:aws:ec2:us-east-1:<account-id>:security-group-rule/sgr-017cc02b9ae6f4931" -> null
+      - cidr_ipv4              = "0.0.0.0/0" -> null
+      - description            = "Outbound: SSM, S3, the internet test download, the other app instances" -> null
+      - id                     = "sgr-017cc02b9ae6f4931" -> null
+      - ip_protocol            = "-1" -> null
+      - region                 = "us-east-1" -> null
+      - security_group_id      = "sg-0de5ee1d9fc7d8d8f" -> null
+      - security_group_rule_id = "sgr-017cc02b9ae6f4931" -> null
+      - tags_all               = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+    }
+
+  # aws_vpc_security_group_ingress_rule.bulk will be destroyed
+  - resource "aws_vpc_security_group_ingress_rule" "bulk" {
+      - arn                    = "arn:aws:ec2:us-east-1:<account-id>:security-group-rule/sgr-0c67fc0ab83e844f4" -> null
+      - cidr_ipv4              = "10.170.0.0/16" -> null
+      - description            = "Bulk TCP transfers between app instances" -> null
+      - from_port              = 9000 -> null
+      - id                     = "sgr-0c67fc0ab83e844f4" -> null
+      - ip_protocol            = "tcp" -> null
+      - region                 = "us-east-1" -> null
+      - security_group_id      = "sg-0de5ee1d9fc7d8d8f" -> null
+      - security_group_rule_id = "sgr-0c67fc0ab83e844f4" -> null
+      - tags_all               = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - to_port                = 9000 -> null
+    }
+
+  # aws_vpc_security_group_ingress_rule.http will be destroyed
+  - resource "aws_vpc_security_group_ingress_rule" "http" {
+      - arn                    = "arn:aws:ec2:us-east-1:<account-id>:security-group-rule/sgr-048b9c1208df96130" -> null
+      - cidr_ipv4              = "10.170.0.0/16" -> null
+      - description            = "Service-to-service HTTP calls (the chatty service)" -> null
+      - from_port              = 8080 -> null
+      - id                     = "sgr-048b9c1208df96130" -> null
+      - ip_protocol            = "tcp" -> null
+      - region                 = "us-east-1" -> null
+      - security_group_id      = "sg-0de5ee1d9fc7d8d8f" -> null
+      - security_group_rule_id = "sgr-048b9c1208df96130" -> null
+      - tags_all               = {
+          - "ManagedBy" = "terraform"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - to_port                = 8080 -> null
+    }
+
+Plan: 0 to add, 0 to change, 39 to destroy.
+
+Changes to Outputs:
+  - app_sha256             = "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470" -> null
+  - athena                 = {
+      - database  = "mvela_xfer"
+      - flow_root = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+      - table     = "vpc_flow_logs"
+      - workgroup = "mvela-xfer"
+    } -> null
+  - buckets                = {
+      - athena   = "mvela-xfer-athena-e3bf3457"
+      - flowlogs = "mvela-xfer-flowlogs-e3bf3457"
+      - lake     = "mvela-xfer-lake-e3bf3457"
+      - replica  = "mvela-xfer-replica-e3bf3457"
+    } -> null
+  - flow_log_id            = "fl-03a0906a8d392d132" -> null
+  - lab                    = {} -> null
+  - phases                 = {
+      - s3_gateway_endpoint = true
+      - traffic_lab         = false
+    } -> null
+  - regions                = {
+      - primary = "us-east-1"
+      - second  = "eu-west-1"
+    } -> null
+  - s3_gateway_endpoint_id = "vpce-0fd3b2ed5cfc76d57" -> null
+  - vpc                    = {
+      - azs  = [
+          - "us-east-1a",
+          - "us-east-1b",
+        ]
+      - cidr = "10.170.0.0/16"
+      - id   = "vpc-084d6659fc4b29b32"
+    } -> null
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+aws_route_table_association.private["a"]: Destroying... [id=rtbassoc-02e554a22e5d44d49]
+aws_iam_instance_profile.app: Destroying... [id=mvela-xfer-app-profile]
+aws_vpc_security_group_ingress_rule.http: Destroying... [id=sgr-048b9c1208df96130]
+aws_s3_bucket_lifecycle_configuration.replica: Destroying... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Destroying... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_public_access_block.athena: Destroying... [id=mvela-xfer-athena-e3bf3457]
+aws_vpc_security_group_egress_rule.all: Destroying... [id=sgr-017cc02b9ae6f4931]
+aws_iam_role_policy.app_s3: Destroying... [id=mvela-xfer-app-role:mvela-xfer-app-s3]
+aws_s3_bucket_policy.lake: Destroying... [id=mvela-xfer-lake-e3bf3457]
+aws_glue_catalog_table.flows: Destroying... [id=<account-id>:mvela_xfer:vpc_flow_logs]
+aws_iam_role_policy.app_s3: Destruction complete after 1s
+aws_s3_bucket_lifecycle_configuration.lake: Destroying... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_policy.lake: Destruction complete after 1s
+aws_glue_catalog_table.flows: Destruction complete after 1s
+aws_s3_bucket_public_access_block.athena: Destruction complete after 1s
+aws_vpc_endpoint.s3[0]: Destroying... [id=vpce-0fd3b2ed5cfc76d57]
+aws_route.public_internet: Destroying... [id=r-rtb-04dde3fa5f5d199071080289494]
+aws_route_table_association.public_a: Destroying... [id=rtbassoc-09a2a26fd5cb187ca]
+aws_s3_bucket_lifecycle_configuration.replica: Destruction complete after 2s
+aws_iam_role_policy_attachment.app_ssm: Destroying... [id=mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Destruction complete after 2s
+aws_iam_instance_profile.app: Destruction complete after 2s
+aws_route_table_association.private["b"]: Destroying... [id=rtbassoc-0344f1c4fb326e082]
+aws_flow_log.vpc: Destroying... [id=fl-03a0906a8d392d132]
+aws_vpc_security_group_egress_rule.all: Destruction complete after 2s
+aws_s3_bucket_policy.replica: Destroying... [id=mvela-xfer-replica-e3bf3457]
+aws_vpc_security_group_ingress_rule.http: Destruction complete after 2s
+aws_athena_workgroup.this: Destroying... [id=mvela-xfer]
+aws_iam_role_policy_attachment.app_ssm: Destruction complete after 0s
+aws_vpc_security_group_ingress_rule.bulk: Destroying... [id=sgr-0c67fc0ab83e844f4]
+aws_s3_bucket_lifecycle_configuration.lake: Destruction complete after 1s
+aws_s3_bucket_lifecycle_configuration.athena: Destroying... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket_policy.replica: Destruction complete after 0s
+aws_s3_bucket_public_access_block.lake: Destroying... [id=mvela-xfer-lake-e3bf3457]
+aws_route_table_association.private["a"]: Destruction complete after 2s
+aws_glue_catalog_database.this: Destroying... [id=<account-id>:mvela_xfer]
+aws_route_table_association.public_a: Destruction complete after 2s
+aws_iam_role.app: Destroying... [id=mvela-xfer-app-role]
+aws_flow_log.vpc: Destruction complete after 1s
+aws_s3_bucket_public_access_block.replica: Destroying... [id=mvela-xfer-replica-e3bf3457]
+aws_glue_catalog_database.this: Destruction complete after 1s
+aws_subnet.public_a: Destroying... [id=subnet-05e8ca58c6d045a3f]
+aws_vpc_security_group_ingress_rule.bulk: Destruction complete after 1s
+aws_s3_bucket_policy.flowlogs: Destroying... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.athena: Destruction complete after 1s
+aws_security_group.app: Destroying... [id=sg-0de5ee1d9fc7d8d8f]
+aws_athena_workgroup.this: Destruction complete after 1s
+aws_s3_bucket.athena: Destroying... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket_public_access_block.lake: Destruction complete after 1s
+aws_s3_bucket.lake: Destroying... [id=mvela-xfer-lake-e3bf3457]
+aws_route_table_association.private["b"]: Destruction complete after 1s
+aws_subnet.private["a"]: Destroying... [id=subnet-0821d4652a1ccea90]
+aws_route.public_internet: Destruction complete after 2s
+aws_subnet.private["b"]: Destroying... [id=subnet-015d77022fdfef550]
+aws_s3_bucket_public_access_block.replica: Destruction complete after 1s
+aws_internet_gateway.this: Destroying... [id=igw-0aef63192ccf16dac]
+aws_s3_bucket_policy.flowlogs: Destruction complete after 1s
+aws_route_table.public: Destroying... [id=rtb-04dde3fa5f5d19907]
+aws_subnet.public_a: Destruction complete after 1s
+aws_s3_bucket.replica: Destroying... [id=mvela-xfer-replica-e3bf3457]
+aws_iam_role.app: Destruction complete after 1s
+aws_s3_bucket_public_access_block.flowlogs: Destroying... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_subnet.private["a"]: Destruction complete after 1s
+aws_subnet.private["b"]: Destruction complete after 1s
+aws_security_group.app: Destruction complete after 1s
+aws_s3_bucket_public_access_block.flowlogs: Destruction complete after 1s
+aws_s3_bucket.flowlogs: Destroying... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_internet_gateway.this: Destruction complete after 1s
+aws_s3_bucket.lake: Destruction complete after 2s
+aws_route_table.public: Destruction complete after 1s
+aws_s3_bucket.athena: Destruction complete after 3s
+aws_s3_bucket.replica: Destruction complete after 2s
+aws_s3_bucket.flowlogs: Destruction complete after 3s
+aws_vpc_endpoint.s3[0]: Still destroying... [id=vpce-0fd3b2ed5cfc76d57, 00m10s elapsed]
+aws_vpc_endpoint.s3[0]: Destruction complete after 12s
+aws_route_table.private: Destroying... [id=rtb-0a89d9f763bf2168d]
+aws_route_table.private: Destruction complete after 2s
+aws_vpc.this: Destroying... [id=vpc-084d6659fc4b29b32]
+aws_vpc.this: Destruction complete after 1s
+Releasing state lock. This may take a few moments...
+
+Destroy complete! Resources: 39 destroyed.

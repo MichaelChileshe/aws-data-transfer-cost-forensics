@@ -1,0 +1,66 @@
+{
+ "phases": {
+  "s3_gateway_endpoint": true,
+  "traffic_lab": true
+ },
+ "regions": {
+  "primary": "us-east-1",
+  "second": "eu-west-1"
+ },
+ "vpc": {
+  "azs": [
+   "us-east-1a",
+   "us-east-1b"
+  ],
+  "cidr": "10.170.0.0/16",
+  "id": "vpc-084d6659fc4b29b32"
+ },
+ "lab": {
+  "app-a": {
+   "az": "us-east-1a",
+   "az_id": "use1-az1",
+   "eni": "eni-00bdc13d2ed790585",
+   "id": "i-0af4765b1680ddb7c",
+   "private_ip": "10.170.10.10",
+   "subnet": "a"
+  },
+  "app-a2": {
+   "az": "us-east-1a",
+   "az_id": "use1-az1",
+   "eni": "eni-04424f53c7a87ab2d",
+   "id": "i-0841528055882165e",
+   "private_ip": "10.170.10.20",
+   "subnet": "a"
+  },
+  "app-b": {
+   "az": "us-east-1b",
+   "az_id": "use1-az2",
+   "eni": "eni-0745d89b3b422f893",
+   "id": "i-032ad1ad259dc6db5",
+   "private_ip": "10.170.11.10",
+   "subnet": "b"
+  }
+ },
+ "nat": {
+  "az_id": "use1-az1",
+  "eni": "eni-0bbc0dba041f72507",
+  "id": "nat-037ec89138180a34d",
+  "private_ip": "10.170.0.151",
+  "public_ip": "32.198.154.19"
+ },
+ "buckets": {
+  "athena": "mvela-xfer-athena-e3bf3457",
+  "flowlogs": "mvela-xfer-flowlogs-e3bf3457",
+  "lake": "mvela-xfer-lake-e3bf3457",
+  "replica": "mvela-xfer-replica-e3bf3457"
+ },
+ "flow_log_id": "fl-03a0906a8d392d132",
+ "athena": {
+  "database": "mvela_xfer",
+  "flow_root": "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/",
+  "table": "vpc_flow_logs",
+  "workgroup": "mvela-xfer"
+ },
+ "app_sha256": "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470",
+ "s3_gateway_endpoint_id": "vpce-0fd3b2ed5cfc76d57"
+}

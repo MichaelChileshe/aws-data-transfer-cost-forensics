@@ -1,0 +1,31 @@
+{
+  "company": "Mvelaphanda Logistics (fictional)",
+  "notes": "Declared monthly traffic profile used to project the bill before and after the fixes. TB = 1024 GB, GB = 2^30 bytes. Change the numbers and re-run scripts/cost_model.py.",
+  "month_hours": 730,
+  "ec2_compute_usd_month": 9500,
+  "instances": 120,
+  "azs": 2,
+  "nat_gateways_before": 1,
+  "traffic_tb_month": {
+    "s3_same_region": 60,
+    "service_calls": 100,
+    "replication_to_eu": 30,
+    "internet_egress": 40,
+    "internet_ingress": 15
+  },
+  "shares_before": {
+    "service_calls_cross_az": 0.5,
+    "nat_traffic_from_other_az": 0.5
+  },
+  "fixes": {
+    "s3_gateway_endpoint": true,
+    "nat_per_az": true,
+    "az_affinity_cross_az_share": 0.05,
+    "compression_ratio": "measured",
+    "compressible_share": 0.8,
+    "compress": ["replication_to_eu", "internet_egress"],
+    "replication_via_s3_crr": true,
+    "cloudfront_for_egress": true,
+    "cloudfront_price_key": "cf_south_africa"
+  }
+}

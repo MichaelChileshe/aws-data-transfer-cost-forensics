@@ -1,0 +1,193 @@
+Acquiring state lock. This may take a few moments...
+aws_iam_role.app: Creating...
+aws_glue_catalog_database.this: Creating...
+aws_vpc.this: Creating...
+aws_eip.nat[0]: Creating...
+aws_s3_bucket.lake: Creating...
+aws_s3_bucket.athena: Creating...
+aws_s3_bucket.flowlogs: Creating...
+aws_s3_bucket.replica: Creating...
+aws_glue_catalog_database.this: Creation complete after 2s [id=<account-id>:mvela_xfer]
+aws_iam_role.app: Creation complete after 3s [id=mvela-xfer-app-role]
+aws_iam_role_policy_attachment.app_ssm: Creating...
+aws_iam_instance_profile.app: Creating...
+aws_iam_role_policy_attachment.app_ssm: Creation complete after 1s [id=mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_eip.nat[0]: Creation complete after 5s [id=eipalloc-0c88c5202aa86405f]
+aws_s3_bucket.replica: Creation complete after 6s [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_public_access_block.replica: Creating...
+aws_s3_bucket_lifecycle_configuration.replica: Creating...
+aws_s3_bucket.lake: Creation complete after 8s [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_public_access_block.lake: Creating...
+aws_iam_role_policy.app_s3: Creating...
+aws_s3_bucket_lifecycle_configuration.lake: Creating...
+aws_s3_bucket_public_access_block.replica: Creation complete after 2s [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_policy.replica: Creating...
+aws_vpc.this: Creation complete after 8s [id=vpc-084d6659fc4b29b32]
+aws_internet_gateway.this: Creating...
+aws_security_group.app: Creating...
+aws_s3_bucket.flowlogs: Creation complete after 8s [id=mvela-xfer-flowlogs-e3bf3457]
+aws_subnet.public_a: Creating...
+aws_s3_bucket.athena: Creation complete after 8s [id=mvela-xfer-athena-e3bf3457]
+aws_route_table.public: Creating...
+aws_s3_bucket_policy.replica: Creation complete after 1s [id=mvela-xfer-replica-e3bf3457]
+aws_route_table.private: Creating...
+aws_s3_bucket_public_access_block.lake: Creation complete after 1s [id=mvela-xfer-lake-e3bf3457]
+aws_subnet.private["a"]: Creating...
+aws_iam_role_policy.app_s3: Creation complete after 2s [id=mvela-xfer-app-role:mvela-xfer-app-s3]
+aws_subnet.private["b"]: Creating...
+aws_internet_gateway.this: Creation complete after 2s [id=igw-0aef63192ccf16dac]
+aws_s3_bucket_public_access_block.flowlogs: Creating...
+aws_subnet.public_a: Creation complete after 2s [id=subnet-05e8ca58c6d045a3f]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Creating...
+aws_route_table.public: Creation complete after 2s [id=rtb-04dde3fa5f5d19907]
+aws_s3_bucket_lifecycle_configuration.athena: Creating...
+aws_subnet.private["a"]: Creation complete after 1s [id=subnet-0821d4652a1ccea90]
+aws_athena_workgroup.this: Creating...
+aws_subnet.private["b"]: Creation complete after 1s [id=subnet-015d77022fdfef550]
+aws_s3_bucket_public_access_block.athena: Creating...
+aws_route_table.private: Creation complete after 2s [id=rtb-0a89d9f763bf2168d]
+aws_s3_bucket_policy.lake: Creating...
+aws_s3_bucket_public_access_block.flowlogs: Creation complete after 1s [id=mvela-xfer-flowlogs-e3bf3457]
+aws_glue_catalog_table.flows: Creating...
+aws_security_group.app: Creation complete after 4s [id=sg-0de5ee1d9fc7d8d8f]
+aws_route_table_association.public_a: Creating...
+aws_s3_bucket_public_access_block.athena: Creation complete after 1s [id=mvela-xfer-athena-e3bf3457]
+aws_route.public_internet: Creating...
+aws_s3_bucket_policy.lake: Creation complete after 1s [id=mvela-xfer-lake-e3bf3457]
+aws_route_table_association.private["b"]: Creating...
+aws_iam_instance_profile.app: Creation complete after 9s [id=mvela-xfer-app-profile]
+aws_route_table_association.private["a"]: Creating...
+aws_glue_catalog_table.flows: Creation complete after 2s [id=<account-id>:mvela_xfer:vpc_flow_logs]
+aws_s3_bucket_policy.flowlogs: Creating...
+aws_athena_workgroup.this: Creation complete after 2s [id=mvela-xfer]
+aws_vpc_security_group_ingress_rule.bulk: Creating...
+aws_route_table_association.public_a: Creation complete after 1s [id=rtbassoc-09a2a26fd5cb187ca]
+aws_vpc_security_group_ingress_rule.http: Creating...
+aws_vpc_security_group_ingress_rule.bulk: Creation complete after 0s [id=sgr-0c67fc0ab83e844f4]
+aws_vpc_security_group_egress_rule.all: Creating...
+aws_route_table_association.private["b"]: Creation complete after 1s [id=rtbassoc-0344f1c4fb326e082]
+aws_route_table_association.private["a"]: Creation complete after 2s [id=rtbassoc-02e554a22e5d44d49]
+aws_vpc_security_group_ingress_rule.http: Creation complete after 1s [id=sgr-048b9c1208df96130]
+aws_s3_bucket_policy.flowlogs: Creation complete after 1s [id=mvela-xfer-flowlogs-e3bf3457]
+aws_flow_log.vpc: Creating...
+aws_vpc_security_group_egress_rule.all: Creation complete after 1s [id=sgr-017cc02b9ae6f4931]
+aws_route.public_internet: Creation complete after 2s [id=r-rtb-04dde3fa5f5d199071080289494]
+aws_nat_gateway.this[0]: Creating...
+aws_flow_log.vpc: Creation complete after 1s [id=fl-03a0906a8d392d132]
+aws_s3_bucket_lifecycle_configuration.replica: Still creating... [00m10s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [00m10s elapsed]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Still creating... [00m10s elapsed]
+aws_s3_bucket_lifecycle_configuration.athena: Still creating... [00m10s elapsed]
+aws_nat_gateway.this[0]: Still creating... [00m10s elapsed]
+aws_s3_bucket_lifecycle_configuration.replica: Still creating... [00m20s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [00m20s elapsed]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Still creating... [00m20s elapsed]
+aws_s3_bucket_lifecycle_configuration.athena: Still creating... [00m20s elapsed]
+aws_nat_gateway.this[0]: Still creating... [00m20s elapsed]
+aws_s3_bucket_lifecycle_configuration.replica: Still creating... [00m30s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [00m30s elapsed]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Still creating... [00m30s elapsed]
+aws_s3_bucket_lifecycle_configuration.athena: Still creating... [00m30s elapsed]
+aws_nat_gateway.this[0]: Still creating... [00m30s elapsed]
+aws_s3_bucket_lifecycle_configuration.replica: Still creating... [00m40s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [00m40s elapsed]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Still creating... [00m40s elapsed]
+aws_s3_bucket_lifecycle_configuration.athena: Still creating... [00m40s elapsed]
+aws_nat_gateway.this[0]: Still creating... [00m40s elapsed]
+aws_s3_bucket_lifecycle_configuration.replica: Still creating... [00m50s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [00m50s elapsed]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Still creating... [00m50s elapsed]
+aws_s3_bucket_lifecycle_configuration.athena: Still creating... [00m50s elapsed]
+aws_nat_gateway.this[0]: Still creating... [00m50s elapsed]
+aws_s3_bucket_lifecycle_configuration.replica: Creation complete after 59s [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.lake: Still creating... [01m00s elapsed]
+aws_s3_bucket_lifecycle_configuration.lake: Creation complete after 1m1s [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Creation complete after 59s [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.athena: Creation complete after 1m0s [id=mvela-xfer-athena-e3bf3457]
+aws_nat_gateway.this[0]: Still creating... [01m00s elapsed]
+aws_nat_gateway.this[0]: Still creating... [01m10s elapsed]
+aws_nat_gateway.this[0]: Still creating... [01m20s elapsed]
+aws_nat_gateway.this[0]: Still creating... [01m30s elapsed]
+aws_nat_gateway.this[0]: Still creating... [01m40s elapsed]
+aws_nat_gateway.this[0]: Still creating... [01m50s elapsed]
+aws_nat_gateway.this[0]: Creation complete after 1m51s [id=nat-037ec89138180a34d]
+aws_route.private_nat[0]: Creating...
+aws_route.private_nat[0]: Creation complete after 2s [id=r-rtb-0a89d9f763bf2168d1080289494]
+aws_instance.app["app-b"]: Creating...
+aws_instance.app["app-a"]: Creating...
+aws_instance.app["app-a2"]: Creating...
+aws_instance.app["app-b"]: Still creating... [00m10s elapsed]
+aws_instance.app["app-a2"]: Still creating... [00m10s elapsed]
+aws_instance.app["app-a"]: Still creating... [00m10s elapsed]
+aws_instance.app["app-a2"]: Creation complete after 18s [id=i-0841528055882165e]
+aws_instance.app["app-b"]: Creation complete after 18s [id=i-032ad1ad259dc6db5]
+aws_instance.app["app-a"]: Creation complete after 20s [id=i-0af4765b1680ddb7c]
+Releasing state lock. This may take a few moments...
+
+Apply complete! Resources: 44 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_sha256 = "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470"
+athena = {
+  "database" = "mvela_xfer"
+  "flow_root" = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+  "table" = "vpc_flow_logs"
+  "workgroup" = "mvela-xfer"
+}
+buckets = {
+  "athena" = "mvela-xfer-athena-e3bf3457"
+  "flowlogs" = "mvela-xfer-flowlogs-e3bf3457"
+  "lake" = "mvela-xfer-lake-e3bf3457"
+  "replica" = "mvela-xfer-replica-e3bf3457"
+}
+flow_log_id = "fl-03a0906a8d392d132"
+lab = {
+  "app-a" = {
+    "az" = "us-east-1a"
+    "az_id" = "use1-az1"
+    "eni" = "eni-00bdc13d2ed790585"
+    "id" = "i-0af4765b1680ddb7c"
+    "private_ip" = "10.170.10.10"
+    "subnet" = "a"
+  }
+  "app-a2" = {
+    "az" = "us-east-1a"
+    "az_id" = "use1-az1"
+    "eni" = "eni-04424f53c7a87ab2d"
+    "id" = "i-0841528055882165e"
+    "private_ip" = "10.170.10.20"
+    "subnet" = "a"
+  }
+  "app-b" = {
+    "az" = "us-east-1b"
+    "az_id" = "use1-az2"
+    "eni" = "eni-0745d89b3b422f893"
+    "id" = "i-032ad1ad259dc6db5"
+    "private_ip" = "10.170.11.10"
+    "subnet" = "b"
+  }
+}
+nat = {
+  "az_id" = "use1-az1"
+  "eni" = "eni-0bbc0dba041f72507"
+  "id" = "nat-037ec89138180a34d"
+  "private_ip" = "10.170.0.151"
+  "public_ip" = "32.198.154.19"
+}
+phases = {
+  "s3_gateway_endpoint" = false
+  "traffic_lab" = true
+}
+regions = {
+  "primary" = "us-east-1"
+  "second" = "eu-west-1"
+}
+vpc = {
+  "azs" = tolist([
+    "us-east-1a",
+    "us-east-1b",
+  ])
+  "cidr" = "10.170.0.0/16"
+  "id" = "vpc-084d6659fc4b29b32"
+}

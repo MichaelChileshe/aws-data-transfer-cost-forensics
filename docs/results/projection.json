@@ -1,0 +1,117 @@
+{
+ "profile": {
+  "company": "Mvelaphanda Logistics (fictional)",
+  "notes": "Declared monthly traffic profile used to project the bill before and after the fixes. TB = 1024 GB, GB = 2^30 bytes. Change the numbers and re-run scripts/cost_model.py.",
+  "month_hours": 730,
+  "ec2_compute_usd_month": 9500,
+  "instances": 120,
+  "azs": 2,
+  "nat_gateways_before": 1,
+  "traffic_tb_month": {
+   "s3_same_region": 60,
+   "service_calls": 100,
+   "replication_to_eu": 30,
+   "internet_egress": 40,
+   "internet_ingress": 15
+  },
+  "shares_before": {
+   "service_calls_cross_az": 0.5,
+   "nat_traffic_from_other_az": 0.5
+  },
+  "fixes": {
+   "s3_gateway_endpoint": true,
+   "nat_per_az": true,
+   "az_affinity_cross_az_share": 0.05,
+   "compression_ratio": "measured",
+   "compressible_share": 0.8,
+   "compress": [
+    "replication_to_eu",
+    "internet_egress"
+   ],
+   "replication_via_s3_crr": true,
+   "cloudfront_for_egress": true,
+   "cloudfront_price_key": "cf_south_africa"
+  }
+ },
+ "compression_ratio": 0.27953170984983444,
+ "shrink": 0.4236253678798675,
+ "background_bytes_per_instance_hour": 503727.0,
+ "rows": [
+  {
+   "item": "NAT gateway hours",
+   "before_tb": "-",
+   "before_usd": 32.85,
+   "after_tb": "-",
+   "after_usd": 65.7,
+   "saving_usd": -32.85,
+   "fix": "one NAT gateway per AZ"
+  },
+  {
+   "item": "NAT processing (S3 + replication + inbound + background)",
+   "before_tb": 105.04,
+   "before_usd": 4840.25,
+   "after_tb": 15.04,
+   "after_usd": 693.05,
+   "saving_usd": 4147.2,
+   "fix": "S3 gateway endpoint; replication by S3 CRR (bypasses the NAT)"
+  },
+  {
+   "item": "cross-AZ hop to the NAT gateway",
+   "before_tb": 52.52,
+   "before_usd": 1075.61,
+   "after_tb": 0,
+   "after_usd": 0.0,
+   "saving_usd": 1075.61,
+   "fix": "NAT gateway in every AZ"
+  },
+  {
+   "item": "service calls crossing AZs",
+   "before_tb": 50.0,
+   "before_usd": 1024.0,
+   "after_tb": 5.0,
+   "after_usd": 102.4,
+   "saving_usd": 921.6,
+   "fix": "AZ affinity (cross-AZ share 0.5 -> 0.05)"
+  },
+  {
+   "item": "S3 same Region transfer",
+   "before_tb": 60,
+   "before_usd": 0.0,
+   "after_tb": 60,
+   "after_usd": 0.0,
+   "saving_usd": 0.0,
+   "fix": "always free"
+  },
+  {
+   "item": "inter-Region us-east-1 -> eu-west-1",
+   "before_tb": 30,
+   "before_usd": 614.4,
+   "after_tb": 12.709,
+   "after_usd": 260.28,
+   "saving_usd": 354.12,
+   "fix": "compression (x0.424)"
+  },
+  {
+   "item": "internet egress",
+   "before_tb": 40,
+   "before_usd": 3524.3,
+   "after_tb": 16.945,
+   "after_usd": 1765.61,
+   "saving_usd": 1758.69,
+   "fix": "compression + CloudFront"
+  },
+  {
+   "item": "internet ingress",
+   "before_tb": 15,
+   "before_usd": 0.0,
+   "after_tb": 15,
+   "after_usd": 0.0,
+   "saving_usd": 0.0,
+   "fix": "-"
+  }
+ ],
+ "before_usd": 11111.41,
+ "after_usd": 2887.04,
+ "egress_dto_after_usd": 1517.5940808105465,
+ "egress_cloudfront_after_usd": 1765.607982177734
+}

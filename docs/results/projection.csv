@@ -1,0 +1,9 @@
+item,before_tb,before_usd,after_tb,after_usd,saving_usd,fix
+NAT gateway hours,-,32.85,-,65.7,-32.85,one NAT gateway per AZ
+NAT processing (S3 + replication + inbound + background),105.04,4840.25,15.04,693.05,4147.2,S3 gateway endpoint; replication by S3 CRR (bypasses the NAT)
+cross-AZ hop to the NAT gateway,52.52,1075.61,0,0.0,1075.61,NAT gateway in every AZ
+service calls crossing AZs,50.0,1024.0,5.0,102.4,921.6,AZ affinity (cross-AZ share 0.5 -> 0.05)
+S3 same Region transfer,60,0.0,60,0.0,0.0,always free
+inter-Region us-east-1 -> eu-west-1,30,614.4,12.709,260.28,354.12,compression (x0.424)
+internet egress,40,3524.3,16.945,1765.61,1758.69,compression + CloudFront
+internet ingress,15,0.0,15,0.0,0.0,-

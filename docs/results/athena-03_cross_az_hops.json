@@ -1,0 +1,870 @@
+{
+ "meta": {
+  "query_id": "c926b044-dbb3-4ce4-80bc-1bd6bcd11fce",
+  "scanned_bytes": 306628,
+  "engine_ms": 1634,
+  "rows": 86
+ },
+ "rows": [
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "111808631",
+   "packets": "24859"
+  },
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "40190429",
+   "packets": "16790"
+  },
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "32092226",
+   "packets": "21326"
+  },
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "754504",
+   "packets": "7133"
+  },
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "734996",
+   "packets": "4369"
+  },
+  {
+   "run": "(between runs)",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "511577",
+   "packets": "2524"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "144214112",
+   "packets": "98374"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "43451680",
+   "packets": "98502"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "8175",
+   "packets": "35"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "6434",
+   "packets": "42"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "5584",
+   "packets": "23"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "3738",
+   "packets": "18"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "1323",
+   "packets": "21"
+  },
+  {
+   "run": "chatty-saz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "1066",
+   "packets": "16"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "144230704",
+   "packets": "98382"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "43451728",
+   "packets": "98520"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "11237",
+   "packets": "53"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "11131",
+   "packets": "42"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "8108",
+   "packets": "34"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "6226",
+   "packets": "38"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1644",
+   "packets": "26"
+  },
+  {
+   "run": "chatty-xaz",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1368",
+   "packets": "21"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "312451486",
+   "packets": "214432"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1340407",
+   "packets": "24564"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "196596",
+   "packets": "205"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "16523",
+   "packets": "65"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "16224",
+   "packets": "73"
+  },
+  {
+   "run": "gzip-euw1",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "1347",
+   "packets": "21"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "22900",
+   "packets": "89"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "17658",
+   "packets": "84"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "17323",
+   "packets": "98"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "16278",
+   "packets": "86"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "13298",
+   "packets": "74"
+  },
+  {
+   "run": "idle",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "13037",
+   "packets": "89"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "556961107",
+   "packets": "371665"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1951001",
+   "packets": "36781"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "7932",
+   "packets": "32"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "6026",
+   "packets": "36"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "1106",
+   "packets": "18"
+  },
+  {
+   "run": "internet-in",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "1018",
+   "packets": "16"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1117458231",
+   "packets": "767752"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "3298877",
+   "packets": "61677"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "15392",
+   "packets": "73"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "14833",
+   "packets": "47"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "10032",
+   "packets": "47"
+  },
+  {
+   "run": "s3-euw1-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "862",
+   "packets": "13"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "11311",
+   "packets": "39"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "7975",
+   "packets": "33"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "7871",
+   "packets": "31"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "6102",
+   "packets": "37"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "6089",
+   "packets": "37"
+  },
+  {
+   "run": "s3-gwe",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "5552",
+   "packets": "26"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "5805",
+   "packets": "32"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "5680",
+   "packets": "28"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "4525",
+   "packets": "31"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1206",
+   "packets": "19"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1018",
+   "packets": "16"
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "838",
+   "packets": "13"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1092464102",
+   "packets": "305921"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "5045186",
+   "packets": "103374"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "8099",
+   "packets": "34"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "6690",
+   "packets": "46"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "6137",
+   "packets": "37"
+  },
+  {
+   "run": "s3-nat",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1411",
+   "packets": "22"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "273983977",
+   "packets": "102782"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "1177263",
+   "packets": "23057"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "5942",
+   "packets": "33"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1230",
+   "packets": "19"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "947",
+   "packets": "14"
+  },
+  {
+   "run": "s3-nat-from-b",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "697",
+   "packets": "10"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1080080323",
+   "packets": "120008"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "566822",
+   "packets": "10900"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "15365",
+   "packets": "50"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "11060",
+   "packets": "36"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "10184",
+   "packets": "46"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "9759",
+   "packets": "40"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "8266",
+   "packets": "31"
+  },
+  {
+   "run": "saz-bulk",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "5661",
+   "packets": "34"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "1080125900",
+   "packets": "120027"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "508306",
+   "packets": "9775"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "10987",
+   "packets": "40"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.10.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "10219",
+   "packets": "42"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.11.10",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": "8023",
+   "packets": "33"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.11.10",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": "6382",
+   "packets": "41"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.10.20",
+   "hop_dst": "10.170.0.151",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1258",
+   "packets": "20"
+  },
+  {
+   "run": "xaz-bulk",
+   "hop_src": "10.170.0.151",
+   "hop_dst": "10.170.10.20",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": "1170",
+   "packets": "18"
+  }
+ ]
+}

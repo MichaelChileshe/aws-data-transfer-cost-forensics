@@ -1,0 +1,60 @@
+{
+ "phases": {
+  "s3_gateway_endpoint": false,
+  "traffic_lab": true
+ },
+ "instances": {
+  "app-a": {
+   "name": "app-a",
+   "svc": "active",
+   "sha256": "ce7ccdec3d24114d",
+   "az_id": "use1-az1",
+   "cli": "aws-cli/2.38.0",
+   "py": "3.9.25"
+  },
+  "app-a2": {
+   "name": "app-a2",
+   "svc": "active",
+   "sha256": "ce7ccdec3d24114d",
+   "az_id": "use1-az1",
+   "cli": "aws-cli/2.38.0",
+   "py": "3.9.25"
+  },
+  "app-b": {
+   "name": "app-b",
+   "svc": "active",
+   "sha256": "ce7ccdec3d24114d",
+   "az_id": "use1-az2",
+   "cli": "aws-cli/2.38.0",
+   "py": "3.9.25"
+  }
+ },
+ "flow_log": {
+  "FlowLogStatus": "ACTIVE",
+  "DeliverLogsStatus": "SUCCESS",
+  "MaxAggregationInterval": 60,
+  "TrafficType": "ALL",
+  "LogDestinationType": "s3",
+  "DestinationOptions": {
+   "FileFormat": "parquet",
+   "HiveCompatiblePartitions": true,
+   "PerHourPartition": true
+  },
+  "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status} ${vpc-id} ${subnet-id} ${instance-id} ${az-id} ${sublocation-type} ${flow-direction} ${traffic-path} ${pkt-src-aws-service} ${pkt-dst-aws-service} ${pkt-srcaddr} ${pkt-dstaddr}"
+ },
+ "delivered": [
+  {
+   "key": "AWSLogs/aws-account-id=<account-id>/",
+   "size": 0
+  },
+  {
+   "key": "AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=11/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1140Z_ebcd178f.log.parquet",
+   "size": 14832
+  }
+ ],
+ "delivered_count": 2,
+ "hour_partitions": [
+  "",
+  "year=2026/month=10/day=30/hour=11"
+ ]
+}

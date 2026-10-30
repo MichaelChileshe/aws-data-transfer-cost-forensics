@@ -1,0 +1,637 @@
+data.aws_ec2_instance_type_offerings.type: Reading...
+data.aws_ssm_parameter.al2023_arm: Reading...
+data.aws_caller_identity.current: Reading...
+data.aws_availability_zones.available: Reading...
+aws_vpc.this: Refreshing state... [id=vpc-084d6659fc4b29b32]
+aws_iam_role.app: Refreshing state... [id=mvela-xfer-app-role]
+aws_glue_catalog_database.this: Refreshing state... [id=<account-id>:mvela_xfer]
+aws_s3_bucket.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+data.aws_caller_identity.current: Read complete after 0s [id=<account-id>]
+aws_s3_bucket.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+data.aws_ssm_parameter.al2023_arm: Read complete after 1s [id=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-arm64]
+aws_eip.nat[0]: Refreshing state... [id=eipalloc-0c88c5202aa86405f]
+data.aws_ec2_instance_type_offerings.type: Read complete after 1s [id=us-east-1]
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+aws_iam_role_policy_attachment.app_ssm: Refreshing state... [id=mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_instance_profile.app: Refreshing state... [id=mvela-xfer-app-profile]
+aws_internet_gateway.this: Refreshing state... [id=igw-0aef63192ccf16dac]
+aws_route_table.public: Refreshing state... [id=rtb-04dde3fa5f5d19907]
+aws_subnet.public_a: Refreshing state... [id=subnet-05e8ca58c6d045a3f]
+aws_subnet.private["a"]: Refreshing state... [id=subnet-0821d4652a1ccea90]
+aws_subnet.private["b"]: Refreshing state... [id=subnet-015d77022fdfef550]
+aws_security_group.app: Refreshing state... [id=sg-0de5ee1d9fc7d8d8f]
+aws_route_table.private: Refreshing state... [id=rtb-0a89d9f763bf2168d]
+aws_route_table_association.private["a"]: Refreshing state... [id=rtbassoc-02e554a22e5d44d49]
+aws_route_table_association.private["b"]: Refreshing state... [id=rtbassoc-0344f1c4fb326e082]
+aws_vpc_endpoint.s3[0]: Refreshing state... [id=vpce-0fd3b2ed5cfc76d57]
+aws_vpc_security_group_ingress_rule.bulk: Refreshing state... [id=sgr-0c67fc0ab83e844f4]
+aws_vpc_security_group_ingress_rule.http: Refreshing state... [id=sgr-048b9c1208df96130]
+aws_vpc_security_group_egress_rule.all: Refreshing state... [id=sgr-017cc02b9ae6f4931]
+aws_route.public_internet: Refreshing state... [id=r-rtb-04dde3fa5f5d199071080289494]
+aws_route_table_association.public_a: Refreshing state... [id=rtbassoc-09a2a26fd5cb187ca]
+aws_s3_bucket_public_access_block.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_nat_gateway.this[0]: Refreshing state... [id=nat-037ec89138180a34d]
+aws_s3_bucket_public_access_block.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_iam_role_policy.app_s3: Refreshing state... [id=mvela-xfer-app-role:mvela-xfer-app-s3]
+aws_s3_bucket_policy.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_policy.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_athena_workgroup.this: Refreshing state... [id=mvela-xfer]
+aws_s3_bucket_public_access_block.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket_public_access_block.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_glue_catalog_table.flows: Refreshing state... [id=<account-id>:mvela_xfer:vpc_flow_logs]
+aws_s3_bucket_policy.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_route.private_nat[0]: Refreshing state... [id=r-rtb-0a89d9f763bf2168d1080289494]
+aws_flow_log.vpc: Refreshing state... [id=fl-03a0906a8d392d132]
+aws_instance.app["app-a2"]: Refreshing state... [id=i-0841528055882165e]
+aws_instance.app["app-a"]: Refreshing state... [id=i-0af4765b1680ddb7c]
+aws_instance.app["app-b"]: Refreshing state... [id=i-032ad1ad259dc6db5]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_eip.nat[0] will be destroyed
+  # (because index [0] is out of range for count)
+  - resource "aws_eip" "nat" {
+      - allocation_id            = "eipalloc-0c88c5202aa86405f" -> null
+      - arn                      = "arn:aws:ec2:us-east-1:<account-id>:elastic-ip/eipalloc-0c88c5202aa86405f" -> null
+      - association_id           = "eipassoc-0744f6429c4e85ecc" -> null
+      - domain                   = "vpc" -> null
+      - id                       = "eipalloc-0c88c5202aa86405f" -> null
+      - network_border_group     = "us-east-1" -> null
+      - network_interface        = "eni-0bbc0dba041f72507" -> null
+      - private_dns              = "ip-10-170-0-151.ec2.internal" -> null
+      - private_ip               = "10.170.0.151" -> null
+      - public_dns               = "ec2-32-198-154-19.compute-1.amazonaws.com" -> null
+      - public_ip                = "32.198.154.19" -> null
+      - public_ipv4_pool         = "amazon" -> null
+      - region                   = "us-east-1" -> null
+      - tags                     = {
+          - "Name" = "mvela-xfer-nat-eip"
+        } -> null
+      - tags_all                 = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-nat-eip"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+        # (6 unchanged attributes hidden)
+    }
+
+  # aws_instance.app["app-a"] will be destroyed
+  # (because key ["app-a"] is not in for_each map)
+  - resource "aws_instance" "app" {
+      - ami                                  = "ami-0702f1d5548f1fe1e" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:<account-id>:instance/i-0af4765b1680ddb7c" -> null
+      - associate_public_ip_address          = false -> null
+      - availability_zone                    = "us-east-1a" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - force_destroy                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - iam_instance_profile                 = "mvela-xfer-app-profile" -> null
+      - id                                   = "i-0af4765b1680ddb7c" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t4g.small" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-00bdc13d2ed790585" -> null
+      - private_dns                          = "ip-10-170-10-10.ec2.internal" -> null
+      - private_ip                           = "10.170.10.10" -> null
+      - region                               = "us-east-1" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-0821d4652a1ccea90" -> null
+      - tags                                 = {
+          - "AppName" = "app-a"
+          - "Name"    = "mvela-xfer-app-a"
+        } -> null
+      - tags_all                             = {
+          - "AppName"   = "app-a"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-app-a"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-a' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-a"
+        EOT -> null
+      - user_data_replace_on_change          = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-0de5ee1d9fc7d8d8f",
+        ] -> null
+        # (10 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count            = 2 -> null
+          - threads_per_core      = 1 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - primary_network_interface {
+          - delete_on_termination = true -> null
+          - network_interface_id  = "eni-00bdc13d2ed790585" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:us-east-1:<account-id>:key/fa956852-6a94-48f9-9315-fe5d975d6b38" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "ManagedBy" = "terraform"
+              - "Project"   = "aws-data-transfer-cost-forensics"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-099f8cde187500c15" -> null
+          - volume_size           = 12 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # aws_instance.app["app-a2"] will be destroyed
+  # (because key ["app-a2"] is not in for_each map)
+  - resource "aws_instance" "app" {
+      - ami                                  = "ami-0702f1d5548f1fe1e" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:<account-id>:instance/i-0841528055882165e" -> null
+      - associate_public_ip_address          = false -> null
+      - availability_zone                    = "us-east-1a" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - force_destroy                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - iam_instance_profile                 = "mvela-xfer-app-profile" -> null
+      - id                                   = "i-0841528055882165e" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t4g.small" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-04424f53c7a87ab2d" -> null
+      - private_dns                          = "ip-10-170-10-20.ec2.internal" -> null
+      - private_ip                           = "10.170.10.20" -> null
+      - region                               = "us-east-1" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-0821d4652a1ccea90" -> null
+      - tags                                 = {
+          - "AppName" = "app-a2"
+          - "Name"    = "mvela-xfer-app-a2"
+        } -> null
+      - tags_all                             = {
+          - "AppName"   = "app-a2"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-app-a2"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-a2' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-a2"
+        EOT -> null
+      - user_data_replace_on_change          = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-0de5ee1d9fc7d8d8f",
+        ] -> null
+        # (10 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count            = 2 -> null
+          - threads_per_core      = 1 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - primary_network_interface {
+          - delete_on_termination = true -> null
+          - network_interface_id  = "eni-04424f53c7a87ab2d" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:us-east-1:<account-id>:key/fa956852-6a94-48f9-9315-fe5d975d6b38" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "ManagedBy" = "terraform"
+              - "Project"   = "aws-data-transfer-cost-forensics"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-045264b5c93a5d7b9" -> null
+          - volume_size           = 12 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # aws_instance.app["app-b"] will be destroyed
+  # (because key ["app-b"] is not in for_each map)
+  - resource "aws_instance" "app" {
+      - ami                                  = "ami-0702f1d5548f1fe1e" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:<account-id>:instance/i-032ad1ad259dc6db5" -> null
+      - associate_public_ip_address          = false -> null
+      - availability_zone                    = "us-east-1b" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - force_destroy                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - iam_instance_profile                 = "mvela-xfer-app-profile" -> null
+      - id                                   = "i-032ad1ad259dc6db5" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t4g.small" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-0745d89b3b422f893" -> null
+      - private_dns                          = "ip-10-170-11-10.ec2.internal" -> null
+      - private_ip                           = "10.170.11.10" -> null
+      - region                               = "us-east-1" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-015d77022fdfef550" -> null
+      - tags                                 = {
+          - "AppName" = "app-b"
+          - "Name"    = "mvela-xfer-app-b"
+        } -> null
+      - tags_all                             = {
+          - "AppName"   = "app-b"
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-app-b"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-b' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-b"
+        EOT -> null
+      - user_data_replace_on_change          = true -> null
+      - vpc_security_group_ids               = [
+          - "sg-0de5ee1d9fc7d8d8f",
+        ] -> null
+        # (10 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count            = 2 -> null
+          - threads_per_core      = 1 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - primary_network_interface {
+          - delete_on_termination = true -> null
+          - network_interface_id  = "eni-0745d89b3b422f893" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:us-east-1:<account-id>:key/fa956852-6a94-48f9-9315-fe5d975d6b38" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "ManagedBy" = "terraform"
+              - "Project"   = "aws-data-transfer-cost-forensics"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-02896a58da15bc018" -> null
+          - volume_size           = 12 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # aws_nat_gateway.this[0] will be destroyed
+  # (because index [0] is out of range for count)
+  - resource "aws_nat_gateway" "this" {
+      - allocation_id                      = "eipalloc-0c88c5202aa86405f" -> null
+      - association_id                     = "eipassoc-0744f6429c4e85ecc" -> null
+      - availability_mode                  = "zonal" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-037ec89138180a34d" -> null
+      - network_interface_id               = "eni-0bbc0dba041f72507" -> null
+      - private_ip                         = "10.170.0.151" -> null
+      - public_ip                          = "32.198.154.19" -> null
+      - region                             = "us-east-1" -> null
+      - regional_nat_gateway_address       = [] -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-05e8ca58c6d045a3f" -> null
+      - tags                               = {
+          - "Name" = "mvela-xfer-nat-a"
+        } -> null
+      - tags_all                           = {
+          - "ManagedBy" = "terraform"
+          - "Name"      = "mvela-xfer-nat-a"
+          - "Project"   = "aws-data-transfer-cost-forensics"
+        } -> null
+      - vpc_id                             = "vpc-084d6659fc4b29b32" -> null
+    }
+
+  # aws_route.private_nat[0] will be destroyed
+  # (because index [0] is out of range for count)
+  - resource "aws_route" "private_nat" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - id                          = "r-rtb-0a89d9f763bf2168d1080289494" -> null
+      - nat_gateway_id              = "nat-037ec89138180a34d" -> null
+      - origin                      = "CreateRoute" -> null
+      - region                      = "us-east-1" -> null
+      - route_table_id              = "rtb-0a89d9f763bf2168d" -> null
+      - state                       = "active" -> null
+        # (14 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 6 to destroy.
+
+Changes to Outputs:
+  ~ lab                    = {
+      - app-a  = {
+          - az         = "us-east-1a"
+          - az_id      = "use1-az1"
+          - eni        = "eni-00bdc13d2ed790585"
+          - id         = "i-0af4765b1680ddb7c"
+          - private_ip = "10.170.10.10"
+          - subnet     = "a"
+        }
+      - app-a2 = {
+          - az         = "us-east-1a"
+          - az_id      = "use1-az1"
+          - eni        = "eni-04424f53c7a87ab2d"
+          - id         = "i-0841528055882165e"
+          - private_ip = "10.170.10.20"
+          - subnet     = "a"
+        }
+      - app-b  = {
+          - az         = "us-east-1b"
+          - az_id      = "use1-az2"
+          - eni        = "eni-0745d89b3b422f893"
+          - id         = "i-032ad1ad259dc6db5"
+          - private_ip = "10.170.11.10"
+          - subnet     = "b"
+        }
+    }
+  - nat                    = {
+      - az_id      = "use1-az1"
+      - eni        = "eni-0bbc0dba041f72507"
+      - id         = "nat-037ec89138180a34d"
+      - private_ip = "10.170.0.151"
+      - public_ip  = "32.198.154.19"
+    } -> null
+  ~ phases                 = {
+      ~ traffic_lab         = true -> false
+        # (1 unchanged attribute hidden)
+    }
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+aws_instance.app["app-a"]: Destroying... [id=i-0af4765b1680ddb7c]
+aws_instance.app["app-a2"]: Destroying... [id=i-0841528055882165e]
+aws_instance.app["app-b"]: Destroying... [id=i-032ad1ad259dc6db5]
+aws_instance.app["app-a2"]: Still destroying... [id=i-0841528055882165e, 00m10s elapsed]
+aws_instance.app["app-a"]: Still destroying... [id=i-0af4765b1680ddb7c, 00m10s elapsed]
+aws_instance.app["app-b"]: Still destroying... [id=i-032ad1ad259dc6db5, 00m10s elapsed]
+aws_instance.app["app-a"]: Still destroying... [id=i-0af4765b1680ddb7c, 00m20s elapsed]
+aws_instance.app["app-a2"]: Still destroying... [id=i-0841528055882165e, 00m20s elapsed]
+aws_instance.app["app-b"]: Still destroying... [id=i-032ad1ad259dc6db5, 00m20s elapsed]
+aws_instance.app["app-a"]: Destruction complete after 22s
+aws_instance.app["app-b"]: Destruction complete after 24s
+aws_instance.app["app-a2"]: Destruction complete after 24s
+aws_route.private_nat[0]: Destroying... [id=r-rtb-0a89d9f763bf2168d1080289494]
+aws_route.private_nat[0]: Destruction complete after 1s
+aws_nat_gateway.this[0]: Destroying... [id=nat-037ec89138180a34d]
+aws_nat_gateway.this[0]: Still destroying... [id=nat-037ec89138180a34d, 00m10s elapsed]
+aws_nat_gateway.this[0]: Still destroying... [id=nat-037ec89138180a34d, 00m20s elapsed]
+aws_nat_gateway.this[0]: Still destroying... [id=nat-037ec89138180a34d, 00m30s elapsed]
+aws_nat_gateway.this[0]: Still destroying... [id=nat-037ec89138180a34d, 00m40s elapsed]
+aws_nat_gateway.this[0]: Still destroying... [id=nat-037ec89138180a34d, 00m50s elapsed]
+aws_nat_gateway.this[0]: Destruction complete after 53s
+aws_eip.nat[0]: Destroying... [id=eipalloc-0c88c5202aa86405f]
+aws_eip.nat[0]: Destruction complete after 2s
+Releasing state lock. This may take a few moments...
+
+Apply complete! Resources: 0 added, 0 changed, 6 destroyed.
+
+Outputs:
+
+app_sha256 = "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470"
+athena = {
+  "database" = "mvela_xfer"
+  "flow_root" = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+  "table" = "vpc_flow_logs"
+  "workgroup" = "mvela-xfer"
+}
+buckets = {
+  "athena" = "mvela-xfer-athena-e3bf3457"
+  "flowlogs" = "mvela-xfer-flowlogs-e3bf3457"
+  "lake" = "mvela-xfer-lake-e3bf3457"
+  "replica" = "mvela-xfer-replica-e3bf3457"
+}
+flow_log_id = "fl-03a0906a8d392d132"
+lab = {}
+phases = {
+  "s3_gateway_endpoint" = true
+  "traffic_lab" = false
+}
+regions = {
+  "primary" = "us-east-1"
+  "second" = "eu-west-1"
+}
+s3_gateway_endpoint_id = "vpce-0fd3b2ed5cfc76d57"
+vpc = {
+  "azs" = tolist([
+    "us-east-1a",
+    "us-east-1b",
+  ])
+  "cidr" = "10.170.0.0/16"
+  "id" = "vpc-084d6659fc4b29b32"
+}

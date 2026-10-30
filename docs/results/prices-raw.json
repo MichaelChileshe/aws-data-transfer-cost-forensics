@@ -1,0 +1,1611 @@
+{
+ "fetched_utc": "2026-10-30T12:51:09Z",
+ "lookups": [
+  {
+   "service": "AmazonEC2",
+   "filters": {
+    "usagetype": "NatGateway-Hours",
+    "productFamily": "NAT Gateway"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "NAT Gateway",
+      "attributes": {
+       "regionCode": "us-east-1",
+       "servicecode": "AmazonEC2",
+       "groupDescription": "Hourly charge for NAT Gateways",
+       "usagetype": "NatGateway-Hours",
+       "locationType": "AWS Region",
+       "location": "US East (N. Virginia)",
+       "servicename": "Amazon Elastic Compute Cloud",
+       "operation": "NatGateway",
+       "group": "NGW:NatGateway"
+      },
+      "sku": "M2YSHUBETB3JX4M4"
+     },
+     "serviceCode": "AmazonEC2",
+     "terms": {
+      "OnDemand": {
+       "M2YSHUBETB3JX4M4.JRTCKXETXF": {
+        "priceDimensions": {
+         "M2YSHUBETB3JX4M4.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "Hrs",
+          "endRange": "Inf",
+          "description": "$0.045 per NAT Gateway Hour",
+          "appliesTo": [],
+          "rateCode": "M2YSHUBETB3JX4M4.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0450000000"
+          }
+         }
+        },
+        "sku": "M2YSHUBETB3JX4M4",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261029175634",
+     "publicationDate": "2026-10-29T17:56:34Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonEC2",
+   "filters": {
+    "usagetype": "NatGateway-Bytes",
+    "productFamily": "NAT Gateway"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "NAT Gateway",
+      "attributes": {
+       "regionCode": "us-east-1",
+       "servicecode": "AmazonEC2",
+       "groupDescription": "Charge for per GB data processed by NatGateways",
+       "usagetype": "NatGateway-Bytes",
+       "locationType": "AWS Region",
+       "location": "US East (N. Virginia)",
+       "servicename": "Amazon Elastic Compute Cloud",
+       "operation": "NatGateway",
+       "group": "NGW:NatGateway"
+      },
+      "sku": "59S5R83GFPUAGVR5"
+     },
+     "serviceCode": "AmazonEC2",
+     "terms": {
+      "OnDemand": {
+       "59S5R83GFPUAGVR5.JRTCKXETXF": {
+        "priceDimensions": {
+         "59S5R83GFPUAGVR5.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.045 per GB Data Processed by NAT Gateways",
+          "appliesTo": [],
+          "rateCode": "59S5R83GFPUAGVR5.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0450000000"
+          }
+         }
+        },
+        "sku": "59S5R83GFPUAGVR5",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261029175634",
+     "publicationDate": "2026-10-29T17:56:34Z"
+    }
+   ]
+  },
+  {
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-Regional-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Region",
+       "toRegionCode": "us-east-1",
+       "servicecode": "AWSDataTransfer",
+       "usagetype": "DataTransfer-Regional-Bytes",
+       "fromRegionCode": "us-east-1",
+       "transferType": "IntraRegion",
+       "servicename": "AWS Data Transfer",
+       "fromLocation": "US East (N. Virginia)",
+       "toLocationType": "AWS Region",
+       "toLocation": "US East (N. Virginia)",
+       "operation": ""
+      },
+      "sku": "PNUBVW4CPC8XA46W"
+     },
+     "serviceCode": "AWSDataTransfer",
+     "terms": {
+      "OnDemand": {
+       "PNUBVW4CPC8XA46W.JRTCKXETXF": {
+        "priceDimensions": {
+         "PNUBVW4CPC8XA46W.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.010 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB",
+          "appliesTo": [],
+          "rateCode": "PNUBVW4CPC8XA46W.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0100000000"
+          }
+         }
+        },
+        "sku": "PNUBVW4CPC8XA46W",
+        "effectiveDate": "2026-06-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20260916132208",
+     "publicationDate": "2026-09-16T13:22:08Z"
+    }
+   ]
+  },
+  {
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "USE1-EU-AWS-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Region",
+       "toRegionCode": "eu-west-1",
+       "servicecode": "AWSDataTransfer",
+       "usagetype": "USE1-EU-AWS-Out-Bytes",
+       "fromRegionCode": "us-east-1",
+       "transferType": "InterRegion Outbound",
+       "servicename": "AWS Data Transfer",
+       "fromLocation": "US East (N. Virginia)",
+       "toLocationType": "AWS Region",
+       "toLocation": "EU (Ireland)",
+       "operation": ""
+      },
+      "sku": "NW4B786HNAH6HZ7R"
+     },
+     "serviceCode": "AWSDataTransfer",
+     "terms": {
+      "OnDemand": {
+       "NW4B786HNAH6HZ7R.JRTCKXETXF": {
+        "priceDimensions": {
+         "NW4B786HNAH6HZ7R.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.02 per GB - US East (Northern Virginia) data transfer to EU (Ireland)",
+          "appliesTo": [],
+          "rateCode": "NW4B786HNAH6HZ7R.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0200000000"
+          }
+         }
+        },
+        "sku": "NW4B786HNAH6HZ7R",
+        "effectiveDate": "2026-06-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20260916132208",
+     "publicationDate": "2026-09-16T13:22:08Z"
+    }
+   ]
+  },
+  {
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "EU-USE1-AWS-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Region",
+       "toRegionCode": "us-east-1",
+       "servicecode": "AWSDataTransfer",
+       "usagetype": "EU-USE1-AWS-Out-Bytes",
+       "fromRegionCode": "eu-west-1",
+       "transferType": "InterRegion Outbound",
+       "servicename": "AWS Data Transfer",
+       "fromLocation": "EU (Ireland)",
+       "toLocationType": "AWS Region",
+       "toLocation": "US East (N. Virginia)",
+       "operation": ""
+      },
+      "sku": "N7JF33XCBEZEKJFQ"
+     },
+     "serviceCode": "AWSDataTransfer",
+     "terms": {
+      "OnDemand": {
+       "N7JF33XCBEZEKJFQ.JRTCKXETXF": {
+        "priceDimensions": {
+         "N7JF33XCBEZEKJFQ.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.02 per GB - EU (Ireland) data transfer to US East (Northern Virginia)",
+          "appliesTo": [],
+          "rateCode": "N7JF33XCBEZEKJFQ.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0200000000"
+          }
+         }
+        },
+        "sku": "N7JF33XCBEZEKJFQ",
+        "effectiveDate": "2026-06-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20260916132208",
+     "publicationDate": "2026-09-16T13:22:08Z"
+    }
+   ]
+  },
+  {
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Region",
+       "toRegionCode": "",
+       "servicecode": "AWSDataTransfer",
+       "usagetype": "DataTransfer-Out-Bytes",
+       "fromRegionCode": "us-east-1",
+       "transferType": "AWS Outbound",
+       "servicename": "AWS Data Transfer",
+       "fromLocation": "US East (N. Virginia)",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "HQEH3ZWJVT46JHRG"
+     },
+     "serviceCode": "AWSDataTransfer",
+     "terms": {
+      "OnDemand": {
+       "HQEH3ZWJVT46JHRG.JRTCKXETXF": {
+        "priceDimensions": {
+         "HQEH3ZWJVT46JHRG.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.085 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "HQEH3ZWJVT46JHRG.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         },
+         "HQEH3ZWJVT46JHRG.JRTCKXETXF.GPHXDESFBB": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.050 per GB - greater than 150 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "HQEH3ZWJVT46JHRG.JRTCKXETXF.GPHXDESFBB",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0500000000"
+          }
+         },
+         "HQEH3ZWJVT46JHRG.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.090 per GB - first 10 TB / month data transfer out beyond the global free tier",
+          "appliesTo": [],
+          "rateCode": "HQEH3ZWJVT46JHRG.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "HQEH3ZWJVT46JHRG.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.070 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "HQEH3ZWJVT46JHRG.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0700000000"
+          }
+         }
+        },
+        "sku": "HQEH3ZWJVT46JHRG",
+        "effectiveDate": "2026-06-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20260916132208",
+     "publicationDate": "2026-09-16T13:22:08Z"
+    }
+   ]
+  },
+  {
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-In-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "Other",
+       "toRegionCode": "us-east-1",
+       "servicecode": "AWSDataTransfer",
+       "usagetype": "DataTransfer-In-Bytes",
+       "fromRegionCode": "",
+       "transferType": "AWS Inbound",
+       "servicename": "AWS Data Transfer",
+       "fromLocation": "External",
+       "toLocationType": "AWS Region",
+       "toLocation": "US East (N. Virginia)",
+       "operation": ""
+      },
+      "sku": "9MG5B7V4UUU2WPAV"
+     },
+     "serviceCode": "AWSDataTransfer",
+     "terms": {
+      "OnDemand": {
+       "9MG5B7V4UUU2WPAV.JRTCKXETXF": {
+        "priceDimensions": {
+         "9MG5B7V4UUU2WPAV.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.000 per GB - data transfer in per month",
+          "appliesTo": [],
+          "rateCode": "9MG5B7V4UUU2WPAV.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0000000000"
+          }
+         }
+        },
+        "sku": "9MG5B7V4UUU2WPAV",
+        "effectiveDate": "2026-06-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20260916132208",
+     "publicationDate": "2026-09-16T13:22:08Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonVPC",
+   "filters": {
+    "usagetype": "VpcEndpoint-Hours"
+   },
+   "records": []
+  },
+  {
+   "service": "AmazonVPC",
+   "filters": {
+    "usagetype": "VpcEndpoint-Bytes"
+   },
+   "records": []
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "AP-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "AP-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Asia Pacific",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "A86N9S7CGUKZHH8P"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "A86N9S7CGUKZHH8P.JRTCKXETXF": {
+        "priceDimensions": {
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.060 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.1 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.1000000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.070 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0700000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.09 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.120 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1200000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.080 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "A86N9S7CGUKZHH8P.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.095 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "A86N9S7CGUKZHH8P.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0950000000"
+          }
+         }
+        },
+        "sku": "A86N9S7CGUKZHH8P",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "AU-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "AU-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Australia",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "8JNNPNBQD9DSHV5K"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "8JNNPNBQD9DSHV5K.JRTCKXETXF": {
+        "priceDimensions": {
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.094 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0940000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.114 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1140000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.098 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0980000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.09 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.08 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.092 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0920000000"
+          }
+         },
+         "8JNNPNBQD9DSHV5K.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.085 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "8JNNPNBQD9DSHV5K.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         }
+        },
+        "sku": "8JNNPNBQD9DSHV5K",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "CA-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "CA-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Canada",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "YNZW9TGPQWEQM4JS"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "YNZW9TGPQWEQM4JS.JRTCKXETXF": {
+        "priceDimensions": {
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.085 per GB - first 10 TB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.080 per GB - next 40 TB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.060 per GB - next 100 TB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.025 per GB - next 4 PB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0250000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.040 per GB - next 350 TB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.020 per GB - data transfer out / month over 5 PB (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0200000000"
+          }
+         },
+         "YNZW9TGPQWEQM4JS.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.030 per GB - next 524 TB / month data transfer out (Canada)",
+          "appliesTo": [],
+          "rateCode": "YNZW9TGPQWEQM4JS.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0300000000"
+          }
+         }
+        },
+        "sku": "YNZW9TGPQWEQM4JS",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "EU-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "EU-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Europe",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "VU3485RNDU6HBQF6"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "VU3485RNDU6HBQF6.JRTCKXETXF": {
+        "priceDimensions": {
+         "VU3485RNDU6HBQF6.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.060 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.080 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.025 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0250000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.085 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.040 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.030 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0300000000"
+          }
+         },
+         "VU3485RNDU6HBQF6.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.020 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "VU3485RNDU6HBQF6.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0200000000"
+          }
+         }
+        },
+        "sku": "VU3485RNDU6HBQF6",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "IN-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "IN-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "India",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "XVZYVSAH88373VKR"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "XVZYVSAH88373VKR.JRTCKXETXF": {
+        "priceDimensions": {
+         "XVZYVSAH88373VKR.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.109 per GB - first 10 TB / month data transfer out (India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1090000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.08 per GB - next 350 TB / month data transfer out(India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.075 per GB  - next 4 PB / month data transfer out(India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0750000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.0850 per GB - next 40 TB / month data transfer out (India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.082 per GB - next 100 TB / month data transfer out (India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0820000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.072 per GB  - data transfer out / month over 5 PB(India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0720000000"
+          }
+         },
+         "XVZYVSAH88373VKR.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.078 per GB - next 524 TB / month data transfer out(India)",
+          "appliesTo": [],
+          "rateCode": "XVZYVSAH88373VKR.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0780000000"
+          }
+         }
+        },
+        "sku": "XVZYVSAH88373VKR",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "JP-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "JP-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Japan",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "CME9BRJSS2F5PBYE"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "CME9BRJSS2F5PBYE.JRTCKXETXF": {
+        "priceDimensions": {
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.086 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0860000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.084 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0840000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.070 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0700000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.089 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0890000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.114 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1140000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.060 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "CME9BRJSS2F5PBYE.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.080 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "CME9BRJSS2F5PBYE.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         }
+        },
+        "sku": "CME9BRJSS2F5PBYE",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "ME-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "ME-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "Middle East",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "KJKQCFWRY9KUWY4S"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "KJKQCFWRY9KUWY4S.JRTCKXETXF": {
+        "priceDimensions": {
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.105 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.1050000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.060 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.040 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.050 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0500000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.080 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.090 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "KJKQCFWRY9KUWY4S.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.110 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "KJKQCFWRY9KUWY4S.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1100000000"
+          }
+         }
+        },
+        "sku": "KJKQCFWRY9KUWY4S",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "SA-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "SA-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "South America",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "ZT3N6V49SHDM9P3G"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "ZT3N6V49SHDM9P3G.JRTCKXETXF": {
+        "priceDimensions": {
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.080 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.050 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0500000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.040 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.105 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.1050000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.060 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.090 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "ZT3N6V49SHDM9P3G.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.110 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "ZT3N6V49SHDM9P3G.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1100000000"
+          }
+         }
+        },
+        "sku": "ZT3N6V49SHDM9P3G",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "US-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "US-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "United States",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "GV2WFGX37Q9PDSHF"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "GV2WFGX37Q9PDSHF.JRTCKXETXF": {
+        "priceDimensions": {
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.080 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.030 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0300000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.020 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0200000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.025 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0250000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.040 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.060 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "GV2WFGX37Q9PDSHF.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.085 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "GV2WFGX37Q9PDSHF.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.0850000000"
+          }
+         }
+        },
+        "sku": "GV2WFGX37Q9PDSHF",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  },
+  {
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "ZA-DataTransfer-Out-Bytes"
+   },
+   "records": [
+    {
+     "product": {
+      "productFamily": "Data Transfer",
+      "attributes": {
+       "fromLocationType": "AWS Edge Location",
+       "toRegionCode": "",
+       "servicecode": "AmazonCloudFront",
+       "usagetype": "ZA-DataTransfer-Out-Bytes",
+       "fromRegionCode": "",
+       "transferType": "CloudFront Outbound",
+       "servicename": "Amazon CloudFront",
+       "fromLocation": "South Africa",
+       "toLocationType": "Other",
+       "toLocation": "External",
+       "operation": ""
+      },
+      "sku": "84Z32PF576RHPTMX"
+     },
+     "serviceCode": "AmazonCloudFront",
+     "terms": {
+      "OnDemand": {
+       "84Z32PF576RHPTMX.JRTCKXETXF": {
+        "priceDimensions": {
+         "84Z32PF576RHPTMX.JRTCKXETXF.SW9U2ZKBYX": {
+          "unit": "GB",
+          "endRange": "Inf",
+          "description": "$0.040 per GB - data transfer out / month over 5 PB",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.SW9U2ZKBYX",
+          "beginRange": "5242880",
+          "pricePerUnit": {
+           "USD": "0.0400000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.N9EW5UVVPA": {
+          "unit": "GB",
+          "endRange": "153600",
+          "description": "$0.090 per GB - next 100 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.N9EW5UVVPA",
+          "beginRange": "51200",
+          "pricePerUnit": {
+           "USD": "0.0900000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.3B9CK5AZ6J": {
+          "unit": "GB",
+          "endRange": "1048576",
+          "description": "$0.060 per GB - next 524 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.3B9CK5AZ6J",
+          "beginRange": "512000",
+          "pricePerUnit": {
+           "USD": "0.0600000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.AZ7GJS7NVF": {
+          "unit": "GB",
+          "endRange": "512000",
+          "description": "$0.080 per GB - next 350 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.AZ7GJS7NVF",
+          "beginRange": "153600",
+          "pricePerUnit": {
+           "USD": "0.0800000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.Q3Z75P77EN": {
+          "unit": "GB",
+          "endRange": "10240",
+          "description": "$0.110 per GB - first 10 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.Q3Z75P77EN",
+          "beginRange": "0",
+          "pricePerUnit": {
+           "USD": "0.1100000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.RBMR72YW69": {
+          "unit": "GB",
+          "endRange": "5242880",
+          "description": "$0.050 per GB - next 4 PB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.RBMR72YW69",
+          "beginRange": "1048576",
+          "pricePerUnit": {
+           "USD": "0.0500000000"
+          }
+         },
+         "84Z32PF576RHPTMX.JRTCKXETXF.VF6T3GAUKQ": {
+          "unit": "GB",
+          "endRange": "51200",
+          "description": "$0.105 per GB - next 40 TB / month data transfer out",
+          "appliesTo": [],
+          "rateCode": "84Z32PF576RHPTMX.JRTCKXETXF.VF6T3GAUKQ",
+          "beginRange": "10240",
+          "pricePerUnit": {
+           "USD": "0.1050000000"
+          }
+         }
+        },
+        "sku": "84Z32PF576RHPTMX",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+       }
+      }
+     },
+     "version": "20261019150500",
+     "publicationDate": "2026-10-19T15:05:00Z"
+    }
+   ]
+  }
+ ]
+}

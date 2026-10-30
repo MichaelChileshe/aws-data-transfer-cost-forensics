@@ -1,0 +1,230 @@
+{
+ "fetched_utc": "2026-10-30T12:51:09Z",
+ "prices": {
+  "nat_hour": {
+   "what": "NAT gateway, per hour (us-east-1)",
+   "service": "AmazonEC2",
+   "filters": {
+    "usagetype": "NatGateway-Hours",
+    "productFamily": "NAT Gateway"
+   },
+   "sku": "M2YSHUBETB3JX4M4",
+   "usagetype": "NatGateway-Hours",
+   "operation": "NatGateway",
+   "location": "US East (N. Virginia)",
+   "unit": "Hrs",
+   "usd": 0.045
+  },
+  "nat_gb": {
+   "what": "NAT gateway, per GB processed (us-east-1)",
+   "service": "AmazonEC2",
+   "filters": {
+    "usagetype": "NatGateway-Bytes",
+    "productFamily": "NAT Gateway"
+   },
+   "sku": "59S5R83GFPUAGVR5",
+   "usagetype": "NatGateway-Bytes",
+   "operation": "NatGateway",
+   "location": "US East (N. Virginia)",
+   "unit": "GB",
+   "usd": 0.045
+  },
+  "intra_region_gb": {
+   "what": "inter-AZ in us-east-1, per GB, each direction",
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-Regional-Bytes"
+   },
+   "sku": "PNUBVW4CPC8XA46W",
+   "usagetype": "DataTransfer-Regional-Bytes",
+   "operation": "",
+   "location": "US East (N. Virginia)",
+   "unit": "GB",
+   "usd": 0.01
+  },
+  "use1_to_euw1_gb": {
+   "what": "us-east-1 -> eu-west-1, per GB",
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "USE1-EU-AWS-Out-Bytes"
+   },
+   "sku": "NW4B786HNAH6HZ7R",
+   "usagetype": "USE1-EU-AWS-Out-Bytes",
+   "operation": "",
+   "location": "US East (N. Virginia)",
+   "unit": "GB",
+   "usd": 0.02
+  },
+  "euw1_to_use1_gb": {
+   "what": "eu-west-1 -> us-east-1, per GB (S3 answers coming back)",
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "EU-USE1-AWS-Out-Bytes"
+   },
+   "sku": "N7JF33XCBEZEKJFQ",
+   "usagetype": "EU-USE1-AWS-Out-Bytes",
+   "operation": "",
+   "location": "EU (Ireland)",
+   "unit": "GB",
+   "usd": 0.02
+  },
+  "internet_out": {
+   "what": "us-east-1 -> internet, per GB, tiered",
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-Out-Bytes"
+   },
+   "sku": "HQEH3ZWJVT46JHRG",
+   "usagetype": "DataTransfer-Out-Bytes",
+   "operation": "",
+   "location": "US East (N. Virginia)",
+   "unit": "GB",
+   "tiers": [
+    {
+     "begin_gb": 0.0,
+     "end_gb": 10240.0,
+     "usd": 0.09
+    },
+    {
+     "begin_gb": 10240.0,
+     "end_gb": 51200.0,
+     "usd": 0.085
+    },
+    {
+     "begin_gb": 51200.0,
+     "end_gb": 153600.0,
+     "usd": 0.07
+    },
+    {
+     "begin_gb": 153600.0,
+     "end_gb": null,
+     "usd": 0.05
+    }
+   ]
+  },
+  "internet_in": {
+   "what": "internet -> us-east-1, per GB",
+   "service": "AWSDataTransfer",
+   "filters": {
+    "usagetype": "DataTransfer-In-Bytes"
+   },
+   "sku": "9MG5B7V4UUU2WPAV",
+   "usagetype": "DataTransfer-In-Bytes",
+   "operation": "",
+   "location": "External",
+   "unit": "GB",
+   "usd": 0.0
+  },
+  "cf_south_africa": {
+   "what": "CloudFront to viewers in South Africa",
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "ZA-DataTransfer-Out-Bytes"
+   },
+   "sku": "84Z32PF576RHPTMX",
+   "usagetype": "ZA-DataTransfer-Out-Bytes",
+   "operation": "",
+   "location": "South Africa",
+   "unit": "GB",
+   "tiers": [
+    {
+     "begin_gb": 0.0,
+     "end_gb": 10240.0,
+     "usd": 0.11
+    },
+    {
+     "begin_gb": 10240.0,
+     "end_gb": 51200.0,
+     "usd": 0.105
+    },
+    {
+     "begin_gb": 51200.0,
+     "end_gb": 153600.0,
+     "usd": 0.09
+    },
+    {
+     "begin_gb": 153600.0,
+     "end_gb": 512000.0,
+     "usd": 0.08
+    },
+    {
+     "begin_gb": 512000.0,
+     "end_gb": 1048576.0,
+     "usd": 0.06
+    },
+    {
+     "begin_gb": 1048576.0,
+     "end_gb": 5242880.0,
+     "usd": 0.05
+    },
+    {
+     "begin_gb": 5242880.0,
+     "end_gb": null,
+     "usd": 0.04
+    }
+   ]
+  },
+  "cf_united_states": {
+   "what": "CloudFront to viewers in United States",
+   "service": "AmazonCloudFront",
+   "filters": {
+    "usagetype": "US-DataTransfer-Out-Bytes"
+   },
+   "sku": "GV2WFGX37Q9PDSHF",
+   "usagetype": "US-DataTransfer-Out-Bytes",
+   "operation": "",
+   "location": "United States",
+   "unit": "GB",
+   "tiers": [
+    {
+     "begin_gb": 0.0,
+     "end_gb": 10240.0,
+     "usd": 0.085
+    },
+    {
+     "begin_gb": 10240.0,
+     "end_gb": 51200.0,
+     "usd": 0.08
+    },
+    {
+     "begin_gb": 51200.0,
+     "end_gb": 153600.0,
+     "usd": 0.06
+    },
+    {
+     "begin_gb": 153600.0,
+     "end_gb": 512000.0,
+     "usd": 0.04
+    },
+    {
+     "begin_gb": 512000.0,
+     "end_gb": 1048576.0,
+     "usd": 0.03
+    },
+    {
+     "begin_gb": 1048576.0,
+     "end_gb": 5242880.0,
+     "usd": 0.025
+    },
+    {
+     "begin_gb": 5242880.0,
+     "end_gb": null,
+     "usd": 0.02
+    }
+   ]
+  }
+ },
+ "errors": [],
+ "warnings": [
+  "vpce_interface_hour: no product matches {'usagetype': 'VpcEndpoint-Hours'} in ['AmazonVPC']",
+  "vpce_interface_gb: no product matches {'usagetype': 'VpcEndpoint-Bytes'} in ['AmazonVPC']"
+ ],
+ "documented": {
+  "s3_gateway_endpoint": "no hourly or data processing charge (Amazon VPC pricing page)",
+  "internet_out_free_gb_month": 100,
+  "internet_out_free_note": "100 GB/month free data transfer out to the internet, aggregated across services and Regions (except China and GovCloud)",
+  "cloudfront_free_gb_month": 1024,
+  "cloudfront_free_note": "CloudFront pay-as-you-go free tier: 1 TB data transfer out per month; origin fetches from AWS origins are free",
+  "gb": "1 GB = 2^30 bytes in this kit's calculations"
+ }
+}

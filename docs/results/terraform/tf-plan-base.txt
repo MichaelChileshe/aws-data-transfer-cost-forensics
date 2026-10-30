@@ -1,0 +1,1508 @@
+data.aws_ec2_instance_type_offerings.type: Reading...
+data.aws_ssm_parameter.al2023_arm: Reading...
+data.aws_availability_zones.available: Reading...
+data.aws_caller_identity.current: Reading...
+data.aws_caller_identity.current: Read complete after 1s [id=<account-id>]
+data.aws_ssm_parameter.al2023_arm: Read complete after 2s [id=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-arm64]
+data.aws_ec2_instance_type_offerings.type: Read complete after 2s [id=us-east-1]
+data.aws_availability_zones.available: Read complete after 2s [id=us-east-1]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_athena_workgroup.this will be created
+  + resource "aws_athena_workgroup" "this" {
+      + arn           = (known after apply)
+      + description   = "Data-transfer forensics over the VPC flow logs"
+      + force_destroy = true
+      + id            = (known after apply)
+      + name          = "mvela-xfer"
+      + region        = "us-east-1"
+      + state         = "ENABLED"
+      + tags_all      = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+
+      + configuration {
+          + bytes_scanned_cutoff_per_query          = 104857600
+          + enable_minimum_encryption_configuration = (known after apply)
+          + enforce_workgroup_configuration         = true
+          + publish_cloudwatch_metrics_enabled      = false
+          + requester_pays_enabled                  = false
+
+          + result_configuration {
+              + output_location = "s3://mvela-xfer-athena-e3bf3457/results/"
+
+              + encryption_configuration {
+                  + encryption_option = "SSE_S3"
+                }
+            }
+        }
+    }
+
+  # aws_eip.nat[0] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + region               = "us-east-1"
+      + tags                 = {
+          + "Name" = "mvela-xfer-nat-eip"
+        }
+      + tags_all             = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-nat-eip"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+    }
+
+  # aws_flow_log.vpc will be created
+  + resource "aws_flow_log" "vpc" {
+      + arn                      = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "s3"
+      + log_format               = "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status} ${vpc-id} ${subnet-id} ${instance-id} ${az-id} ${sublocation-type} ${flow-direction} ${traffic-path} ${pkt-src-aws-service} ${pkt-dst-aws-service} ${pkt-srcaddr} ${pkt-dstaddr}"
+      + max_aggregation_interval = 60
+      + region                   = "us-east-1"
+      + tags                     = {
+          + "Name" = "mvela-xfer-flowlog"
+        }
+      + tags_all                 = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-flowlog"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+
+      + destination_options {
+          + file_format                = "parquet"
+          + hive_compatible_partitions = true
+          + per_hour_partition         = true
+        }
+    }
+
+  # aws_glue_catalog_database.this will be created
+  + resource "aws_glue_catalog_database" "this" {
+      + arn          = (known after apply)
+      + catalog_id   = (known after apply)
+      + description  = "Mvelaphanda data-transfer forensics"
+      + id           = (known after apply)
+      + location_uri = (known after apply)
+      + name         = "mvela_xfer"
+      + region       = "us-east-1"
+      + tags_all     = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+
+      + create_table_default_permission (known after apply)
+    }
+
+  # aws_glue_catalog_table.flows will be created
+  + resource "aws_glue_catalog_table" "flows" {
+      + arn           = (known after apply)
+      + catalog_id    = (known after apply)
+      + database_name = "mvela_xfer"
+      + description   = "VPC flow logs, custom v5 format, Parquet, Hive-compatible hourly partitions"
+      + id            = (known after apply)
+      + name          = "vpc_flow_logs"
+      + parameters    = {
+          + "EXTERNAL"                  = "TRUE"
+          + "classification"            = "parquet"
+          + "projection.day.digits"     = "2"
+          + "projection.day.range"      = "1,31"
+          + "projection.day.type"       = "integer"
+          + "projection.enabled"        = "true"
+          + "projection.hour.digits"    = "2"
+          + "projection.hour.range"     = "0,23"
+          + "projection.hour.type"      = "integer"
+          + "projection.month.digits"   = "2"
+          + "projection.month.range"    = "1,12"
+          + "projection.month.type"     = "integer"
+          + "projection.year.range"     = "2025,2035"
+          + "projection.year.type"      = "integer"
+          + "storage.location.template" = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=${year}/month=${month}/day=${day}/hour=${hour}/"
+        }
+      + region        = "us-east-1"
+      + table_type    = "EXTERNAL_TABLE"
+
+      + partition_index (known after apply)
+
+      + partition_keys {
+          + name = "year"
+          + type = "string"
+        }
+      + partition_keys {
+          + name = "month"
+          + type = "string"
+        }
+      + partition_keys {
+          + name = "day"
+          + type = "string"
+        }
+      + partition_keys {
+          + name = "hour"
+          + type = "string"
+        }
+
+      + storage_descriptor {
+          + additional_locations = (known after apply)
+          + bucket_columns       = (known after apply)
+          + input_format         = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat"
+          + location             = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+          + output_format        = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat"
+          + parameters           = (known after apply)
+
+          + columns {
+              + name       = "version"
+              + parameters = (known after apply)
+              + type       = "int"
+            }
+          + columns {
+              + name       = "account_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "interface_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "srcaddr"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "dstaddr"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "srcport"
+              + parameters = (known after apply)
+              + type       = "int"
+            }
+          + columns {
+              + name       = "dstport"
+              + parameters = (known after apply)
+              + type       = "int"
+            }
+          + columns {
+              + name       = "protocol"
+              + parameters = (known after apply)
+              + type       = "int"
+            }
+          + columns {
+              + name       = "packets"
+              + parameters = (known after apply)
+              + type       = "bigint"
+            }
+          + columns {
+              + name       = "bytes"
+              + parameters = (known after apply)
+              + type       = "bigint"
+            }
+          + columns {
+              + name       = "start"
+              + parameters = (known after apply)
+              + type       = "bigint"
+            }
+          + columns {
+              + name       = "end"
+              + parameters = (known after apply)
+              + type       = "bigint"
+            }
+          + columns {
+              + name       = "action"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "log_status"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "vpc_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "subnet_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "instance_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "az_id"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "sublocation_type"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "flow_direction"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "traffic_path"
+              + parameters = (known after apply)
+              + type       = "int"
+            }
+          + columns {
+              + name       = "pkt_src_aws_service"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "pkt_dst_aws_service"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "pkt_srcaddr"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+          + columns {
+              + name       = "pkt_dstaddr"
+              + parameters = (known after apply)
+              + type       = "string"
+            }
+
+          + ser_de_info {
+              + parameters            = (known after apply)
+              + serialization_library = "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe"
+            }
+        }
+
+      + view_definition (known after apply)
+    }
+
+  # aws_iam_instance_profile.app will be created
+  + resource "aws_iam_instance_profile" "app" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = "mvela-xfer-app-profile"
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = "mvela-xfer-app-role"
+      + tags_all    = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + unique_id   = (known after apply)
+    }
+
+  # aws_iam_role.app will be created
+  + resource "aws_iam_role" "app" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "mvela-xfer-app-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy.app_s3 will be created
+  + resource "aws_iam_role_policy" "app_s3" {
+      + id          = (known after apply)
+      + name        = "mvela-xfer-app-s3"
+      + name_prefix = (known after apply)
+      + policy      = (known after apply)
+      + role        = (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.app_ssm will be created
+  + resource "aws_iam_role_policy_attachment" "app_ssm" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      + role       = "mvela-xfer-app-role"
+    }
+
+  # aws_instance.app["app-a"] will be created
+  + resource "aws_instance" "app" {
+      + ami                                  = "ami-0702f1d5548f1fe1e"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = "mvela-xfer-app-profile"
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t4g.small"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = "10.170.10.10"
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "AppName" = "app-a"
+          + "Name"    = "mvela-xfer-app-a"
+        }
+      + tags_all                             = {
+          + "AppName"   = "app-a"
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-app-a"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-a' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-a"
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = true
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags_all              = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 12
+          + volume_type           = "gp3"
+        }
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_instance.app["app-a2"] will be created
+  + resource "aws_instance" "app" {
+      + ami                                  = "ami-0702f1d5548f1fe1e"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = "mvela-xfer-app-profile"
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t4g.small"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = "10.170.10.20"
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "AppName" = "app-a2"
+          + "Name"    = "mvela-xfer-app-a2"
+        }
+      + tags_all                             = {
+          + "AppName"   = "app-a2"
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-app-a2"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-a2' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-a2"
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = true
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags_all              = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 12
+          + volume_type           = "gp3"
+        }
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_instance.app["app-b"] will be created
+  + resource "aws_instance" "app" {
+      + ami                                  = "ami-0702f1d5548f1fe1e"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = "mvela-xfer-app-profile"
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t4g.small"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = "10.170.11.10"
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "AppName" = "app-b"
+          + "Name"    = "mvela-xfer-app-b"
+        }
+      + tags_all                             = {
+          + "AppName"   = "app-b"
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-app-b"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            # Boot script for one Mvelaphanda app instance (rendered by Terraform): the traffic tool, its name,
+            # and a systemd service (TCP sink on 9000, HTTP service on 8080). Python 3 stdlib only.
+            set -euxo pipefail
+            mkdir -p /opt/mvela /var/tmp/mvela
+            echo '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' | base64 -d | gunzip > /opt/mvela/mvela_traffic.py
+            echo 'NAME=app-b' > /etc/mvela.conf
+            cat > /etc/systemd/system/mvela-svc.service <<'UNIT'
+            [Unit]
+            Description=Mvelaphanda app service (bulk TCP sink 9000, HTTP 8080)
+            After=network-online.target
+            
+            [Service]
+            ExecStart=/usr/bin/python3 -u /opt/mvela/mvela_traffic.py serve
+            Restart=always
+            RestartSec=2
+            
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now mvela-svc
+            sleep 2
+            systemctl is-active mvela-svc
+            sha256sum /opt/mvela/mvela_traffic.py
+            echo "mvela app ready: app-b"
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device {
+          + delete_on_termination = true
+          + device_name           = (known after apply)
+          + encrypted             = true
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags_all              = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = 12
+          + volume_type           = "gp3"
+        }
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_internet_gateway.this will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-east-1"
+      + tags     = {
+          + "Name" = "mvela-xfer-igw"
+        }
+      + tags_all = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-igw"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_nat_gateway.this[0] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + auto_provision_zones               = (known after apply)
+      + auto_scaling_ips                   = (known after apply)
+      + availability_mode                  = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + region                             = "us-east-1"
+      + regional_nat_gateway_address       = (known after apply)
+      + regional_nat_gateway_auto_mode     = (known after apply)
+      + route_table_id                     = (known after apply)
+      + secondary_allocation_ids           = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Name" = "mvela-xfer-nat-a"
+        }
+      + tags_all                           = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-nat-a"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id                             = (known after apply)
+    }
+
+  # aws_route.private_nat[0] will be created
+  + resource "aws_route" "private_nat" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "us-east-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+    }
+
+  # aws_route.public_internet will be created
+  + resource "aws_route" "public_internet" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "us-east-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+    }
+
+  # aws_route_table.private will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-east-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "mvela-xfer-private-rt"
+        }
+      + tags_all         = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-private-rt"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table.public will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-east-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "mvela-xfer-public-rt"
+        }
+      + tags_all         = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-public-rt"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table_association.private["a"] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + region         = "us-east-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.private["b"] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + region         = "us-east-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.public_a will be created
+  + resource "aws_route_table_association" "public_a" {
+      + id             = (known after apply)
+      + region         = "us-east-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_s3_bucket.athena will be created
+  + resource "aws_s3_bucket" "athena" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "mvela-xfer-athena-e3bf3457"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket.flowlogs will be created
+  + resource "aws_s3_bucket" "flowlogs" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "mvela-xfer-flowlogs-e3bf3457"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket.lake will be created
+  + resource "aws_s3_bucket" "lake" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "mvela-xfer-lake-e3bf3457"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket.replica will be created
+  + resource "aws_s3_bucket" "replica" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "mvela-xfer-replica-e3bf3457"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "eu-west-1"
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.athena will be created
+  + resource "aws_s3_bucket_lifecycle_configuration" "athena" {
+      + bucket                                 = (known after apply)
+      + expected_bucket_owner                  = (known after apply)
+      + id                                     = (known after apply)
+      + region                                 = "us-east-1"
+      + transition_default_minimum_object_size = "all_storage_classes_128K"
+
+      + rule {
+          + id     = "expire-query-results"
+          + status = "Enabled"
+            # (1 unchanged attribute hidden)
+
+          + expiration {
+              + days                         = 7
+              + expired_object_delete_marker = false
+            }
+
+          + filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.flowlogs will be created
+  + resource "aws_s3_bucket_lifecycle_configuration" "flowlogs" {
+      + bucket                                 = (known after apply)
+      + expected_bucket_owner                  = (known after apply)
+      + id                                     = (known after apply)
+      + region                                 = "us-east-1"
+      + transition_default_minimum_object_size = "all_storage_classes_128K"
+
+      + rule {
+          + id     = "expire-flow-logs"
+          + status = "Enabled"
+            # (1 unchanged attribute hidden)
+
+          + expiration {
+              + days                         = 7
+              + expired_object_delete_marker = false
+            }
+
+          + filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.lake will be created
+  + resource "aws_s3_bucket_lifecycle_configuration" "lake" {
+      + bucket                                 = (known after apply)
+      + expected_bucket_owner                  = (known after apply)
+      + id                                     = (known after apply)
+      + region                                 = "us-east-1"
+      + transition_default_minimum_object_size = "all_storage_classes_128K"
+
+      + rule {
+          + id     = "expire-lab-objects"
+          + status = "Enabled"
+            # (1 unchanged attribute hidden)
+
+          + abort_incomplete_multipart_upload {
+              + days_after_initiation = 1
+            }
+
+          + expiration {
+              + days                         = 1
+              + expired_object_delete_marker = false
+            }
+
+          + filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.replica will be created
+  + resource "aws_s3_bucket_lifecycle_configuration" "replica" {
+      + bucket                                 = (known after apply)
+      + expected_bucket_owner                  = (known after apply)
+      + id                                     = (known after apply)
+      + region                                 = "eu-west-1"
+      + transition_default_minimum_object_size = "all_storage_classes_128K"
+
+      + rule {
+          + id     = "expire-lab-objects"
+          + status = "Enabled"
+            # (1 unchanged attribute hidden)
+
+          + abort_incomplete_multipart_upload {
+              + days_after_initiation = 1
+            }
+
+          + expiration {
+              + days                         = 1
+              + expired_object_delete_marker = false
+            }
+
+          + filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_policy.flowlogs will be created
+  + resource "aws_s3_bucket_policy" "flowlogs" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+      + region = "us-east-1"
+    }
+
+  # aws_s3_bucket_policy.lake will be created
+  + resource "aws_s3_bucket_policy" "lake" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+      + region = "us-east-1"
+    }
+
+  # aws_s3_bucket_policy.replica will be created
+  + resource "aws_s3_bucket_policy" "replica" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+      + region = "eu-west-1"
+    }
+
+  # aws_s3_bucket_public_access_block.athena will be created
+  + resource "aws_s3_bucket_public_access_block" "athena" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + region                  = "us-east-1"
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_public_access_block.flowlogs will be created
+  + resource "aws_s3_bucket_public_access_block" "flowlogs" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + region                  = "us-east-1"
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_public_access_block.lake will be created
+  + resource "aws_s3_bucket_public_access_block" "lake" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + region                  = "us-east-1"
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_public_access_block.replica will be created
+  + resource "aws_s3_bucket_public_access_block" "replica" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + region                  = "eu-west-1"
+      + restrict_public_buckets = true
+    }
+
+  # aws_security_group.app will be created
+  + resource "aws_security_group" "app" {
+      + arn                    = (known after apply)
+      + description            = "Mvelaphanda app services - 9000 (bulk TCP) and 8080 (HTTP) from inside the VPC only"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "mvela-xfer-app-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "mvela-xfer-app-sg"
+        }
+      + tags_all               = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-app-sg"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.private["a"] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.170.10.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Name" = "mvela-xfer-private-a"
+        }
+      + tags_all                                       = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-private-a"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_subnet.private["b"] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.170.11.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Name" = "mvela-xfer-private-b"
+        }
+      + tags_all                                       = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-private-b"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_subnet.public_a will be created
+  + resource "aws_subnet" "public_a" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.170.0.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Name" = "mvela-xfer-public-a"
+        }
+      + tags_all                                       = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-public-a"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.this will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.170.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-east-1"
+      + tags                                 = {
+          + "Name" = "mvela-xfer-vpc"
+        }
+      + tags_all                             = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-vpc"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+    }
+
+  # aws_vpc_security_group_egress_rule.all will be created
+  + resource "aws_vpc_security_group_egress_rule" "all" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Outbound: SSM, S3, the internet test download, the other app instances"
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + region                 = "us-east-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+    }
+
+  # aws_vpc_security_group_ingress_rule.bulk will be created
+  + resource "aws_vpc_security_group_ingress_rule" "bulk" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "10.170.0.0/16"
+      + description            = "Bulk TCP transfers between app instances"
+      + from_port              = 9000
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + region                 = "us-east-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + to_port                = 9000
+    }
+
+  # aws_vpc_security_group_ingress_rule.http will be created
+  + resource "aws_vpc_security_group_ingress_rule" "http" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "10.170.0.0/16"
+      + description            = "Service-to-service HTTP calls (the chatty service)"
+      + from_port              = 8080
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + region                 = "us-east-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {
+          + "ManagedBy" = "terraform"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + to_port                = 8080
+    }
+
+Plan: 44 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + app_sha256             = "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470"
+  + athena                 = {
+      + database  = "mvela_xfer"
+      + flow_root = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+      + table     = "vpc_flow_logs"
+      + workgroup = "mvela-xfer"
+    }
+  + buckets                = {
+      + athena   = "mvela-xfer-athena-e3bf3457"
+      + flowlogs = "mvela-xfer-flowlogs-e3bf3457"
+      + lake     = "mvela-xfer-lake-e3bf3457"
+      + replica  = "mvela-xfer-replica-e3bf3457"
+    }
+  + flow_log_id            = (known after apply)
+  + lab                    = {
+      + app-a  = {
+          + az         = (known after apply)
+          + az_id      = (known after apply)
+          + eni        = (known after apply)
+          + id         = (known after apply)
+          + private_ip = "10.170.10.10"
+          + subnet     = "a"
+        }
+      + app-a2 = {
+          + az         = (known after apply)
+          + az_id      = (known after apply)
+          + eni        = (known after apply)
+          + id         = (known after apply)
+          + private_ip = "10.170.10.20"
+          + subnet     = "a"
+        }
+      + app-b  = {
+          + az         = (known after apply)
+          + az_id      = (known after apply)
+          + eni        = (known after apply)
+          + id         = (known after apply)
+          + private_ip = "10.170.11.10"
+          + subnet     = "b"
+        }
+    }
+  + nat                    = {
+      + az_id      = (known after apply)
+      + eni        = (known after apply)
+      + id         = (known after apply)
+      + private_ip = (known after apply)
+      + public_ip  = (known after apply)
+    }
+  + phases                 = {
+      + s3_gateway_endpoint = false
+      + traffic_lab         = true
+    }
+  + regions                = {
+      + primary = "us-east-1"
+      + second  = "eu-west-1"
+    }
+  + vpc                    = {
+      + azs  = [
+          + "us-east-1a",
+          + "us-east-1b",
+        ]
+      + cidr = "10.170.0.0/16"
+      + id   = (known after apply)
+    }
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: base.tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "base.tfplan"
+Releasing state lock. This may take a few moments...

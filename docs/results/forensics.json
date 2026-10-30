@@ -1,0 +1,4019 @@
+{
+ "paths_by_run": [
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 121639346,
+   "packets": 72815,
+   "records": 14
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 120046553,
+   "packets": 29943,
+   "records": 15
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 120132030,
+   "packets": 32421,
+   "records": 15
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 361085,
+   "packets": 745,
+   "records": 52
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 542533,
+   "packets": 926,
+   "records": 55
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 556472,
+   "packets": 946,
+   "records": 59
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 180333,
+   "packets": 138,
+   "records": 1
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 273352,
+   "packets": 6167,
+   "records": 30
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 193160,
+   "packets": 3659,
+   "records": 33
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 194014,
+   "packets": 3796,
+   "records": 21
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 193838,
+   "packets": 598,
+   "records": 49
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 207670,
+   "packets": 643,
+   "records": 52
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 96269,
+   "packets": 170,
+   "records": 68
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 95541,
+   "packets": 162,
+   "records": 60
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 97098,
+   "packets": 182,
+   "records": 80
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 217538,
+   "packets": 691,
+   "records": 57
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 7993,
+   "packets": 36,
+   "records": 1
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 18558,
+   "packets": 113,
+   "records": 51
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 16814,
+   "packets": 89,
+   "records": 29
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 17327,
+   "packets": 96,
+   "records": 38
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 76,
+   "packets": 1,
+   "records": 1
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 76,
+   "packets": 1,
+   "records": 1
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 76,
+   "packets": 1,
+   "records": 1
+  },
+  {
+   "run": "(between runs)",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 76,
+   "packets": 1,
+   "records": 1
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "same-AZ",
+   "peer": "app-a2",
+   "bytes": 144214112,
+   "packets": 98374,
+   "records": 10
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "same-AZ",
+   "peer": "app-a",
+   "bytes": 144214112,
+   "packets": 98369,
+   "records": 9
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "same-AZ",
+   "peer": "app-a2",
+   "bytes": 43451680,
+   "packets": 98529,
+   "records": 10
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "same-AZ",
+   "peer": "app-a",
+   "bytes": 43451680,
+   "packets": 98502,
+   "records": 9
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 7728,
+   "packets": 29,
+   "records": 4
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5332,
+   "packets": 20,
+   "records": 2
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5822,
+   "packets": 33,
+   "records": 4
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 3514,
+   "packets": 16,
+   "records": 2
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1136,
+   "packets": 19,
+   "records": 3
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 912,
+   "packets": 15,
+   "records": 3
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 456,
+   "packets": 6,
+   "records": 6
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 456,
+   "packets": 6,
+   "records": 6
+  },
+  {
+   "run": "chatty-saz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "cross-AZ",
+   "peer": "app-b",
+   "bytes": 144230704,
+   "packets": 98382,
+   "records": 10
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "cross-AZ",
+   "peer": "app-a",
+   "bytes": 144230704,
+   "packets": 98385,
+   "records": 11
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "cross-AZ",
+   "peer": "app-a",
+   "bytes": 43451728,
+   "packets": 98520,
+   "records": 11
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "cross-AZ",
+   "peer": "app-b",
+   "bytes": 43451728,
+   "packets": 98525,
+   "records": 10
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10708,
+   "packets": 36,
+   "records": 4
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 7643,
+   "packets": 28,
+   "records": 4
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10560,
+   "packets": 43,
+   "records": 4
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5681,
+   "packets": 31,
+   "records": 4
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 878,
+   "packets": 15,
+   "records": 3
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 766,
+   "packets": 13,
+   "records": 3
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "chatty-xaz",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "S3 eu-west-1 via NAT gateway",
+   "peer": "",
+   "bytes": 312264641,
+   "packets": 214264,
+   "records": 10
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "S3 eu-west-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1303381,
+   "packets": 24485,
+   "records": 10
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 17156,
+   "packets": 67,
+   "records": 9
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 20795,
+   "packets": 72,
+   "records": 9
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10970,
+   "packets": 37,
+   "records": 5
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10831,
+   "packets": 39,
+   "records": 5
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1058,
+   "packets": 18,
+   "records": 4
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1050,
+   "packets": 18,
+   "records": 4
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "gzip-euw1",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "idle",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 19610,
+   "packets": 87,
+   "records": 9
+  },
+  {
+   "run": "idle",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 21934,
+   "packets": 77,
+   "records": 9
+  },
+  {
+   "run": "idle",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 15873,
+   "packets": 60,
+   "records": 8
+  },
+  {
+   "run": "idle",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 11730,
+   "packets": 54,
+   "records": 8
+  },
+  {
+   "run": "idle",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 11287,
+   "packets": 63,
+   "records": 8
+  },
+  {
+   "run": "idle",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 11196,
+   "packets": 64,
+   "records": 8
+  },
+  {
+   "run": "idle",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1292,
+   "packets": 17,
+   "records": 17
+  },
+  {
+   "run": "idle",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1748,
+   "packets": 23,
+   "records": 23
+  },
+  {
+   "run": "idle",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1520,
+   "packets": 20,
+   "records": 20
+  },
+  {
+   "run": "idle",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1748,
+   "packets": 23,
+   "records": 23
+  },
+  {
+   "run": "idle",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1520,
+   "packets": 20,
+   "records": 20
+  },
+  {
+   "run": "idle",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1292,
+   "packets": 17,
+   "records": 17
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "internet via NAT gateway",
+   "peer": "",
+   "bytes": 556956868,
+   "packets": 371640,
+   "records": 8
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "internet via NAT gateway",
+   "peer": "",
+   "bytes": 1944888,
+   "packets": 36749,
+   "records": 8
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 7548,
+   "packets": 26,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5978,
+   "packets": 31,
+   "records": 4
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5642,
+   "packets": 30,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 4228,
+   "packets": 26,
+   "records": 4
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 967,
+   "packets": 16,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 799,
+   "packets": 13,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "internet-in",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "S3 eu-west-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1117620072,
+   "packets": 767775,
+   "records": 12
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "S3 eu-west-1 via NAT gateway",
+   "peer": "",
+   "bytes": 3681596,
+   "packets": 71383,
+   "records": 12
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 14624,
+   "packets": 45,
+   "records": 5
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10719,
+   "packets": 36,
+   "records": 4
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10263,
+   "packets": 41,
+   "records": 4
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10284,
+   "packets": 48,
+   "records": 5
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 646,
+   "packets": 11,
+   "records": 2
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 534,
+   "packets": 9,
+   "records": 2
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "peer": "",
+   "bytes": 152,
+   "packets": 2,
+   "records": 2
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-euw1-nat",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "S3 us-east-1 via gateway endpoint",
+   "peer": "",
+   "bytes": 1093553357,
+   "packets": 293982,
+   "records": 10
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via gateway endpoint",
+   "peer": "",
+   "bytes": 2522635,
+   "packets": 51919,
+   "records": 10
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 8034,
+   "packets": 29,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 8064,
+   "packets": 35,
+   "records": 5
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5272,
+   "packets": 22,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 6106,
+   "packets": 38,
+   "records": 5
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5257,
+   "packets": 29,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 3730,
+   "packets": 19,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "S3 us-east-1 via gateway endpoint",
+   "peer": "",
+   "bytes": 274401680,
+   "packets": 88131,
+   "records": 10
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via gateway endpoint",
+   "peer": "",
+   "bytes": 915275,
+   "packets": 18359,
+   "records": 10
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5361,
+   "packets": 23,
+   "records": 2
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 3696,
+   "packets": 18,
+   "records": 2
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1019,
+   "packets": 17,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 698,
+   "packets": 12,
+   "records": 2
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 851,
+   "packets": 14,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 586,
+   "packets": 10,
+   "records": 2
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 304,
+   "packets": 4,
+   "records": 4
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 228,
+   "packets": 3,
+   "records": 3
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1092453029,
+   "packets": 305868,
+   "records": 10
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5040939,
+   "packets": 103348,
+   "records": 10
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10531,
+   "packets": 33,
+   "records": 3
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 7695,
+   "packets": 29,
+   "records": 4
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10051,
+   "packets": 38,
+   "records": 3
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5733,
+   "packets": 32,
+   "records": 4
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 878,
+   "packets": 15,
+   "records": 3
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 766,
+   "packets": 13,
+   "records": 3
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 608,
+   "packets": 8,
+   "records": 8
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 608,
+   "packets": 8,
+   "records": 8
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 608,
+   "packets": 8,
+   "records": 8
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 608,
+   "packets": 8,
+   "records": 8
+  },
+  {
+   "run": "s3-nat",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 276321282,
+   "packets": 103455,
+   "records": 10
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "S3 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 1138075,
+   "packets": 23036,
+   "records": 10
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5593,
+   "packets": 27,
+   "records": 3
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 3928,
+   "packets": 22,
+   "records": 3
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 967,
+   "packets": 16,
+   "records": 3
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 698,
+   "packets": 12,
+   "records": 2
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 799,
+   "packets": 13,
+   "records": 3
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 586,
+   "packets": 10,
+   "records": 2
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 456,
+   "packets": 6,
+   "records": 6
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 532,
+   "packets": 7,
+   "records": 7
+  },
+  {
+   "run": "s3-nat-from-b",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 456,
+   "packets": 6,
+   "records": 6
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "same-AZ",
+   "peer": "app-a2",
+   "bytes": 1080080323,
+   "packets": 120008,
+   "records": 1
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "same-AZ",
+   "peer": "app-a",
+   "bytes": 1079981312,
+   "packets": 119997,
+   "records": 1
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "same-AZ",
+   "peer": "app-a2",
+   "bytes": 566822,
+   "packets": 10900,
+   "records": 1
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "same-AZ",
+   "peer": "app-a",
+   "bytes": 566822,
+   "packets": 10900,
+   "records": 1
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 8066,
+   "packets": 29,
+   "records": 4
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 14994,
+   "packets": 45,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10722,
+   "packets": 31,
+   "records": 3
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 9364,
+   "packets": 34,
+   "records": 3
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10149,
+   "packets": 46,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5346,
+   "packets": 30,
+   "records": 4
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "saz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "cross-AZ",
+   "peer": "app-b",
+   "bytes": 1080125900,
+   "packets": 120027,
+   "records": 1
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "cross-AZ",
+   "peer": "app-a",
+   "bytes": 1079981884,
+   "packets": 120011,
+   "records": 1
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "cross-AZ",
+   "peer": "app-a",
+   "bytes": 508306,
+   "packets": 9775,
+   "records": 1
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "cross-AZ",
+   "peer": "app-b",
+   "bytes": 508306,
+   "packets": 9775,
+   "records": 1
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 10687,
+   "packets": 37,
+   "records": 4
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 7463,
+   "packets": 25,
+   "records": 3
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 9995,
+   "packets": 40,
+   "records": 4
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 5449,
+   "packets": 27,
+   "records": 3
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 878,
+   "packets": 15,
+   "records": 3
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 766,
+   "packets": 13,
+   "records": 3
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-b",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a2",
+   "direction": "egress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  },
+  {
+   "run": "xaz-bulk",
+   "eni": "app-a2",
+   "direction": "ingress",
+   "path": "EC2 us-east-1 via NAT gateway",
+   "peer": "",
+   "bytes": 380,
+   "packets": 5,
+   "records": 5
+  }
+ ],
+ "paths_total": [
+  {
+   "path": "S3 eu-west-1 via NAT gateway",
+   "direction": "egress",
+   "bytes": 1429884713
+  },
+  {
+   "path": "S3 us-east-1 via NAT gateway",
+   "direction": "egress",
+   "bytes": 1369434837
+  },
+  {
+   "path": "S3 us-east-1 via gateway endpoint",
+   "direction": "egress",
+   "bytes": 1367955037
+  },
+  {
+   "path": "cross-AZ",
+   "direction": "egress",
+   "bytes": 1268316638
+  },
+  {
+   "path": "same-AZ",
+   "direction": "egress",
+   "bytes": 1268312937
+  },
+  {
+   "path": "same-AZ",
+   "direction": "ingress",
+   "bytes": 1268213926
+  },
+  {
+   "path": "cross-AZ",
+   "direction": "ingress",
+   "bytes": 1268172622
+  },
+  {
+   "path": "internet via NAT gateway",
+   "direction": "ingress",
+   "bytes": 556956868
+  },
+  {
+   "path": "S3 us-east-1 via NAT gateway",
+   "direction": "ingress",
+   "bytes": 367996943
+  },
+  {
+   "path": "S3 eu-west-1 via NAT gateway",
+   "direction": "ingress",
+   "bytes": 4984977
+  },
+  {
+   "path": "S3 us-east-1 via gateway endpoint",
+   "direction": "ingress",
+   "bytes": 3437910
+  },
+  {
+   "path": "internet via NAT gateway",
+   "direction": "egress",
+   "bytes": 1944888
+  },
+  {
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "direction": "egress",
+   "bytes": 1686870
+  },
+  {
+   "path": "AMAZON us-east-1 via NAT gateway",
+   "direction": "ingress",
+   "bytes": 869446
+  },
+  {
+   "path": "EC2 us-east-1 via NAT gateway",
+   "direction": "egress",
+   "bytes": 305020
+  },
+  {
+   "path": "AMAZON us-east-1 outside VPC (route unknown)",
+   "direction": "egress",
+   "bytes": 180333
+  },
+  {
+   "path": "EC2 us-east-1 via NAT gateway",
+   "direction": "ingress",
+   "bytes": 68811
+  },
+  {
+   "path": "AMAZON us-east-1 outside VPC (route unknown)",
+   "direction": "ingress",
+   "bytes": 7993
+  },
+  {
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "direction": "egress",
+   "bytes": 760
+  },
+  {
+   "path": "EC2 us-east-1 outside VPC (route unknown)",
+   "direction": "ingress",
+   "bytes": 760
+  }
+ ],
+ "hops": [
+  {
+   "run": "(between runs)",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 111808631,
+   "packets": 24859
+  },
+  {
+   "run": "(between runs)",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 40190429,
+   "packets": 16790
+  },
+  {
+   "run": "(between runs)",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 32092226,
+   "packets": 21326
+  },
+  {
+   "run": "(between runs)",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 754504,
+   "packets": 7133
+  },
+  {
+   "run": "(between runs)",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 734996,
+   "packets": 4369
+  },
+  {
+   "run": "(between runs)",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 511577,
+   "packets": 2524
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-a",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 144214112,
+   "packets": 98374
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-a2",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 43451680,
+   "packets": 98502
+  },
+  {
+   "run": "chatty-saz",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 8175,
+   "packets": 35
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 6434,
+   "packets": 42
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 5584,
+   "packets": 23
+  },
+  {
+   "run": "chatty-saz",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 3738,
+   "packets": 18
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 1323,
+   "packets": 21
+  },
+  {
+   "run": "chatty-saz",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 1066,
+   "packets": 16
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-a",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 144230704,
+   "packets": 98382
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-b",
+   "dst": "app-a",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 43451728,
+   "packets": 98520
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 11237,
+   "packets": 53
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 11131,
+   "packets": 42
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 8108,
+   "packets": 34
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 6226,
+   "packets": 38
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1644,
+   "packets": 26
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1368,
+   "packets": 21
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 312451486,
+   "packets": 214432
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1340407,
+   "packets": 24564
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 196596,
+   "packets": 205
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 16523,
+   "packets": 65
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 16224,
+   "packets": 73
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 1347,
+   "packets": 21
+  },
+  {
+   "run": "idle",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 22900,
+   "packets": 89
+  },
+  {
+   "run": "idle",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 17658,
+   "packets": 84
+  },
+  {
+   "run": "idle",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 17323,
+   "packets": 98
+  },
+  {
+   "run": "idle",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 16278,
+   "packets": 86
+  },
+  {
+   "run": "idle",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 13298,
+   "packets": 74
+  },
+  {
+   "run": "idle",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 13037,
+   "packets": 89
+  },
+  {
+   "run": "internet-in",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 556961107,
+   "packets": 371665
+  },
+  {
+   "run": "internet-in",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1951001,
+   "packets": 36781
+  },
+  {
+   "run": "internet-in",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 7932,
+   "packets": 32
+  },
+  {
+   "run": "internet-in",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 6026,
+   "packets": 36
+  },
+  {
+   "run": "internet-in",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 1106,
+   "packets": 18
+  },
+  {
+   "run": "internet-in",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 1018,
+   "packets": 16
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1117458231,
+   "packets": 767752
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 3298877,
+   "packets": 61677
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 15392,
+   "packets": 73
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 14833,
+   "packets": 47
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 10032,
+   "packets": 47
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 862,
+   "packets": 13
+  },
+  {
+   "run": "s3-gwe",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 11311,
+   "packets": 39
+  },
+  {
+   "run": "s3-gwe",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 7975,
+   "packets": 33
+  },
+  {
+   "run": "s3-gwe",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 7871,
+   "packets": 31
+  },
+  {
+   "run": "s3-gwe",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 6102,
+   "packets": 37
+  },
+  {
+   "run": "s3-gwe",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 6089,
+   "packets": 37
+  },
+  {
+   "run": "s3-gwe",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 5552,
+   "packets": 26
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 5805,
+   "packets": 32
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 5680,
+   "packets": 28
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 4525,
+   "packets": 31
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1206,
+   "packets": 19
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1018,
+   "packets": 16
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 838,
+   "packets": 13
+  },
+  {
+   "run": "s3-nat",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1092464102,
+   "packets": 305921
+  },
+  {
+   "run": "s3-nat",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 5045186,
+   "packets": 103374
+  },
+  {
+   "run": "s3-nat",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 8099,
+   "packets": 34
+  },
+  {
+   "run": "s3-nat",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 6690,
+   "packets": 46
+  },
+  {
+   "run": "s3-nat",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 6137,
+   "packets": 37
+  },
+  {
+   "run": "s3-nat",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1411,
+   "packets": 22
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 273983977,
+   "packets": 102782
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 1177263,
+   "packets": 23057
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 5942,
+   "packets": 33
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1230,
+   "packets": 19
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 947,
+   "packets": 14
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 697,
+   "packets": 10
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-a",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1080080323,
+   "packets": 120008
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-a2",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 566822,
+   "packets": 10900
+  },
+  {
+   "run": "saz-bulk",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 15365,
+   "packets": 50
+  },
+  {
+   "run": "saz-bulk",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 11060,
+   "packets": 36
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 10184,
+   "packets": 46
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 9759,
+   "packets": 40
+  },
+  {
+   "run": "saz-bulk",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 8266,
+   "packets": 31
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 5661,
+   "packets": 34
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-a",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 1080125900,
+   "packets": 120027
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-b",
+   "dst": "app-a",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 508306,
+   "packets": 9775
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "nat-gw",
+   "dst": "app-a",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 10987,
+   "packets": 40
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-a",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 10219,
+   "packets": 42
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "nat-gw",
+   "dst": "app-b",
+   "from_az": "use1-az1",
+   "to_az": "use1-az2",
+   "kind": "cross-AZ",
+   "bytes": 8023,
+   "packets": 33
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-b",
+   "dst": "nat-gw",
+   "from_az": "use1-az2",
+   "to_az": "use1-az1",
+   "kind": "cross-AZ",
+   "bytes": 6382,
+   "packets": 41
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-a2",
+   "dst": "nat-gw",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1258,
+   "packets": 20
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "nat-gw",
+   "dst": "app-a2",
+   "from_az": "use1-az1",
+   "to_az": "use1-az1",
+   "kind": "same-AZ",
+   "bytes": 1170,
+   "packets": 18
+  }
+ ],
+ "nat_legs": {
+  "(between runs)": {
+   "in_from_source": 2001077,
+   "out_to_destination": 2014940,
+   "in_from_destination": 170347128,
+   "out_to_source": 184091286,
+   "bytes": 358454431,
+   "records": 1561,
+   "processed": 172348205
+  },
+  "chatty-saz": {
+   "in_from_source": 13341,
+   "out_to_destination": 12932,
+   "in_from_destination": 14950,
+   "out_to_source": 12979,
+   "bytes": 54202,
+   "records": 126,
+   "processed": 28291
+  },
+  "chatty-xaz": {
+   "in_from_source": 19107,
+   "out_to_destination": 19343,
+   "in_from_destination": 22312,
+   "out_to_source": 20607,
+   "bytes": 81369,
+   "records": 148,
+   "processed": 41419
+  },
+  "gzip-euw1": {
+   "in_from_source": 312649429,
+   "out_to_destination": 312659186,
+   "in_from_destination": 1369002,
+   "out_to_source": 1373154,
+   "bytes": 628050771,
+   "records": 193,
+   "processed": 314018431
+  },
+  "idle": {
+   "in_from_source": 46638,
+   "out_to_destination": 37791,
+   "in_from_destination": 56923,
+   "out_to_source": 53856,
+   "bytes": 195208,
+   "records": 397,
+   "processed": 103561
+  },
+  "internet-in": {
+   "in_from_source": 1958133,
+   "out_to_destination": 1957790,
+   "in_from_destination": 556971716,
+   "out_to_source": 556970057,
+   "bytes": 1117857696,
+   "records": 137,
+   "processed": 558929849
+  },
+  "s3-euw1-nat": {
+   "in_from_source": 1117483655,
+   "out_to_destination": 1117485899,
+   "in_from_destination": 3334073,
+   "out_to_source": 3314572,
+   "bytes": 2241618199,
+   "records": 223,
+   "processed": 1120817728
+  },
+  "s3-gwe": {
+   "in_from_source": 17743,
+   "out_to_destination": 26834,
+   "in_from_destination": 21618,
+   "out_to_source": 27157,
+   "bytes": 93352,
+   "records": 111,
+   "processed": 39361
+  },
+  "s3-gwe-from-b": {
+   "in_from_source": 12691,
+   "out_to_destination": 12832,
+   "in_from_destination": 13615,
+   "out_to_source": 6381,
+   "bytes": 45519,
+   "records": 96,
+   "processed": 26306
+  },
+  "s3-nat": {
+   "in_from_source": 1092476929,
+   "out_to_destination": 1092467616,
+   "in_from_destination": 5056160,
+   "out_to_source": 5054696,
+   "bytes": 2195055401,
+   "records": 192,
+   "processed": 1097533089
+  },
+  "s3-nat-from-b": {
+   "in_from_source": 273991149,
+   "out_to_destination": 273991390,
+   "in_from_destination": 1181140,
+   "out_to_source": 1178907,
+   "bytes": 550342586,
+   "records": 157,
+   "processed": 275172289
+  },
+  "saz-bulk": {
+   "in_from_source": 25604,
+   "out_to_destination": 25320,
+   "in_from_destination": 36858,
+   "out_to_source": 34691,
+   "bytes": 122473,
+   "records": 139,
+   "processed": 62462
+  },
+  "xaz-bulk": {
+   "in_from_source": 17859,
+   "out_to_destination": 17382,
+   "in_from_destination": 21540,
+   "out_to_source": 20180,
+   "bytes": 76961,
+   "records": 135,
+   "processed": 39399
+  }
+ },
+ "ip_az": {
+  "10.170.0.151": "use1-az1",
+  "10.170.10.10": "use1-az1",
+  "10.170.10.20": "use1-az1",
+  "10.170.11.10": "use1-az2"
+ },
+ "ip_az_mismatches": {},
+ "reconciliation": [
+  {
+   "run": "idle",
+   "src": "app-a",
+   "logical_bytes": 0,
+   "seconds": 240.011,
+   "cross_az_hop_bytes": 30621,
+   "nat_processed_bytes": 103561,
+   "other_paths": [
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 21934
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 19610
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 15873
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 11730
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 11287
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 11196
+    }
+   ]
+  },
+  {
+   "run": "s3-nat",
+   "src": "app-a",
+   "logical_bytes": 1073741824,
+   "seconds": 3.747,
+   "cross_az_hop_bytes": 14236,
+   "nat_processed_bytes": 1097533089,
+   "expected_path": "S3 us-east-1 via NAT gateway",
+   "direction": "egress",
+   "measured_bytes": 1092453029,
+   "reverse_bytes": 5040939,
+   "ratio": 1.0174,
+   "bytes_per_packet": 3572,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10531
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10051
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 7695
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5733
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 878
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 766
+    }
+   ]
+  },
+  {
+   "run": "s3-nat-from-b",
+   "src": "app-b",
+   "logical_bytes": 268435456,
+   "seconds": 1.801,
+   "cross_az_hop_bytes": 275161240,
+   "nat_processed_bytes": 275172289,
+   "expected_path": "S3 us-east-1 via NAT gateway",
+   "direction": "egress",
+   "measured_bytes": 276321282,
+   "reverse_bytes": 1138075,
+   "ratio": 1.0294,
+   "bytes_per_packet": 2671,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5593
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 3928
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 967
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 799
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 698
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 586
+    }
+   ]
+  },
+  {
+   "run": "xaz-bulk",
+   "src": "app-a",
+   "logical_bytes": 1073741824,
+   "seconds": 1.953,
+   "cross_az_hop_bytes": 1080648611,
+   "nat_processed_bytes": 39399,
+   "expected_path": "cross-AZ",
+   "direction": "egress",
+   "measured_bytes": 1080125900,
+   "reverse_bytes": 508306,
+   "ratio": 1.0059,
+   "bytes_per_packet": 8999,
+   "found": true,
+   "receiver_bytes": 1079981884,
+   "other_paths": [
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "cross-AZ",
+     "bytes": 1079981884
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "cross-AZ",
+     "bytes": 508306
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10687
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 9995
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 7463
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5449
+    }
+   ]
+  },
+  {
+   "run": "saz-bulk",
+   "src": "app-a",
+   "logical_bytes": 1073741824,
+   "seconds": 1.73,
+   "cross_az_hop_bytes": 13927,
+   "nat_processed_bytes": 62462,
+   "expected_path": "same-AZ",
+   "direction": "egress",
+   "measured_bytes": 1080080323,
+   "reverse_bytes": 566822,
+   "ratio": 1.0059,
+   "bytes_per_packet": 9000,
+   "found": true,
+   "receiver_bytes": 1079981312,
+   "other_paths": [
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "same-AZ",
+     "bytes": 1079981312
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "same-AZ",
+     "bytes": 566822
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 14994
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10722
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10149
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 9364
+    }
+   ]
+  },
+  {
+   "run": "chatty-xaz",
+   "src": "app-a",
+   "logical_bytes": 167772160,
+   "seconds": 8.021,
+   "cross_az_hop_bytes": 187696766,
+   "nat_processed_bytes": 41419,
+   "expected_path": "cross-AZ",
+   "direction": "both",
+   "measured_bytes": 187682432,
+   "reverse_bytes": 0,
+   "ratio": 1.1187,
+   "bytes_per_packet": 953,
+   "found": true,
+   "receiver_bytes": 144230704,
+   "other_paths": [
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "cross-AZ",
+     "bytes": 144230704
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "cross-AZ",
+     "bytes": 43451728
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10708
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10560
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 7643
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5681
+    }
+   ]
+  },
+  {
+   "run": "chatty-saz",
+   "src": "app-a",
+   "logical_bytes": 167772160,
+   "seconds": 8.021,
+   "cross_az_hop_bytes": 2389,
+   "nat_processed_bytes": 28291,
+   "expected_path": "same-AZ",
+   "direction": "both",
+   "measured_bytes": 187665792,
+   "reverse_bytes": 0,
+   "ratio": 1.1186,
+   "bytes_per_packet": 953,
+   "found": true,
+   "receiver_bytes": 144214112,
+   "other_paths": [
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "same-AZ",
+     "bytes": 144214112
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "same-AZ",
+     "bytes": 43451680
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 7728
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5822
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5332
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 3514
+    }
+   ]
+  },
+  {
+   "run": "s3-euw1-nat",
+   "src": "app-a",
+   "logical_bytes": 1073741824,
+   "seconds": 7.378,
+   "cross_az_hop_bytes": 30225,
+   "nat_processed_bytes": 1120817728,
+   "expected_path": "S3 eu-west-1 via NAT gateway",
+   "direction": "egress",
+   "measured_bytes": 1117620072,
+   "reverse_bytes": 3681596,
+   "ratio": 1.0409,
+   "bytes_per_packet": 1456,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 14624
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10719
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10284
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10263
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 646
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 534
+    }
+   ]
+  },
+  {
+   "run": "gzip-euw1",
+   "src": "app-a",
+   "logical_bytes": 300144888,
+   "seconds": 3.635,
+   "cross_az_hop_bytes": 17571,
+   "nat_processed_bytes": 314018431,
+   "expected_path": "S3 eu-west-1 via NAT gateway",
+   "direction": "egress",
+   "measured_bytes": 312264641,
+   "reverse_bytes": 1303381,
+   "ratio": 1.0404,
+   "bytes_per_packet": 1457,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 20795
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 17156
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10970
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 10831
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 1058
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 1050
+    }
+   ]
+  },
+  {
+   "run": "internet-in",
+   "src": "app-a",
+   "logical_bytes": 536870912,
+   "seconds": 12.53,
+   "cross_az_hop_bytes": 2124,
+   "nat_processed_bytes": 558929849,
+   "expected_path": "internet via NAT gateway",
+   "direction": "ingress",
+   "measured_bytes": 556956868,
+   "reverse_bytes": 1944888,
+   "ratio": 1.0374,
+   "bytes_per_packet": 1499,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 7548
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5978
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5642
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 4228
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 967
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 799
+    }
+   ]
+  },
+  {
+   "run": "s3-gwe",
+   "src": "app-a",
+   "logical_bytes": 1073741824,
+   "seconds": 7.376,
+   "cross_az_hop_bytes": 13973,
+   "nat_processed_bytes": 39361,
+   "expected_path": "S3 us-east-1 via gateway endpoint",
+   "direction": "egress",
+   "measured_bytes": 1093553357,
+   "reverse_bytes": 2522635,
+   "ratio": 1.0185,
+   "bytes_per_packet": 3720,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 8064
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 8034
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 6106
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5272
+    },
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5257
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 3730
+    }
+   ]
+  },
+  {
+   "run": "s3-gwe-from-b",
+   "src": "app-b",
+   "logical_bytes": 268435456,
+   "seconds": 1.563,
+   "cross_az_hop_bytes": 10205,
+   "nat_processed_bytes": 26306,
+   "expected_path": "S3 us-east-1 via gateway endpoint",
+   "direction": "egress",
+   "measured_bytes": 274401680,
+   "reverse_bytes": 915275,
+   "ratio": 1.0222,
+   "bytes_per_packet": 3114,
+   "found": true,
+   "other_paths": [
+    {
+     "eni": "app-b",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 5361
+    },
+    {
+     "eni": "app-b",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 3696
+    },
+    {
+     "eni": "app-a",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 1019
+    },
+    {
+     "eni": "app-a",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 851
+    },
+    {
+     "eni": "app-a2",
+     "direction": "egress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 698
+    },
+    {
+     "eni": "app-a2",
+     "direction": "ingress",
+     "path": "AMAZON us-east-1 via NAT gateway",
+     "bytes": 586
+    }
+   ]
+  }
+ ],
+ "background": {
+  "app-a": {
+   "bytes": 44128,
+   "by_path": {
+    "AMAZON us-east-1 via NAT gateway": 41544,
+    "EC2 us-east-1 via NAT gateway": 2584
+   },
+   "bytes_per_hour": 661890
+  },
+  "app-a2": {
+   "bytes": 30109,
+   "by_path": {
+    "AMAZON us-east-1 via NAT gateway": 27069,
+    "EC2 us-east-1 via NAT gateway": 3040
+   },
+   "bytes_per_hour": 451614
+  },
+  "app-b": {
+   "bytes": 26513,
+   "by_path": {
+    "AMAZON us-east-1 via NAT gateway": 23017,
+    "EC2 us-east-1 via NAT gateway": 3496
+   },
+   "bytes_per_hour": 397677
+  }
+ },
+ "window": {
+  "t0": 1793360319,
+  "t1": 1793364175,
+  "t0_utc": "2026-10-30 11:38:39 UTC",
+  "t1_utc": "2026-10-30 12:42:55 UTC"
+ },
+ "queries": {
+  "01_top_talkers": {
+   "query_id": "fe4e5c93-b4a3-45cd-89ce-2289963bf140",
+   "scanned_bytes": 72710,
+   "engine_ms": 830,
+   "rows": 40
+  },
+  "02_paths_by_run": {
+   "query_id": "c24c14dd-bbfa-4687-bb6e-5ba895e8ba3d",
+   "scanned_bytes": 145999,
+   "engine_ms": 1755,
+   "rows": 766
+  },
+  "03_cross_az_hops": {
+   "query_id": "c926b044-dbb3-4ce4-80bc-1bd6bcd11fce",
+   "scanned_bytes": 306628,
+   "engine_ms": 1634,
+   "rows": 86
+  },
+  "04_nat_legs": {
+   "query_id": "c88606fe-5e4f-42b7-98a2-f620d95b22bc",
+   "scanned_bytes": 50192,
+   "engine_ms": 698,
+   "rows": 13
+  },
+  "05_ip_az_map": {
+   "query_id": "6de78ebd-e948-4a40-9363-5bbfcb022dc7",
+   "scanned_bytes": 39791,
+   "engine_ms": 697,
+   "rows": 4
+  }
+ },
+ "ip_ranges": {
+  "syncToken": "1793353625",
+  "createDate": "2026-10-30-09-47-05"
+ },
+ "top_talkers": [
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "10.170.0.151",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "2522435096",
+   "packets": "1293966"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "10.170.11.10",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "1224356604",
+   "packets": "218409"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "10.170.10.20",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "1224294435",
+   "packets": "218382"
+  },
+  {
+   "interface_id": "eni-0745d89b3b422f893",
+   "owner": "i-032ad1ad259dc6db5",
+   "az_id": "use1-az2",
+   "flow_direction": "ingress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "10.170.11.10",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "1224212588",
+   "packets": "218396"
+  },
+  {
+   "interface_id": "eni-04424f53c7a87ab2d",
+   "owner": "i-0841528055882165e",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "10.170.10.20",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "1224195424",
+   "packets": "218366"
+  },
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.0.151",
+   "dstaddr": "10.170.10.10",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "556956868",
+   "packets": "371640"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "16.15.253.193",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "390523830",
+   "packets": "50595"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "16.15.207.178",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "306230238",
+   "packets": "39711"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "185.125.190.37",
+   "dstaddr": "10.170.10.10",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "278479032",
+   "packets": "185836"
+  },
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "185.125.190.37",
+   "dstaddr": "10.170.0.151",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "278479032",
+   "packets": "185836"
+  },
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "185.125.190.40",
+   "dstaddr": "10.170.0.151",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "278477836",
+   "packets": "185804"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "185.125.190.40",
+   "dstaddr": "10.170.10.10",
+   "src_service": "-",
+   "dst_service": "-",
+   "bytes": "278477836",
+   "packets": "185804"
+  },
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "ingress",
+   "srcaddr": "10.170.11.10",
+   "dstaddr": "10.170.0.151",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "274151459",
+   "packets": "106200"
+  },
+  {
+   "interface_id": "eni-0bbc0dba041f72507",
+   "owner": "(AWS-managed ENI)",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.0.151",
+   "dstaddr": "52.216.213.250",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "225453475",
+   "packets": "159895"
+  },
+  {
+   "interface_id": "eni-00bdc13d2ed790585",
+   "owner": "i-0af4765b1680ddb7c",
+   "az_id": "use1-az1",
+   "flow_direction": "egress",
+   "srcaddr": "10.170.10.10",
+   "dstaddr": "52.216.213.250",
+   "src_service": "-",
+   "dst_service": "S3",
+   "bytes": "225453475",
+   "packets": "159895"
+  }
+ ]
+}

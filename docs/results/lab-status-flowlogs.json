@@ -1,0 +1,40 @@
+{
+ "phases": {
+  "s3_gateway_endpoint": true,
+  "traffic_lab": true
+ },
+ "instances": {},
+ "flow_log": {
+  "FlowLogStatus": "ACTIVE",
+  "DeliverLogsStatus": "SUCCESS",
+  "MaxAggregationInterval": 60,
+  "TrafficType": "ALL",
+  "LogDestinationType": "s3",
+  "DestinationOptions": {
+   "FileFormat": "parquet",
+   "HiveCompatiblePartitions": true,
+   "PerHourPartition": true
+  },
+  "LogFormat": "${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status} ${vpc-id} ${subnet-id} ${instance-id} ${az-id} ${sublocation-type} ${flow-direction} ${traffic-path} ${pkt-src-aws-service} ${pkt-dst-aws-service} ${pkt-srcaddr} ${pkt-dstaddr}"
+ },
+ "delivered": [
+  {
+   "key": "AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=12/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1220Z_46f4dbea.log.parquet",
+   "size": 12220
+  },
+  {
+   "key": "AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=12/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1220Z_f1861f74.log.parquet",
+   "size": 11093
+  },
+  {
+   "key": "AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=12/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1225Z_4d6711fa.log.parquet",
+   "size": 13204
+  }
+ ],
+ "delivered_count": 20,
+ "hour_partitions": [
+  "",
+  "year=2026/month=10/day=30/hour=11",
+  "year=2026/month=10/day=30/hour=12"
+ ]
+}

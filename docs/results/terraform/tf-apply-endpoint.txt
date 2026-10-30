@@ -1,0 +1,184 @@
+data.aws_ec2_instance_type_offerings.type: Reading...
+aws_vpc.this: Refreshing state... [id=vpc-084d6659fc4b29b32]
+aws_eip.nat[0]: Refreshing state... [id=eipalloc-0c88c5202aa86405f]
+data.aws_ssm_parameter.al2023_arm: Reading...
+aws_s3_bucket.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+data.aws_availability_zones.available: Reading...
+aws_glue_catalog_database.this: Refreshing state... [id=<account-id>:mvela_xfer]
+aws_iam_role.app: Refreshing state... [id=mvela-xfer-app-role]
+aws_s3_bucket.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+data.aws_ssm_parameter.al2023_arm: Read complete after 1s [id=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-arm64]
+aws_s3_bucket.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+data.aws_ec2_instance_type_offerings.type: Read complete after 1s [id=us-east-1]
+data.aws_caller_identity.current: Reading...
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+data.aws_caller_identity.current: Read complete after 0s [id=<account-id>]
+aws_iam_role_policy_attachment.app_ssm: Refreshing state... [id=mvela-xfer-app-role/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+aws_iam_instance_profile.app: Refreshing state... [id=mvela-xfer-app-profile]
+aws_route_table.private: Refreshing state... [id=rtb-0a89d9f763bf2168d]
+aws_internet_gateway.this: Refreshing state... [id=igw-0aef63192ccf16dac]
+aws_route_table.public: Refreshing state... [id=rtb-04dde3fa5f5d19907]
+aws_security_group.app: Refreshing state... [id=sg-0de5ee1d9fc7d8d8f]
+aws_subnet.public_a: Refreshing state... [id=subnet-05e8ca58c6d045a3f]
+aws_subnet.private["a"]: Refreshing state... [id=subnet-0821d4652a1ccea90]
+aws_subnet.private["b"]: Refreshing state... [id=subnet-015d77022fdfef550]
+aws_route.public_internet: Refreshing state... [id=r-rtb-04dde3fa5f5d199071080289494]
+aws_route_table_association.public_a: Refreshing state... [id=rtbassoc-09a2a26fd5cb187ca]
+aws_vpc_security_group_ingress_rule.bulk: Refreshing state... [id=sgr-0c67fc0ab83e844f4]
+aws_vpc_security_group_egress_rule.all: Refreshing state... [id=sgr-017cc02b9ae6f4931]
+aws_vpc_security_group_ingress_rule.http: Refreshing state... [id=sgr-048b9c1208df96130]
+aws_s3_bucket_public_access_block.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_route_table_association.private["a"]: Refreshing state... [id=rtbassoc-02e554a22e5d44d49]
+aws_route_table_association.private["b"]: Refreshing state... [id=rtbassoc-0344f1c4fb326e082]
+aws_s3_bucket_policy.replica: Refreshing state... [id=mvela-xfer-replica-e3bf3457]
+aws_nat_gateway.this[0]: Refreshing state... [id=nat-037ec89138180a34d]
+aws_route.private_nat[0]: Refreshing state... [id=r-rtb-0a89d9f763bf2168d1080289494]
+aws_s3_bucket_public_access_block.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_iam_role_policy.app_s3: Refreshing state... [id=mvela-xfer-app-role:mvela-xfer-app-s3]
+aws_s3_bucket_lifecycle_configuration.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_policy.lake: Refreshing state... [id=mvela-xfer-lake-e3bf3457]
+aws_s3_bucket_public_access_block.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_s3_bucket_lifecycle_configuration.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_glue_catalog_table.flows: Refreshing state... [id=<account-id>:mvela_xfer:vpc_flow_logs]
+aws_instance.app["app-a"]: Refreshing state... [id=i-0af4765b1680ddb7c]
+aws_instance.app["app-a2"]: Refreshing state... [id=i-0841528055882165e]
+aws_instance.app["app-b"]: Refreshing state... [id=i-032ad1ad259dc6db5]
+aws_s3_bucket_public_access_block.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_athena_workgroup.this: Refreshing state... [id=mvela-xfer]
+aws_s3_bucket_lifecycle_configuration.athena: Refreshing state... [id=mvela-xfer-athena-e3bf3457]
+aws_s3_bucket_policy.flowlogs: Refreshing state... [id=mvela-xfer-flowlogs-e3bf3457]
+aws_flow_log.vpc: Refreshing state... [id=fl-03a0906a8d392d132]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_vpc_endpoint.s3[0] will be created
+  + resource "aws_vpc_endpoint" "s3" {
+      + arn                   = (known after apply)
+      + cidr_blocks           = (known after apply)
+      + dns_entry             = (known after apply)
+      + id                    = (known after apply)
+      + ip_address_type       = (known after apply)
+      + network_interface_ids = (known after apply)
+      + owner_id              = (known after apply)
+      + policy                = (known after apply)
+      + prefix_list_id        = (known after apply)
+      + private_dns_enabled   = (known after apply)
+      + region                = "us-east-1"
+      + requester_managed     = (known after apply)
+      + route_table_ids       = [
+          + "rtb-0a89d9f763bf2168d",
+        ]
+      + security_group_ids    = (known after apply)
+      + service_name          = "com.amazonaws.us-east-1.s3"
+      + service_region        = (known after apply)
+      + state                 = (known after apply)
+      + subnet_ids            = (known after apply)
+      + tags                  = {
+          + "Name" = "mvela-xfer-s3-gateway"
+        }
+      + tags_all              = {
+          + "ManagedBy" = "terraform"
+          + "Name"      = "mvela-xfer-s3-gateway"
+          + "Project"   = "aws-data-transfer-cost-forensics"
+        }
+      + vpc_endpoint_type     = "Gateway"
+      + vpc_id                = "vpc-084d6659fc4b29b32"
+
+      + dns_options (known after apply)
+
+      + subnet_configuration (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  ~ phases                 = {
+      ~ s3_gateway_endpoint = false -> true
+        # (1 unchanged attribute hidden)
+    }
+  + s3_gateway_endpoint_id = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+aws_vpc_endpoint.s3[0]: Creating...
+aws_vpc_endpoint.s3[0]: Still creating... [00m10s elapsed]
+aws_vpc_endpoint.s3[0]: Creation complete after 17s [id=vpce-0fd3b2ed5cfc76d57]
+Releasing state lock. This may take a few moments...
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_sha256 = "ce7ccdec3d24114de1eb030b91a3a97fe08a08c4c35f944734546bb8455f3470"
+athena = {
+  "database" = "mvela_xfer"
+  "flow_root" = "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/"
+  "table" = "vpc_flow_logs"
+  "workgroup" = "mvela-xfer"
+}
+buckets = {
+  "athena" = "mvela-xfer-athena-e3bf3457"
+  "flowlogs" = "mvela-xfer-flowlogs-e3bf3457"
+  "lake" = "mvela-xfer-lake-e3bf3457"
+  "replica" = "mvela-xfer-replica-e3bf3457"
+}
+flow_log_id = "fl-03a0906a8d392d132"
+lab = {
+  "app-a" = {
+    "az" = "us-east-1a"
+    "az_id" = "use1-az1"
+    "eni" = "eni-00bdc13d2ed790585"
+    "id" = "i-0af4765b1680ddb7c"
+    "private_ip" = "10.170.10.10"
+    "subnet" = "a"
+  }
+  "app-a2" = {
+    "az" = "us-east-1a"
+    "az_id" = "use1-az1"
+    "eni" = "eni-04424f53c7a87ab2d"
+    "id" = "i-0841528055882165e"
+    "private_ip" = "10.170.10.20"
+    "subnet" = "a"
+  }
+  "app-b" = {
+    "az" = "us-east-1b"
+    "az_id" = "use1-az2"
+    "eni" = "eni-0745d89b3b422f893"
+    "id" = "i-032ad1ad259dc6db5"
+    "private_ip" = "10.170.11.10"
+    "subnet" = "b"
+  }
+}
+nat = {
+  "az_id" = "use1-az1"
+  "eni" = "eni-0bbc0dba041f72507"
+  "id" = "nat-037ec89138180a34d"
+  "private_ip" = "10.170.0.151"
+  "public_ip" = "32.198.154.19"
+}
+phases = {
+  "s3_gateway_endpoint" = true
+  "traffic_lab" = true
+}
+regions = {
+  "primary" = "us-east-1"
+  "second" = "eu-west-1"
+}
+s3_gateway_endpoint_id = "vpce-0fd3b2ed5cfc76d57"
+vpc = {
+  "azs" = tolist([
+    "us-east-1a",
+    "us-east-1b",
+  ])
+  "cidr" = "10.170.0.0/16"
+  "id" = "vpc-084d6659fc4b29b32"
+}

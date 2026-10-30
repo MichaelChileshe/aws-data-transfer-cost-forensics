@@ -1,0 +1,12 @@
+== app instances (expected sha256 ce7ccdec3d24114d)
+  app-a   i-0af4765b1680ddb7c  10.170.10.10  az_id=use1-az1 svc=active sha256=ce7ccdec3d24114d aws-cli/2.38.0 python 3.9.25  OK
+  app-a2  i-0841528055882165e  10.170.10.20  az_id=use1-az1 svc=active sha256=ce7ccdec3d24114d aws-cli/2.38.0 python 3.9.25  OK
+  app-b   i-032ad1ad259dc6db5  10.170.11.10  az_id=use1-az2 svc=active sha256=ce7ccdec3d24114d aws-cli/2.38.0 python 3.9.25  OK
+  3/3 OK
+== NAT gateway nat-037ec89138180a34d: ENI eni-0bbc0dba041f72507, private IP 10.170.0.151, az_id use1-az1
+== flow log fl-03a0906a8d392d132: status ACTIVE, delivery SUCCESS, aggregation 60 s, ALL, options {'FileFormat': 'parquet', 'HiveCompatiblePartitions': True, 'PerHourPartition': True}
+   fields: 25 -> ${version} ${account-id} ${interface-id} ${srcaddr} ${dstaddr} ${srcport} ${dstport} ${protocol} ${packets} ${bytes} ${start} ${end} ${action} ${log-status} ${vpc-id} ${subnet-id} ${instance-id} ${az-id} ${sublocation-type} ${flow-direction} ${traffic-path} ${pkt-src-aws-service} ${pkt-dst-aws-service} ${pkt-srcaddr} ${pkt-dstaddr}
+== delivered files: 2 (first 1000 listed), hour partitions: , year=2026/month=10/day=30/hour=11
+   AWSLogs/aws-account-id=<account-id>/  (0 bytes)
+   AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=11/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1140Z_ebcd178f.log.parquet  (14832 bytes)
+saved build/results/lab-status.json

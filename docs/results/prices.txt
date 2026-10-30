@@ -1,0 +1,15 @@
+== Price List API, fetched 2026-10-30T12:31:39Z
+  nat_hour             NatGateway-Hours                   US$0.0450 per Hrs   (NAT gateway, per hour (us-east-1))
+  nat_gb               NatGateway-Bytes                   US$0.0450 per GB   (NAT gateway, per GB processed (us-east-1))
+  intra_region_gb      DataTransfer-Regional-Bytes        US$0.0100 per GB   (inter-AZ in us-east-1, per GB, each direction)
+  internet_out         DataTransfer-Out-Bytes             tiers: 0-10240 GB US$0.0900, 10240-51200 GB US$0.0850, 51200-153600 GB US$0.0700, 153600-inf GB US$0.0500   (us-east-1 -> internet, per GB, tiered)
+  internet_in          DataTransfer-In-Bytes              US$0.0000 per GB   (internet -> us-east-1, per GB)
+  cf_south_africa      ZA-DataTransfer-Out-Bytes          tiers: 0-10240 GB US$0.1100, 10240-51200 GB US$0.1050, 51200-153600 GB US$0.0900, 153600-512000 GB US$0.0800, 512000-1048576 GB US$0.0600, 1048576-5242880 GB US$0.0500, 5242880-inf GB US$0.0400   (CloudFront to viewers in South Africa)
+  cf_united_states     US-DataTransfer-Out-Bytes          tiers: 0-10240 GB US$0.0850, 10240-51200 GB US$0.0800, 51200-153600 GB US$0.0600, 153600-512000 GB US$0.0400, 512000-1048576 GB US$0.0300, 1048576-5242880 GB US$0.0250, 5242880-inf GB US$0.0200   (CloudFront to viewers in United States)
+  note: vpce_interface_hour: no product matches {'usagetype': 'VpcEndpoint-Hours'} in ['AmazonVPC']
+  note: vpce_interface_gb: no product matches {'usagetype': 'VpcEndpoint-Bytes'} in ['AmazonVPC']
+saved build/results/prices.json and prices-raw.json (every raw record)
+
+PRICES MISSING OR AMBIGUOUS - the cost model will not run until these are fixed:
+  - use1_to_euw1_gb: no product matches {'usagetype': 'USE1-EUW1-AWS-Out-Bytes'} in ['AWSDataTransfer', 'AmazonEC2']
+  - euw1_to_use1_gb: no product matches {'usagetype': 'EUW1-USE1-AWS-Out-Bytes'} in ['AWSDataTransfer', 'AmazonEC2']

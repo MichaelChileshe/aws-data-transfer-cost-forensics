@@ -1,0 +1,141 @@
+
+== Lab
+  app-a: az_id / service / sha256                                                       use1-az1 / active / ce7ccdec3d24114d
+  app-a2: az_id / service / sha256                                                      use1-az1 / active / ce7ccdec3d24114d
+  app-b: az_id / service / sha256                                                       use1-az2 / active / ce7ccdec3d24114d
+  flow log status / delivery / aggregation s                                            ACTIVE / SUCCESS / 60
+  payload app-a: bytes / sha256                                                         1,073,741,824 / 1765d8a551069ec1
+  payload app-b: bytes / sha256                                                         268,435,456 / 4ff50806caa819a8
+
+== Runs
+  idle: bytes / seconds / Mbit/s or calls/s                                             0 / 240.011 / -
+  s3-nat: bytes / seconds / Mbit/s or calls/s                                           1,073,741,824 / 3.747 / 2292.6
+  s3-nat-from-b: bytes / seconds / Mbit/s or calls/s                                    268,435,456 / 1.801 / 1192.7
+  xaz-bulk: bytes / seconds / Mbit/s or calls/s                                         1,073,741,824 / 1.953 / 4399.3
+  saz-bulk: bytes / seconds / Mbit/s or calls/s                                         1,073,741,824 / 1.73 / 4965.7
+  chatty-xaz: bytes / seconds / Mbit/s or calls/s                                       167,772,160 / 8.021 / 4085.4
+  chatty-saz: bytes / seconds / Mbit/s or calls/s                                       167,772,160 / 8.021 / 4085.4
+  s3-euw1-nat: bytes / seconds / Mbit/s or calls/s                                      1,073,741,824 / 7.378 / 1164.3
+  gzip-euw1: bytes / seconds / Mbit/s or calls/s                                        300,144,888 / 3.635 / 660.6
+  gzip-euw1: original -> compressed / ratio / gzip seconds                              1,073,741,824 -> 300,144,888 / 0.2795 / 44.07
+  internet-in: bytes / seconds / Mbit/s or calls/s                                      536,870,912 / 12.53 / 342.8
+  s3-gwe: bytes / seconds / Mbit/s or calls/s                                           1,073,741,824 / 7.376 / 1164.5
+  s3-gwe-from-b: bytes / seconds / Mbit/s or calls/s                                    268,435,456 / 1.563 / 1374.2
+
+== Forensics
+  idle: cross-AZ hop bytes / NAT processed bytes                                        30,621 / 103,561
+  s3-nat: S3 us-east-1 via NAT gateway measured / ratio / bytes per packet              1,092,453,029 / 1.0174 / 3572
+  s3-nat: cross-AZ hop bytes / NAT processed bytes                                      14,236 / 1,097,533,089
+  s3-nat-from-b: S3 us-east-1 via NAT gateway measured / ratio / bytes per packet       276,321,282 / 1.0294 / 2671
+  s3-nat-from-b: cross-AZ hop bytes / NAT processed bytes                               275,161,240 / 275,172,289
+  xaz-bulk: cross-AZ measured / ratio / bytes per packet                                1,080,125,900 / 1.0059 / 8999
+  xaz-bulk: receiver's ENI saw                                                          1,079,981,884
+  xaz-bulk: cross-AZ hop bytes / NAT processed bytes                                    1,080,648,611 / 39,399
+  saz-bulk: same-AZ measured / ratio / bytes per packet                                 1,080,080,323 / 1.0059 / 9000
+  saz-bulk: receiver's ENI saw                                                          1,079,981,312
+  saz-bulk: cross-AZ hop bytes / NAT processed bytes                                    13,927 / 62,462
+  chatty-xaz: cross-AZ measured / ratio / bytes per packet                              187,682,432 / 1.1187 / 953
+  chatty-xaz: receiver's ENI saw                                                        144,230,704
+  chatty-xaz: cross-AZ hop bytes / NAT processed bytes                                  187,696,766 / 41,419
+  chatty-saz: same-AZ measured / ratio / bytes per packet                               187,665,792 / 1.1186 / 953
+  chatty-saz: receiver's ENI saw                                                        144,214,112
+  chatty-saz: cross-AZ hop bytes / NAT processed bytes                                  2,389 / 28,291
+  s3-euw1-nat: S3 eu-west-1 via NAT gateway measured / ratio / bytes per packet         1,117,620,072 / 1.0409 / 1456
+  s3-euw1-nat: cross-AZ hop bytes / NAT processed bytes                                 30,225 / 1,120,817,728
+  gzip-euw1: S3 eu-west-1 via NAT gateway measured / ratio / bytes per packet           312,264,641 / 1.0404 / 1457
+  gzip-euw1: cross-AZ hop bytes / NAT processed bytes                                   17,571 / 314,018,431
+  internet-in: internet via NAT gateway measured / ratio / bytes per packet             556,956,868 / 1.0374 / 1499
+  internet-in: cross-AZ hop bytes / NAT processed bytes                                 2,124 / 558,929,849
+  s3-gwe: S3 us-east-1 via gateway endpoint measured / ratio / bytes per packet         1,093,553,357 / 1.0185 / 3720
+  s3-gwe: cross-AZ hop bytes / NAT processed bytes                                      13,973 / 39,361
+  s3-gwe-from-b: S3 us-east-1 via gateway endpoint measured / ratio / bytes per packet  274,401,680 / 1.0222 / 3114
+  s3-gwe-from-b: cross-AZ hop bytes / NAT processed bytes                               10,205 / 26,306
+  background (idle run) app-a: bytes per hour                                           661,890
+  background (idle run) app-a2: bytes per hour                                          451,614
+  background (idle run) app-b: bytes per hour                                           397,677
+
+== Paths (whole build)
+  S3 eu-west-1 via NAT gateway egress                                                   1,429,884,713
+  S3 us-east-1 via NAT gateway egress                                                   1,369,434,837
+  S3 us-east-1 via gateway endpoint egress                                              1,367,955,037
+  cross-AZ egress                                                                       1,268,316,638
+  same-AZ egress                                                                        1,268,312,937
+  same-AZ ingress                                                                       1,268,213,926
+  cross-AZ ingress                                                                      1,268,172,622
+  internet via NAT gateway ingress                                                      556,956,868
+  S3 us-east-1 via NAT gateway ingress                                                  367,996,943
+  S3 eu-west-1 via NAT gateway ingress                                                  4,984,977
+  S3 us-east-1 via gateway endpoint ingress                                             3,437,910
+  internet via NAT gateway egress                                                       1,944,888
+
+== Forensics
+  IP -> AZ learned from flow logs matches Terraform                                     True
+
+== Athena
+  01_top_talkers: rows / bytes scanned / ms                                             40 / 72,710 / 830
+  02_paths_by_run: rows / bytes scanned / ms                                            766 / 145,999 / 1755
+  03_cross_az_hops: rows / bytes scanned / ms                                           86 / 306,628 / 1634
+  04_nat_legs: rows / bytes scanned / ms                                                13 / 50,192 / 698
+  05_ip_az_map: rows / bytes scanned / ms                                               4 / 39,791 / 697
+
+== NAT CloudWatch
+  idle: processed CloudWatch / flow logs                                                111,700 / 103561
+  s3-nat: processed CloudWatch / flow logs                                              1,097,532,620 / 1097533089
+  s3-nat-from-b: processed CloudWatch / flow logs                                       275,141,651 / 275172289
+  xaz-bulk: processed CloudWatch / flow logs                                            36,539 / 39399
+  saz-bulk: processed CloudWatch / flow logs                                            59,887 / 62462
+  chatty-xaz: processed CloudWatch / flow logs                                          37,518 / 41419
+  chatty-saz: processed CloudWatch / flow logs                                          25,722 / 28291
+  s3-euw1-nat: processed CloudWatch / flow logs                                         1,121,244,613 / 1120817728
+  gzip-euw1: processed CloudWatch / flow logs                                           313,606,699 / 314018431
+  internet-in: processed CloudWatch / flow logs                                         558,926,130 / 558929849
+  s3-gwe: processed CloudWatch / flow logs                                              51,444 / 39361
+  s3-gwe-from-b: processed CloudWatch / flow logs                                       13,703 / 26306
+  (between runs): processed CloudWatch / flow logs                                      92,006,705 / 172348205
+
+== Prices
+  nat_hour (NatGateway-Hours)                                                           US$0.045/Hrs
+  nat_gb (NatGateway-Bytes)                                                             US$0.045/GB
+  intra_region_gb (DataTransfer-Regional-Bytes)                                         US$0.01/GB
+  use1_to_euw1_gb (USE1-EU-AWS-Out-Bytes)                                               US$0.02/GB
+  euw1_to_use1_gb (EU-USE1-AWS-Out-Bytes)                                               US$0.02/GB
+  internet_out (DataTransfer-Out-Bytes)                                                 0+ GB US$0.09 | 10240+ GB US$0.085 | 51200+ GB US$0.07 | 153600+ GB US$0.05
+  internet_in (DataTransfer-In-Bytes)                                                   US$0.0/GB
+  cf_south_africa (ZA-DataTransfer-Out-Bytes)                                           0+ GB US$0.11 | 10240+ GB US$0.105 | 51200+ GB US$0.09 | 153600+ GB US$0.08 | 512000+ GB US$0.06 | 1048576+ GB US$0.05 | 5242880+ GB US$0.04
+  cf_united_states (US-DataTransfer-Out-Bytes)                                          0+ GB US$0.085 | 10240+ GB US$0.08 | 51200+ GB US$0.06 | 153600+ GB US$0.04 | 512000+ GB US$0.03 | 1048576+ GB US$0.025 | 5242880+ GB US$0.02
+
+== Cost per run
+  idle: total US$ / per GB sent                                                         0.0000 / -
+  s3-nat: total US$ / per GB sent                                                       0.0460 / 0.0460
+  s3-nat-from-b: total US$ / per GB sent                                                0.0167 / 0.0666
+  xaz-bulk: total US$ / per GB sent                                                     0.0201 / 0.0201
+  saz-bulk: total US$ / per GB sent                                                     0.0000 / 0.0000
+  chatty-xaz: total US$ / per GB sent                                                   0.0035 / 0.0224
+  chatty-saz: total US$ / per GB sent                                                   0.0000 / 0.0000
+  s3-euw1-nat: total US$ / per GB sent                                                  0.0679 / 0.0679
+  gzip-euw1: total US$ / per GB sent                                                    0.0190 / 0.0680
+  internet-in: total US$ / per GB sent                                                  0.0236 / 0.0472
+  s3-gwe: total US$ / per GB sent                                                       0.0000 / 0.0000
+  s3-gwe-from-b: total US$ / per GB sent                                                0.0000 / 0.0000
+  NAT gateway hours estimate / US$                                                      2 / 0.0900
+
+== Projection (US$/month)
+  NAT gateway hours: before / after                                                     32.85 / 65.70
+  NAT processing (S3 + replication + inbound + background): before / after              4,840.25 / 693.05
+  cross-AZ hop to the NAT gateway: before / after                                       1,075.61 / 0.00
+  service calls crossing AZs: before / after                                            1,024.00 / 102.40
+  S3 same Region transfer: before / after                                               0.00 / 0.00
+  inter-Region us-east-1 -> eu-west-1: before / after                                   614.40 / 260.28
+  internet egress: before / after                                                       3,524.30 / 1,765.61
+  internet ingress: before / after                                                      0.00 / 0.00
+  TOTAL before / after / saving                                                         11,111.41 / 2,887.04 / 8,224.37
+  compression ratio used                                                                0.2795
+
+== Terraform
+  tf-apply-base.txt                                                                     Apply complete! Resources: 44 added, 0 changed, 0 destroyed.
+  tf-apply-endpoint.txt                                                                 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+  tf-apply-stop-meter.txt                                                               Apply complete! Resources: 0 added, 0 changed, 6 destroyed.
+  tf-destroy.txt                                                                        Destroy complete! Resources: 39 destroyed.
+  tf-plan-base.txt                                                                      Plan: 44 to add, 0 to change, 0 to destroy.
+
+saved build/results/summary.csv

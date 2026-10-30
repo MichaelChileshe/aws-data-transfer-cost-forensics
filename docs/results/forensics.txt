@@ -1,0 +1,73 @@
+window 2026-10-30 11:38:39 UTC -> 2026-10-30 12:42:55 UTC, 12 run(s)
+  01_top_talkers: 40 rows, scanned 72,710 bytes, 830 ms
+  02_paths_by_run: 766 rows, scanned 145,999 bytes, 1755 ms
+  03_cross_az_hops: 86 rows, scanned 306,628 bytes, 1634 ms
+  04_nat_legs: 13 rows, scanned 50,192 bytes, 698 ms
+  05_ip_az_map: 4 rows, scanned 39,791 bytes, 697 ms
+  downloading https://ip-ranges.amazonaws.com/ip-ranges.json
+
+== Reconciliation: what each run sent vs what the flow logs measured on the sender's ENI
+  run            expected path                          generated        measured   ratio  B/pkt   cross-AZ hops   NAT processed
+  idle           (background)                                   0               0       -      -          30,621         103,561
+  s3-nat         S3 us-east-1 via NAT gateway       1,073,741,824   1,092,453,029  1.0174   3572          14,236   1,097,533,089
+  s3-nat-from-b  S3 us-east-1 via NAT gateway         268,435,456     276,321,282  1.0294   2671     275,161,240     275,172,289
+  xaz-bulk       cross-AZ                           1,073,741,824   1,080,125,900  1.0059   8999   1,080,648,611          39,399
+                 receiver's ENI saw 1,079,981,884 bytes arrive on the same path
+  saz-bulk       same-AZ                            1,073,741,824   1,080,080,323  1.0059   9000          13,927          62,462
+                 receiver's ENI saw 1,079,981,312 bytes arrive on the same path
+  chatty-xaz     cross-AZ                             167,772,160     187,682,432  1.1187    953     187,696,766          41,419
+                 receiver's ENI saw 144,230,704 bytes arrive on the same path
+  chatty-saz     same-AZ                              167,772,160     187,665,792  1.1186    953           2,389          28,291
+                 receiver's ENI saw 144,214,112 bytes arrive on the same path
+  s3-euw1-nat    S3 eu-west-1 via NAT gateway       1,073,741,824   1,117,620,072  1.0409   1456          30,225   1,120,817,728
+  gzip-euw1      S3 eu-west-1 via NAT gateway         300,144,888     312,264,641  1.0404   1457          17,571     314,018,431
+  internet-in    internet via NAT gateway             536,870,912     556,956,868  1.0374   1499           2,124     558,929,849
+  s3-gwe         S3 us-east-1 via gateway endpoint   1,073,741,824   1,093,553,357  1.0185   3720          13,973          39,361
+  s3-gwe-from-b  S3 us-east-1 via gateway endpoint     268,435,456     274,401,680  1.0222   3114          10,205          26,306
+
+== Bytes by path over the whole build (instance ENIs)
+  S3 eu-west-1 via NAT gateway               egress     1,429,884,713
+  S3 us-east-1 via NAT gateway               egress     1,369,434,837
+  S3 us-east-1 via gateway endpoint          egress     1,367,955,037
+  cross-AZ                                   egress     1,268,316,638
+  same-AZ                                    egress     1,268,312,937
+  same-AZ                                    ingress    1,268,213,926
+  cross-AZ                                   ingress    1,268,172,622
+  internet via NAT gateway                   ingress      556,956,868
+  S3 us-east-1 via NAT gateway               ingress      367,996,943
+  S3 eu-west-1 via NAT gateway               ingress        4,984,977
+  S3 us-east-1 via gateway endpoint          ingress        3,437,910
+  internet via NAT gateway                   egress         1,944,888
+  AMAZON us-east-1 via NAT gateway           egress         1,686,870
+  AMAZON us-east-1 via NAT gateway           ingress          869,446
+  EC2 us-east-1 via NAT gateway              egress           305,020
+  AMAZON us-east-1 outside VPC (route unknown) egress           180,333
+  EC2 us-east-1 via NAT gateway              ingress           68,811
+  AMAZON us-east-1 outside VPC (route unknown) ingress            7,993
+  EC2 us-east-1 outside VPC (route unknown)  egress               760
+  EC2 us-east-1 outside VPC (route unknown)  ingress              760
+
+== Background during the idle run (per instance, bytes per hour)
+  app-a         661,890 B/h  AMAZON us-east-1 via NAT gateway 41,544, EC2 us-east-1 via NAT gateway 2,584
+  app-a2        451,614 B/h  AMAZON us-east-1 via NAT gateway 27,069, EC2 us-east-1 via NAT gateway 3,040
+  app-b         397,677 B/h  AMAZON us-east-1 via NAT gateway 23,017, EC2 us-east-1 via NAT gateway 3,496
+
+== NAT gateway ENI legs per run (bytes)
+  (between runs)   from source      2,001,077  to dest      2,014,940  from dest    170,347,128  to source    184,091,286  processed    172,348,205
+  chatty-saz       from source         13,341  to dest         12,932  from dest         14,950  to source         12,979  processed         28,291
+  chatty-xaz       from source         19,107  to dest         19,343  from dest         22,312  to source         20,607  processed         41,419
+  gzip-euw1        from source    312,649,429  to dest    312,659,186  from dest      1,369,002  to source      1,373,154  processed    314,018,431
+  idle             from source         46,638  to dest         37,791  from dest         56,923  to source         53,856  processed        103,561
+  internet-in      from source      1,958,133  to dest      1,957,790  from dest    556,971,716  to source    556,970,057  processed    558,929,849
+  s3-euw1-nat      from source  1,117,483,655  to dest  1,117,485,899  from dest      3,334,073  to source      3,314,572  processed  1,120,817,728
+  s3-gwe           from source         17,743  to dest         26,834  from dest         21,618  to source         27,157  processed         39,361
+  s3-gwe-from-b    from source         12,691  to dest         12,832  from dest         13,615  to source          6,381  processed         26,306
+  s3-nat           from source  1,092,476,929  to dest  1,092,467,616  from dest      5,056,160  to source      5,054,696  processed  1,097,533,089
+  s3-nat-from-b    from source    273,991,149  to dest    273,991,390  from dest      1,181,140  to source      1,178,907  processed    275,172,289
+  saz-bulk         from source         25,604  to dest         25,320  from dest         36,858  to source         34,691  processed         62,462
+  xaz-bulk         from source         17,859  to dest         17,382  from dest         21,540  to source         20,180  processed         39,399
+
+== IP -> AZ learned from the flow logs: matches Terraform
+
+Athena scanned 615,320 bytes for 5 queries (Athena bills per TB scanned, rounded up to 10 MB per query)
+saved build/results/forensics.json and athena-*.json; the SQL that ran: build/results/sql/

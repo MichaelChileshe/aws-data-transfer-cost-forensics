@@ -1,0 +1,35 @@
+{
+ "meta": {
+  "query_id": "7b375ee3-8212-44d2-895e-625fd1a4e19b",
+  "scanned_bytes": 24454,
+  "engine_ms": 617,
+  "rows": 2
+ },
+ "rows": [
+  {
+   "year": "2026",
+   "month": "10",
+   "day": "30",
+   "hour": "11",
+   "records": "2671",
+   "enis": "4",
+   "first_start": "1793360394",
+   "last_end": "1793361597",
+   "bytes": "4842598865",
+   "sample_file": "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=11/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1140Z_8fc9d5bf.log.parquet"
+  },
+  {
+   "year": "2026",
+   "month": "10",
+   "day": "30",
+   "hour": "12",
+   "records": "2441",
+   "enis": "4",
+   "first_start": "1793361579",
+   "last_end": "1793363306",
+   "bytes": "12428011288",
+   "sample_file": "s3://mvela-xfer-flowlogs-e3bf3457/AWSLogs/aws-account-id=<account-id>/aws-service=vpcflowlogs/aws-region=us-east-1/year=2026/month=10/day=30/hour=12/<account-id>_vpcflowlogs_us-east-1_fl-03a0906a8d392d132_20261030T1200Z_0c37b184.log.parquet"
+  }
+ ],
+ "last_end": 1793363306
+}
